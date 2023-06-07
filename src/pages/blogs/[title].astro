@@ -1,0 +1,47 @@
+---
+import BasePageLayout from '../../layouts/BasePageLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const blogs = await getCollection('blog');
+    return blogs.map(entry => ({
+        params: { title: entry.slug }, props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BasePageLayout title={entry.data.title}>
+    <div id="container">
+        <h1 id="blog-title">{entry.data.title}</h1>
+        <div id="blog-card">
+            <div id="blog-content">
+                <Content />
+            </div>
+        </div>
+    </div>
+</BasePageLayout>
+<style>
+	#container {
+		margin: 16px calc(27vw);
+	}
+	@media (max-width:1500px) {
+		#container {
+			margin: 16px;
+		}
+	}
+    #blog-title {
+        margin-top: 0;
+    }
+    #blog-card {
+        margin: -10px 0;
+        background-color: var(--bg2);
+        border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+    }
+    #blog-content {
+        padding: 10px;
+    }
+</style>

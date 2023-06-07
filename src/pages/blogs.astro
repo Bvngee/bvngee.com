@@ -1,0 +1,125 @@
+---
+import BasePageLayout from '../layouts/BasePageLayout.astro';
+import BlogPreview from '../components/BlogPreview.astro'
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
+
+const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
+---
+<BasePageLayout title="Blogs">
+	<div id="container">
+		<div id="header">
+			<h1 id="header-title">Blogs</h1>
+			<div id="header-latest-date">Last Updated: {lastUpdatedDate}</div>
+		</div>
+
+		{blogPosts.map(p => ( <div id="blog-card">
+			<div id="blog-card-label">
+				<a href={p.slug}> <h1 id="blog-title">{p.data.title}</h1> </a>
+				<h id="blog-date">{p.data.publishedDate}</h>
+			</div>
+			<div id="blog-hrs">
+				<div />
+				<div />
+			</div>
+			<div id="blog-content">
+				<BlogPreview post={p}/>
+			</div>
+		</div> ))}
+
+	</div>
+</BasePageLayout>
+<style>
+	#container {
+		margin: 16px calc(27vw);
+	}
+	@media (max-width:1500px) {
+		#container {
+			margin: 16px;
+		}
+	}
+	body {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+	* {
+		box-sizing: border-box;
+		color: var(--fg1);
+	}
+	#header {
+		min-width: 100%;
+		display: flex;
+		flex-direction: row;
+	}
+	#header-latest-date {
+		margin-top: 16px;
+		font-size: 14px;
+		font-weight: lighter;
+		color: var(--fg2)
+	}
+	#header-title {
+		/* color: var(--green); */
+		margin: 0 20px 0 10px;
+		text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
+	}
+	#blog-card {
+		background-color: var(--bg2);
+		border-radius: 10px;
+		padding: 5px 10px;
+		margin: 20px 0px;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+		transition-property: transform;
+		transition-duration: 0.3s;
+	}
+	#blog-card:hover {
+		transform: scale(1.016) translateZ(0);
+		backface-visibility: hidden;
+	}
+	#blog-card-label {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	#blog-title {
+		margin: 0;
+		color: var(--blue);
+		text-shadow: 2px 4px 7px rgba(0,0,0,0.4);
+	}
+	#blog-date {
+		padding: 10px 0 0 0;
+		font-size: 14px;
+		font-weight: lighter;
+		color: var(--fg2)
+	}
+	#blog-title:hover {
+		color: var(--aqua);
+	}
+	a { text-decoration: none; }
+	#blog-hrs {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	#blog-hrs * {
+		width: 3%;
+		margin: 0;
+		height: 4px;
+		color: var(--aqua);
+		background-color: var(--aqua);
+		border-radius: 2px;
+	}
+	#blog-content {
+		display: block;
+		white-space: normal;
+		overflow: hidden;
+		text-overflow: clip;
+		max-height: 210px;
+		margin: -7px 5px 0 5px;
+		text-align: justify;
+
+  		-webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 1));
+  		mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 1));
+	}
+</style>

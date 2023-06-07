@@ -1,0 +1,69 @@
+---
+---
+
+<nav id="nav-links">
+    <a id="home" href="/"><span id="home-logo"> </span>Home</a>
+    <a id="about" href="/about/"><span id="about-logo"> </span>About</a>
+    <a id="blog" href="/blogs/"><span id="blog-logo">󱀂 </span>Blogs</a>
+</nav>
+
+<style>
+    #nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+        background-color: var(--bg2);
+    }
+    a {
+        margin: 8px 20px;
+        padding: 4px 6px;
+        font-size: 18px;
+        text-decoration: none;
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        overflow: hidden;
+        transition-duration: 0.1s;
+        transition-property: transform;
+    }
+    a:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 6px;
+        right: 100%;
+        bottom: 0px;
+        height: 4px;
+        border-radius: 4px;
+        transition-property: right;
+        transition-duration: 0.3s;
+        /* transition-timing-function: asdas; */
+    }
+    a:hover:before {
+		right: 6px;
+    }
+    a#home:before {
+        background-color: var(--green);
+    }
+    a#about:before {
+        background-color: var(--orange);
+    }
+    a#blog:before {
+        background-color: var(--blue);
+    }
+    #home-logo {
+        color: var(--green);
+        /* font-size: 20px; */
+    }
+    #about-logo {
+        color: var(--orange);
+        padding-right: 2px;
+        font-size: 16px;
+    }
+    #blog-logo {
+        color: var(--blue);
+        /* font-size: 20px; */
+    }
+
+</style>
