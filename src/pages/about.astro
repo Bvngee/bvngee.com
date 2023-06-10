@@ -3,5 +3,37 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 ---
 
 <BasePageLayout title="About">
-	<h1>About Me! (not there yet (3))</h1>
+	<div id="container">
+		<h1 id="about-title">About Me! (beginning...)</h1>
+		<div id="about-card">
+			<div id="text-wrapper">
+				<p>asasdasd</p>
+			</div>
+		</div>
+	</div>
 </BasePageLayout>
+<style>
+	#container {
+		margin: 16px calc(27vw);
+	}
+	@media (max-width:1500px) {
+		#container {
+			margin: 16px;
+		}
+	}
+	#about-title {
+        margin: 0 0 0 5px;
+		text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
+	}
+	#about-card {
+		padding: 8px 10px;
+		margin: 20px 0px;
+        background-color: var(--bg2);
+        border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+	}
+	#text-wrapper {
+		text-align: justify;
+		margin: -10px 5px;
+	}
+</style>
