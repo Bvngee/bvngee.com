@@ -78,7 +78,7 @@ body {
 @font-face {
     font-family: 'CaskaydiaCove Nerd Font';
     src: local('CaskaydiaCove Nerd Font Complete SemiBold') format('opentype'),
-        url('/fonts/Caskaydia Cove Nerd Font Complete SemiBold') format('opentype');
+        url('/fonts/Caskaydia Cove Nerd Font Complete SemiBold.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
