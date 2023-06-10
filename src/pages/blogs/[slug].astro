@@ -1,4 +1,5 @@
 ---
+import PageContainer from '../../components/PageContainer.astro';
 import BasePageLayout from '../../layouts/BasePageLayout.astro';
 import { getCollection } from 'astro:content';
 
@@ -14,24 +15,16 @@ const { Content } = await entry.render();
 ---
 
 <BasePageLayout title={entry.data.title}>
-    <div id="container">
+    <PageContainer>
         <h1 id="blog-title">{entry.data.title}</h1>
         <div id="blog-card">
             <div id="blog-content">
                 <Content />
             </div>
         </div>
-    </div>
+    </PageContainer>
 </BasePageLayout>
 <style>
-	#container {
-		margin: 16px calc(27vw);
-	}
-	@media (max-width:1500px) {
-		#container {
-			margin: 16px;
-		}
-	}
     #blog-title {
         margin: 0 0 0 10px;
 		text-shadow: 2px 4px 9px rgba(0,0,0,0.4);

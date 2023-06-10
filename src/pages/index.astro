@@ -1,39 +1,35 @@
 ---
+import PageContainer from '../components/PageContainer.astro';
 import BasePageLayout from '../layouts/BasePageLayout.astro';
 ---
 <BasePageLayout title="Home">
-	<div id="container">
-		<div class="box">
-			<div class="text-wrapper">
-				<h2>Who am I?</h2>
-				<p>I'm just another random who loves tech, maybe like you!</p>
+	<PageContainer>
+		<div id="container">
+			<div class="box">
+				<div class="text-wrapper">
+					<h2>Who am I?</h2>
+					<p>I'm just another random who loves tech, maybe like you!</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="text-wrapper">
+					<h2>Title</h2>
+					<p>example text blah blah</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="text-wrapper">
+					<h2>Other Places</h2>
+					<p>example text blah blah</p>
+				</div>
 			</div>
 		</div>
-		<div class="box">
-			<div class="text-wrapper">
-				<h2>Title</h2>
-				<p>example text blah blah</p>
-			</div>
-		</div>
-		<div class="box">
-			<div class="text-wrapper">
-				<h2>Other Places</h2>
-				<p>example text blah blah</p>
-			</div>
-		</div>
-
-	</div>
+	</PageContainer>
 </BasePageLayout>
 <style>
 	#container {
-		margin: 16px calc(27vw);
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-	}
-	@media (max-width:1500px) {
-		#container {
-			margin: 16px;
-		}
 	}
 	.box {
 		background-color: var(--bg2);
@@ -55,10 +51,4 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 		text-align: justify;
 		margin: -10px 5px;
 	}
-	/* h2 {
-		margin-top: 0;
-	}
-	p {
-		margin-bottom: 0;
-	} */
 </style>

@@ -1,29 +1,22 @@
 ---
+import PageContainer from '../components/PageContainer.astro';
 import BasePageLayout from '../layouts/BasePageLayout.astro';
 ---
 
 <BasePageLayout title="About">
-	<div id="container">
-		<h1 id="about-title">About Me! (beginning...)</h1>
+	<PageContainer>
+		<h1 id="about-title">About Me</h1>
 		<div id="about-card">
 			<div id="text-wrapper">
 				<p>asasdasd</p>
 			</div>
 		</div>
-	</div>
+	</PageContainer>
 </BasePageLayout>
 <style>
-	#container {
-		margin: 16px calc(27vw);
-	}
-	@media (max-width:1500px) {
-		#container {
-			margin: 16px;
-		}
-	}
 	#about-title {
-        margin: 0 0 0 5px;
-		text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
+        margin: 0 0 0 10px;
+		/* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
 	}
 	#about-card {
 		padding: 8px 10px;

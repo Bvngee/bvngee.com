@@ -2,13 +2,14 @@
 import BasePageLayout from '../layouts/BasePageLayout.astro';
 import BlogPreview from '../components/BlogPreview.astro'
 import { getCollection } from 'astro:content';
+import PageContainer from '../components/PageContainer.astro';
 
 const blogPosts = await getCollection('blog');
 
 const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 ---
 <BasePageLayout title="Blogs">
-	<div id="container">
+	<PageContainer>
 		<div id="header">
 			<h1 id="header-title">Blogs</h1>
 			<div id="header-latest-date">Last Updated: {lastUpdatedDate}</div>
@@ -27,18 +28,9 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 				<BlogPreview post={p}/>
 			</div>
 		</div> ))}
-
-	</div>
+	</PageContainer>
 </BasePageLayout>
 <style>
-	#container {
-		margin: 16px calc(27vw);
-	}
-	@media (max-width:1500px) {
-		#container {
-			margin: 16px;
-		}
-	}
 	body {
 		min-height: 100vh;
 		display: flex;
@@ -62,7 +54,7 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 	#header-title {
 		/* color: var(--green); */
 		margin: 0 20px 0 10px;
-		text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
+		/* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
 	}
 	#blog-card {
 		background-color: var(--bg2);
