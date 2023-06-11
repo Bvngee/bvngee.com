@@ -7,20 +7,38 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 		<div id="container">
 			<div class="box">
 				<div class="text-wrapper">
-					<h2>Who am I?</h2>
-					<p>I'm just another random who loves tech, maybe like you!</p>
+					<h2>Who?</h2>
+					<p>
+						I'm BvngeeCord, another guy on the internet who loves tech :&gt
+						Check out <a id="blogs-link" href='/blogs/'>some articles</a> of mine,
+						or learn some more <a id="about-link" href='/about/'>about me</a>.
+					</p>
 				</div>
 			</div>
 			<div class="box">
 				<div class="text-wrapper">
-					<h2>Title</h2>
+					<h2>Where?</h2>
 					<p>example text blah blah</p>
 				</div>
 			</div>
 			<div class="box">
 				<div class="text-wrapper">
-					<h2>Other Places</h2>
-					<p>example text blah blah</p>
+					<h2>What?</h2>
+					<p>Projects</p>
+					<ul>
+						<li>asdasdas</li>
+					</ul>
+					<!-- <p>Technologies I use <em>most:</em></p> -->
+					<!-- <div id="technologies"> -->
+						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" /> -->
+						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" /> -->
+						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" /> -->
+						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" /> -->
+						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg" /> -->
+						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" /> -->
+						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" /> -->
+						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" /> -->
+					<!-- </div> -->
 				</div>
 			</div>
 		</div>
@@ -30,11 +48,11 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 	#container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
 	}
 	.box {
 		background-color: var(--bg2);
 		padding: 8px 10px;
-		margin: 10px 10px;
 		border-radius: 10px;
 		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
 	}
@@ -50,5 +68,25 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 	.text-wrapper {
 		text-align: justify;
 		margin: -10px 5px;
+	}
+	a#blogs-link {
+		text-decoration-color: var(--blue);
+	}
+	a#about-link {
+		text-decoration-color: var(--orange);
+	}
+	ul {
+		padding-left: 19px;
+	}
+	#technologies {
+		background-color: var(--bg1);
+		border-radius: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0px 0px 18px 0px;
+		padding: 2px;
+	}
+	img {
+		padding: 4px;
 	}
 </style>
