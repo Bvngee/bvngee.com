@@ -16,7 +16,10 @@ const { Content } = await entry.render();
 
 <BasePageLayout title={entry.data.title}>
     <PageContainer>
-        <h1 id="blog-title">{entry.data.title}</h1>
+        <div id="header">
+            <h1 id="blog-title">{entry.data.title}</h1>
+            <h id="blog-date">{entry.data.publishedDate}</h>
+        </div>
         <div id="blog-card">
             <div id="blog-content">
                 <Content />
@@ -25,10 +28,19 @@ const { Content } = await entry.render();
     </PageContainer>
 </BasePageLayout>
 <style>
+    #header {
+        display: flex;
+        justify-content: space-between;
+    }
     #blog-title {
         margin: 0 0 0 10px;
 		text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
     }
+	#blog-date {
+		padding: 20px 10px 0 0;
+		font-weight: lighter;
+		color: var(--fg2)
+	}
     #blog-card {
 		padding: 8px 10px;
 		margin: 20px 0px;

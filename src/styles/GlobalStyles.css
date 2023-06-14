@@ -59,11 +59,19 @@ body {
 }
 
 /* Custom Font */
-@font-face {
+/* @font-face {
     font-family: 'CaskaydiaCove Nerd Font';
     src: local('CaskaydiaCove Nerd Font Complete SemiLight') format('opentype'),
         url('/fonts/Caskaydia Cove Nerd Font Complete SemiLight.otf') format('opentype');
     font-weight: lighter;
+    font-style: normal;
+    font-display: swap;
+} */
+@font-face {
+    font-family: 'CaskaydiaCove Nerd Font';
+    src: local('CaskaydiaCove Nerd Font Complete SemiLight') format('opentype'),
+        url('/fonts/Caskaydia Cove Nerd Font Complete SemiLight.otf') format('opentype');
+    font-weight: 100;
     font-style: normal;
     font-display: swap;
 }
@@ -71,14 +79,6 @@ body {
     font-family: 'CaskaydiaCove Nerd Font';
     src: local('CaskaydiaCove Nerd Font Complete Regular') format('opentype'),
         url('/fonts/Caskaydia Cove Nerd Font Complete Regular.otf') format('opentype');
-    font-weight: light;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'CaskaydiaCove Nerd Font';
-    src: local('CaskaydiaCove Nerd Font Complete SemiBold') format('opentype'),
-        url('/fonts/Caskaydia Cove Nerd Font Complete SemiBold.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -107,4 +107,4 @@ body {
     font-style: italic;
     font-display: swap;
 }
-/* sudo cp /usr/local/share/fonts/CaskaydiaCove/Caskaydia\ Cove\ Nerd\ Font\ Complete\ Mono\ Regular.otf ~/Code/bvngeecord.com-v2/public/fonts */
+/* sudo cp /usr/local/share/fonts/CaskaydiaCove/Caskaydia\ Cove\ Nerd\ Font\ Complete\ Mono\ Regular.otf ~/Code/bvngeecord.com/public/fonts */

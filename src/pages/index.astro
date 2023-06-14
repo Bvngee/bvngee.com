@@ -1,44 +1,79 @@
 ---
 import PageContainer from '../components/PageContainer.astro';
+import SocialLinkPreview from '../components/SocialLinkPreview.astro';
+import SoftwareIconShield from '../components/SoftwareIconShield.astro';
 import BasePageLayout from '../layouts/BasePageLayout.astro';
 ---
 <BasePageLayout title="Home">
 	<PageContainer>
 		<div id="container">
-			<div class="box">
+			<h1 id="home-title">Hi, I'm BvngeeCord!</h1>
+			<div class="box" id="who">
 				<div class="text-wrapper">
 					<h2>Who?</h2>
 					<p>
-						I'm BvngeeCord, another guy on the internet who loves tech :&gt
-						Check out <a id="blogs-link" href='/blogs/'>some articles</a> of mine,
-						or learn some more <a id="about-link" href='/about/'>about me</a>.
+						I'm BvngeeCord, another guy on the internet who loves tech :&gt In my free time you'll likely find me programming, playing technical minecraft, ricing Linux, 
+						or learning about computers.  I bike here and there, and <em>love</em> to walk when its rainy:) Check out <a id="blogs-link" href='/blogs/'>some articles</a>
+						of mine, or read some more <a id="about-link" href='/about/'>about me</a>.
 					</p>
 				</div>
 			</div>
-			<div class="box">
-				<div class="text-wrapper">
-					<h2>Where?</h2>
-					<p>example text blah blah</p>
-				</div>
-			</div>
-			<div class="box">
+			<div class="box" id="what">
 				<div class="text-wrapper">
 					<h2>What?</h2>
-					<p>Projects</p>
+					<p>Some projects and things I'm proud of:</p>
 					<ul>
-						<li>asdasdas</li>
+						<li><b><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/94EYHt8qgw">Oracle SMP</a></b>: my technical Minecraft server, running since April 2021</li>
+						<li>My <b>Linux configs/dotfiles</b>: a textual representation of my journey to understand how computers and OSes work (link soon)</li>
+						<li><b><a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/BvngeeAddons">BvngeeAddons</a></b>: my own personal set of client-side modifications to Minecraft</li>
+						<li><b><a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/bvngeecord.com">bvngeecord.com</a></b>: my mini-dive into how the web (front and back) works</li>
+						<li>A plethora of <b><a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord?tab=repositories&type=source">other GitHub projects</a></b>: hackathons, AOCs, scripts, other Minecraft mods, and more</li>
+						<li>More nerdy things that only exist with me physically: my LEGO Technic obsession, custom keyboard and PC,...</li>
 					</ul>
-					<!-- <p>Technologies I use <em>most:</em></p> -->
-					<!-- <div id="technologies"> -->
-						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" /> -->
-						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" /> -->
-						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" /> -->
-						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" /> -->
-						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg" /> -->
-						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" /> -->
-						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" /> -->
-						<!-- <img height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" /> -->
-					<!-- </div> -->
+				</div>
+			</div>
+			<div class="box" id="where">
+				<div class="text-wrapper">
+					<h2>Where?</h2>
+					<p>Some places to find me:</p>
+					<div class="icon-card-wrapper">
+						<!-- use http://www.google.com/s2/favicons?domain=www.example.com if the default doesn't work, like with Discord -->
+						<SocialLinkPreview title="GitHub" href="https://www.github.com/BvgeeCord/" favicon="https://www.github.com/favicon.ico" />
+						<SocialLinkPreview title="Email" href="https://mailto:nystromjp@gmail.com" favicon="https://mail.google.com/favicon.ico" />
+						<SocialLinkPreview title="Discord" href="https://www.discordapp.com/users/BvngeeCord#2251" favicon="http://www.google.com/s2/favicons?domain=www.discord.com" />
+						<SocialLinkPreview title="YouTube" href="https://www.youtube.com/@bvngeecord/" favicon="https://www.youtube.com/favicon.ico" />
+						<SocialLinkPreview title="Reddit" href="https://www.reddit.com/u/BvngeeCord/" favicon="https://www.reddit.com/favicon.ico" />
+						<SocialLinkPreview title="Spotify" href="https://open.spotify.com/user/9hhagw1x0v5mrioqkcvejlyke" favicon="http://www.google.com/s2/favicons?domain=www.spotify.com " />
+					</div>
+				</div>
+			</div>
+			<div class="box" id="how">
+				<div class="text-wrapper">
+					<h2>How?</h2>
+					<p>Software I actually use:</p>
+					<div class="icon-card-wrapper">
+						<SoftwareIconShield name="Firefox" color="FF7139" slug="firefoxbrowser" />
+						<SoftwareIconShield name="Neovim" color="57A143" slug="firefoxbrowser" />
+						<SoftwareIconShield name="Linux" color="FCC624" slug="linux" />
+						<SoftwareIconShield name="Arch Linux" color="1793D1" slug="archlinux" />
+						<SoftwareIconShield name="Wayland" color="FFBC00" slug="wayland" />
+						<SoftwareIconShield name="OBS Studio" color="302E31" slug="obsstudio" />
+						<SoftwareIconShield name="Docker" color="2496ED" slug="docker" />
+						<SoftwareIconShield name="Nginx" color="009639" slug="nginx" />
+						<!-- <SoftwareIconShield name="Blender" color="FF7139" slug="blender" /> -->
+					</div>
+					<p>Languages I use or am familiar with: ("Expert" is relative)</p>
+					<div class="icon-card-wrapper">
+                        <SoftwareIconShield name="Rust" color="000000" slug="rust" />
+						<SoftwareIconShield name="Java" color="3776AB" slug="oracle" />
+						<SoftwareIconShield name="Lua" color="2C2D72" slug="lua" />
+						<SoftwareIconShield name="Bash" color="4EAA25" slug="gnubash" />
+						<SoftwareIconShield name="JavaScript" color="3776AB" slug="javascript" />
+						<SoftwareIconShield name="Astro" color="FF5D01" slug="astro" />
+						<SoftwareIconShield name="HTML" color="E34F26" slug="html5" />
+						<SoftwareIconShield name="CSS" color="1572B6" slug="css3" />
+						<SoftwareIconShield name="Markdown" color="000000" slug="markdown" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -46,24 +81,30 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 </BasePageLayout>
 <style>
 	#container {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 20px;
+		gap: 0 20px;
+	}
+	#home-title {
+        margin: 0 10px 20px 10px;
+		/* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
 	}
 	.box {
-		background-color: var(--bg2);
 		padding: 8px 10px;
 		border-radius: 10px;
+		background-color: var(--bg2);
 		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+		margin: 20px 0;
 	}
-	.box:nth-of-type(1) {
-		grid-column: 1;
+}
+	.box#where {
 	}
-	.box:nth-of-type(2) {
-		grid-column: 2;
+	.box#who {
 	}
-	.box:nth-of-type(3) {
-		
+	.box#what {
+	}
+	.box#how {
+
+	}	
+	.box {
 	}
 	.text-wrapper {
 		text-align: justify;
@@ -75,8 +116,18 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 	a#about-link {
 		text-decoration-color: var(--orange);
 	}
+	.icon-card-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		row-gap: 8px;
+		padding-bottom: 20px;
+	}
 	ul {
 		padding-left: 19px;
+	}
+	li {
+		margin: 8px 0;
 	}
 	#technologies {
 		background-color: var(--bg1);
@@ -86,7 +137,5 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 		margin: 0px 0px 18px 0px;
 		padding: 2px;
 	}
-	img {
-		padding: 4px;
-	}
+
 </style>

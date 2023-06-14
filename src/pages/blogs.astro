@@ -17,13 +17,13 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 
 		{blogPosts.map(p => ( <div id="blog-card">
 			<div id="blog-card-label">
-				<a href={p.slug}> <h1 id="blog-title">{p.data.title}</h1> </a>
+				<a href={p.slug}> <h2 id="blog-title">{p.data.title}</h2> </a>
 				<h id="blog-date">{p.data.publishedDate}</h>
 			</div>
-			<div id="blog-hrs">
+			<!-- <div id="blog-hrs">
 				<div />
 				<div />
-			</div>
+			</div> -->
 			<div id="blog-content">
 				<BlogPreview post={p}/>
 			</div>
@@ -43,11 +43,10 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 	#header {
 		min-width: 100%;
 		display: flex;
-		flex-direction: row;
+		justify-content: space-between;
 	}
 	#header-latest-date {
-		margin-top: 16px;
-		font-size: 14px;
+		padding: 20px 10px 0 0;
 		font-weight: lighter;
 		color: var(--fg2)
 	}
@@ -80,7 +79,7 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 		text-shadow: 2px 4px 7px rgba(0,0,0,0.4);
 	}
 	#blog-date {
-		padding: 10px 0 0 0;
+		padding: 9px 0 0 0;
 		font-size: 14px;
 		font-weight: lighter;
 		color: var(--fg2)
