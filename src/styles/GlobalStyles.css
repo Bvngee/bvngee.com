@@ -1,4 +1,5 @@
-:root {
+/* Global */
+body {
     /* Variable Declaration */
     --bg-darker: #141617;
     --bg-dark: #1d2021;
@@ -23,32 +24,11 @@
 
     /* Default Backgrond */
     background-color: var(--bg1, #000000);
-
 }
 * {
     /* Default Foreground */
     color: var(--fg1, #ffffff);
     font-family: 'CaskaydiaCove Nerd Font';
-    font-weight: regular;
-}
-/*<pre> is used to indicate whitespace significance (so that multiline works), <code> is used to signify any instance of code */
-code, pre {
-    font-weight: regular;
-    font-size: 95%;
-    background-color: var(--bg1);
-}
-pre {
-    padding: 8px;
-    border-radius: 6px;
-    max-height: 350px;
-}
-code {
-    padding: 3px 4px;
-    border-radius: 4px;
-}
-pre code {
-    /* this makes non-multi-line <code> have padding without messing up multi-line <pre><code> blocks. */
-    padding: 0px;
 }
 body {
     margin: 0;
@@ -57,52 +37,44 @@ body {
 ::selection {
     background-color:  #4f422e;
 }
+a[target="_blank"]:not(.no-icon) {
+    color: var(--blue);
+}
+a[target="_blank"]:not(.no-icon):after {
+    content: " ";
+    /* content: "󰌹"; */
+    font-size: 85%;
+    padding: 1px 5px 0 4px;
+    display: inline-block;
+    color: var(--fg2);
+    opacity: 0.7;
+}
 
 /* Custom Font */
-/* @font-face {
+@font-face { /* NORMAL */
     font-family: 'CaskaydiaCove Nerd Font';
-    src: local('CaskaydiaCove Nerd Font Complete SemiLight') format('opentype'),
-        url('/fonts/Caskaydia Cove Nerd Font Complete SemiLight.otf') format('opentype');
-    font-weight: lighter;
-    font-style: normal;
-    font-display: swap;
-} */
-@font-face {
-    font-family: 'CaskaydiaCove Nerd Font';
-    src: local('CaskaydiaCove Nerd Font Complete SemiLight') format('opentype'),
-        url('/fonts/Caskaydia Cove Nerd Font Complete SemiLight.otf') format('opentype');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'CaskaydiaCove Nerd Font';
-    src: local('CaskaydiaCove Nerd Font Complete Regular') format('opentype'),
-        url('/fonts/Caskaydia Cove Nerd Font Complete Regular.otf') format('opentype');
+    src: url('/fonts/Caskaydia Cove Nerd Font Complete Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-@font-face {
+@font-face { /* NORMAL ITALIC */
     font-family: 'CaskaydiaCove Nerd Font';
-    src: local('CaskaydiaCove Nerd Font Complete Bold') format('opentype'),
-        url('/fonts/Caskaydia Cove Nerd Font Complete Bold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'CaskaydiaCove Nerd Font';
-    src: local('CaskaydiaCove Nerd Font Complete Italic') format('opentype'),
-        url('/fonts/Caskaydia Cove Nerd Font Complete Italic.otf') format('opentype');
+    src: url('/fonts/Caskaydia Cove Nerd Font Complete Italic.otf') format('opentype');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
 }
-@font-face {
+@font-face { /* BOLD */
     font-family: 'CaskaydiaCove Nerd Font';
-    src: local('CaskaydiaCove Nerd Font Complete Bold Italic') format('opentype'),
-        url('/fonts/Caskaydia Cove Nerd Font Complete Bold Italic.otf') format('opentype');
+    src: url('/fonts/Caskaydia Cove Nerd Font Complete SemiBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face { /* BOLD ITALIC */
+    font-family: 'CaskaydiaCove Nerd Font';
+    src: url('/fonts/Caskaydia Cove Nerd Font Complete SemiBold Italic.otf') format('opentype');
     font-weight: bold;
     font-style: italic;
     font-display: swap;

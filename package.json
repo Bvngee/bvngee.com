@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "bvngeecord.com",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.4.1"
+    "astro": "^2.4.1",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-external-links": "^2.1.0",
+    "rehype-slug": "^5.1.0",
+    "rehype-toc": "^3.0.2",
+    "remark-toc": "^8.0.1"
   }
 }

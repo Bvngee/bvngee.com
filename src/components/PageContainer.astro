@@ -1,16 +1,14 @@
 ---
 ---
 
-<div id="page-container">
+<main id="page-container">
     <slot />
-</div>
+</main>
 <style>
 	#page-container {
-		padding: 15px calc(25vw);
-	}
-	@media (max-width:1000px) {
-		#page-container {
-			padding: 15px;
-		}
+		/* padding: 15px calc(25vw); */
+		margin: 15px 0;
+		width: min(100ch, 100% - 4rem);
+		margin-inline: auto;
 	}
 </style>

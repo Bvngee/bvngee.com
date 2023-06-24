@@ -1,6 +1,7 @@
 ---
 import PageContainer from '../../components/PageContainer.astro';
 import BasePageLayout from '../../layouts/BasePageLayout.astro';
+import BlogStyles from '../../styles/BlogStyles.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -23,6 +24,7 @@ const { Content } = await entry.render();
         <div id="blog-card">
             <div id="blog-content">
                 <Content />
+                <BlogStyles />
             </div>
         </div>
     </PageContainer>
@@ -31,25 +33,28 @@ const { Content } = await entry.render();
     #header {
         display: flex;
         justify-content: space-between;
+        padding: 0 10px;
     }
     #blog-title {
-        margin: 0 0 0 10px;
-		text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
+        flex-grow: 0;
+        margin: 0 0 0px 0;
+        text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
     }
-	#blog-date {
-		padding: 20px 10px 0 0;
-		font-weight: lighter;
-		color: var(--fg2)
-	}
+    #blog-date {
+        min-width: max-content;
+        margin: 0 0 4px 20px;
+        align-self: flex-end;
+        font-weight: lighter;
+        color: var(--fg2)
+    }
     #blog-card {
-		padding: 8px 10px;
-		margin: 20px 0px;
+        padding: 8px 10px;
+        margin: 20px 0px;
         background-color: var(--bg2);
         border-radius: 10px;
-		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
     }
     #blog-content {
-		text-align: justify;
-		margin: -10px 5px;
+        margin: -10px 5px;
     }
 </style>

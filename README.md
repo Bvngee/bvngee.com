@@ -1,4 +1,4 @@
-Source code for my personal website!
+Source code for [my personal website](https://bvngeecord.com/)!
 
 As explained on the website, I chose to use Astro to build my website. It has everything I need, allows for as much opt in complexity as one could ever want, and is fun to work with!
 

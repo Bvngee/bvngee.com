@@ -3,6 +3,7 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 import BlogPreview from '../components/BlogPreview.astro'
 import { getCollection } from 'astro:content';
 import PageContainer from '../components/PageContainer.astro';
+import BlogStyles from '../styles/BlogStyles.astro';
 
 const blogPosts = await getCollection('blog');
 
@@ -26,34 +27,26 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 			</div> -->
 			<div id="blog-content">
 				<BlogPreview post={p}/>
+				<BlogStyles />
 			</div>
 		</div> ))}
 	</PageContainer>
 </BasePageLayout>
 <style>
-	body {
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-	}
-	* {
-		box-sizing: border-box;
-		color: var(--fg1);
-	}
 	#header {
-		min-width: 100%;
+		padding: 0 10px;
 		display: flex;
 		justify-content: space-between;
 	}
 	#header-latest-date {
-		padding: 20px 10px 0 0;
-		font-weight: lighter;
-		color: var(--fg2)
+        min-width: max-content;
+        margin: 0 0 4px 20px;
+        align-self: flex-end;
+		color: var(--fg2);
+		opacity: 80%;
 	}
 	#header-title {
-		/* color: var(--green); */
-		margin: 0 20px 0 10px;
-		/* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
+		margin: 0;
 	}
 	#blog-card {
 		background-color: var(--bg2);
@@ -62,7 +55,7 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 		margin: 20px 0px;
 		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
 		transition-property: transform;
-		transition-duration: 0.3s;
+		transition-duration: 0.25s;
 	}
 	#blog-card:hover {
 		transform: scale(1.016) translateZ(0);
@@ -108,7 +101,7 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 		text-overflow: clip;
 		max-height: 210px;
 		margin: -7px 5px 0 5px;
-		text-align: justify;
+		/* text-align: justify; */
 
   		-webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 1));
   		mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 1));
