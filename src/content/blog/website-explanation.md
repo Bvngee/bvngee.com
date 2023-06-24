@@ -71,7 +71,7 @@ The webhook server I picked turned out to be very helpful and easy to work with;
 
 A full diagram of the final setup *at this stage*:
 
-![Website Hosting Diagram](/assets/website_explanation.png)
+![Website Hosting Diagram](/images/website_explanation.png)
 
 ## The Backend, Revisited
 
