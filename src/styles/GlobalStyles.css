@@ -1,4 +1,6 @@
-/* Global */
+/* Global CSS Styles */
+
+@import 'https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap';
 body {
     /* Variable Declaration */
     --bg-darker: #141617;
@@ -9,6 +11,10 @@ body {
     --bg3: #3a3735;
     --bg4: #45403d;
     --bg5: #5a525c;
+
+    --gray1: #665C54;
+    --gray2 : #928374;
+
     
     --fg1: #ddc7a1;
     --fg2: #d4be98;
@@ -22,29 +28,31 @@ body {
     --red:    #ea6962;
 
 
-    /* Default Backgrond */
+    /* Default Foreground / Backgrond */
     background-color: var(--bg1, #000000);
-}
-* {
-    /* Default Foreground */
-    color: var(--fg1, #ffffff);
-    font-family: 'CaskaydiaCove Nerd Font';
+    color: var(--fg1);
+
+    font-family: 'Nunito', sans-serif;
 }
 body {
     margin: 0;
     padding: 0;
+    font-size: 105%;
 }
 ::selection {
     background-color:  #4f422e;
+}
+a {
+    color: var(--fg1);
 }
 a[target="_blank"]:not(.no-icon) {
     color: var(--blue);
 }
 a[target="_blank"]:not(.no-icon):after {
-    content: " ";
-    /* content: "󰌹"; */
+    font-family: 'CaskaydiaCove Nerd Font';
+    content: " "; /* content: "󰌹"; */
     font-size: 85%;
-    padding: 1px 5px 0 4px;
+    padding: 1px 7px 0 2px;
     display: inline-block;
     color: var(--fg2);
     opacity: 0.7;

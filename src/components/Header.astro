@@ -2,19 +2,21 @@
 ---
 
 <nav id="nav-links">
-    <a id="home" href="/"><span id="home-logo"> </span>Home</a>
-    <a id="about" href="/about/"><span id="about-logo"> </span>About</a>
-    <a id="blog" href="/blogs/"><span id="blog-logo">󱀂 </span>Blogs</a>
+    <a id="home" href="/"><span class="icon" id="home-logo"> </span>Home</a>
+    <a id="about" href="/about/"><span class="icon" id="about-logo"> </span>About</a>
+    <a id="blog" href="/blogs/"><span class="icon" id="blog-logo">󱀂 </span>Blogs</a>
 </nav>
 
 <style>
     #nav-links {
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
 		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
         background-color: var(--bg2);
         margin-bottom: 10px;
+        font-weight: 600;
     }
     a {
         margin: 8px 20px;
@@ -39,7 +41,6 @@
         border-radius: 4px;
         transition-property: right;
         transition-duration: 0.2s;
-        /* transition-timing-function: ; */
     }
     a:hover:before {
 		right: 6px;
@@ -64,5 +65,7 @@
     #blog-logo {
         color: var(--blue);
     }
-
+    .icon {
+        font-family: 'CaskaydiaCove Nerd Font';
+    }
 </style>

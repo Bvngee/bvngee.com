@@ -1,13 +1,13 @@
 ---
 import BasePageLayout from '../layouts/BasePageLayout.astro';
-import BlogPreview from '../components/BlogPreview.astro'
+import BlogContentContainer from '../components/BlogContentContainer.astro'
 import { getCollection } from 'astro:content';
 import PageContainer from '../components/PageContainer.astro';
-import BlogStyles from '../styles/BlogStyles.astro';
 
 const blogPosts = await getCollection('blog');
 
-const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
+const finalBlogPosts = blogPosts.filter(p => !p.data.draft);
+const lastUpdatedDate = finalBlogPosts.pop()?.data.updatedDate;
 ---
 <BasePageLayout title="Blogs">
 	<PageContainer>
@@ -16,20 +16,21 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 			<div id="header-latest-date">Last Updated: {lastUpdatedDate}</div>
 		</div>
 
-		{blogPosts.map(p => ( <div id="blog-card">
-			<div id="blog-card-label">
-				<a href={p.slug}> <h2 id="blog-title">{p.data.title}</h2> </a>
-				<h id="blog-date">{p.data.publishedDate}</h>
-			</div>
-			<!-- <div id="blog-hrs">
-				<div />
-				<div />
-			</div> -->
-			<div id="blog-content">
-				<BlogPreview post={p}/>
-				<BlogStyles />
-			</div>
-		</div> ))}
+		{finalBlogPosts.map(p => (
+			<div id="blog-card">
+				<div id="blog-card-label">
+					<a href={p.slug}> <h2 id="blog-title">{p.data.title}</h2> </a>
+					<h id="blog-date">{p.data.publishedDate}</h>
+				</div>
+				<!-- <div id="blog-hrs">
+					<div />
+					<div />
+				</div> -->
+				<div id="blog-content">
+					<BlogContentContainer post={p}/>
+				</div>
+			</div> 
+		))}
 	</PageContainer>
 </BasePageLayout>
 <style>
@@ -51,7 +52,7 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 	#blog-card {
 		background-color: var(--bg2);
 		border-radius: 10px;
-		padding: 8px 10px;
+		padding: 10px;
 		margin: 20px 0px;
 		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
 		transition-property: transform;
@@ -67,20 +68,21 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 		justify-content: space-between;
 	}
 	#blog-title {
-		margin: 0;
+		margin: -2px 0 0 2px;
 		color: var(--blue);
 		text-shadow: 2px 4px 7px rgba(0,0,0,0.4);
 	}
 	#blog-date {
-		padding: 9px 0 0 0;
+		padding: 5px;
 		font-size: 14px;
-		font-weight: lighter;
-		color: var(--fg2)
+		color: var(--gray2)
 	}
 	#blog-title:hover {
 		color: var(--aqua);
 	}
-	a { text-decoration: none; }
+	a { 
+		text-decoration: none;
+	}
 	#blog-hrs {
 		display: flex;
 		flex-direction: row;
@@ -95,15 +97,14 @@ const lastUpdatedDate = blogPosts[blogPosts.length - 1].data.publishedDate;
 		border-radius: 2px;
 	}
 	#blog-content {
-		display: block;
-		white-space: normal;
-		overflow: hidden;
-		text-overflow: clip;
-		max-height: 210px;
-		margin: -7px 5px 0 5px;
-		/* text-align: justify; */
+        display: block;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: clip;
+        max-height: 210px;
+        margin: 5px 5px 0 5px;
 
-  		-webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 1));
-  		mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 1));
+  		-webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.9));
+  		mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.85));
 	}
 </style>

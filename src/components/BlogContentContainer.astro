@@ -1,0 +1,87 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+<div class="container">
+    <Content />
+</div>
+<style>
+    /* Styles to be applied to rendered blog content */
+
+    .container :global(:first-child) {
+        margin-top: 0;
+    }
+    .container :global(:last-child) {
+        margin-bottom: 0;
+    }
+    .container :global(h1:after) {
+        content: ' ';
+        display: block;
+        margin: 1px 2px 0 2px;
+        border-bottom: 1px solid var(--bg4);
+    }
+    
+    .container :global(h1) {
+        font-size: 1.7em;
+        margin-top: 0.85em; /*0.67em*/
+        margin-bottom: 0.3em; /*0.67em*/
+    }
+    .container :global(h2) {
+        font-size: 1.55em;
+        margin-top: 0.9em; /*0.83em*/
+        margin-bottom: -0.25em; /*0.83em*/
+    }
+    .container :global(h3) {
+        font-size: 1.35em;
+        margin-top: 1em; /*1em*/
+        margin-bottom: -0.35em; /*1em*/
+    }
+    .container :global(h4) {
+        font-size: 1.2em;
+        margin-top: 1.0em; /*1.33em*/
+        margin-bottom: -0.33em; /*1.33em*/
+    }
+    .container :global(h5, h6) {
+        font-size: 1.05em;
+    }
+    /*<pre> is used to indicate whitespace significance (so that multiline works), <code> is used to signify any instance of code */
+    .container :global(code, pre) {
+        background-color: var(--bg-dark);
+    }
+    .container :global(pre) {
+        padding: 8px;
+        border-radius: 6px;
+        max-height: 350px;
+    }
+    .container :global(code) {
+        font-family: 'CaskaydiaCove Nerd Font';
+        font-size: 85%;
+        padding: 1px 4px 2px 4px;
+        border-radius: 4px;
+        white-space: nowrap; /* Do I want this? Might get annoying */
+        color: var(--gray2);
+    }
+    .container :global(pre > code) {
+        padding: 0px; /* this makes non-multi-line <code> have padding without messing up multi-line <pre><code> blocks. */
+        white-space: pre; /* Do I want this? Might get annoying */
+        opacity: 100%;
+        background-color: var(--bg1);
+    }
+    .container :global(img, svg, picture) {
+        max-width: 100%;
+        display: block;
+        border-radius: 5px;
+        transform: scale(99.5%);
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
+        opacity: 90%;
+    }
+	.container :global(ul) {
+		padding-left: 28px;
+	}
+</style>

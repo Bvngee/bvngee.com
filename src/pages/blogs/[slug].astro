@@ -1,8 +1,8 @@
 ---
-import PageContainer from '../../components/PageContainer.astro';
 import BasePageLayout from '../../layouts/BasePageLayout.astro';
-import BlogStyles from '../../styles/BlogStyles.astro';
+import PageContainer from '../../components/PageContainer.astro';
 import { getCollection } from 'astro:content';
+import BlogContentContainer from '../../components/BlogContentContainer.astro';
 
 export async function getStaticPaths() {
     const blogs = await getCollection('blog');
@@ -12,7 +12,6 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
 ---
 
 <BasePageLayout title={entry.data.title}>
@@ -22,10 +21,11 @@ const { Content } = await entry.render();
             <h id="blog-date">{entry.data.publishedDate}</h>
         </div>
         <div id="blog-card">
-            <div id="blog-content">
-                <Content />
-                <BlogStyles />
-            </div>
+            <BlogContentContainer post={entry}>
+        </div>
+        <div id="footer">
+            <p>- BvngeeCord</p>
+            <p> {entry.data.publishedDate} </p>
         </div>
     </PageContainer>
 </BasePageLayout>
@@ -44,17 +44,20 @@ const { Content } = await entry.render();
         min-width: max-content;
         margin: 0 0 4px 20px;
         align-self: flex-end;
-        font-weight: lighter;
-        color: var(--fg2)
+        color: var(--gray2)
     }
     #blog-card {
-        padding: 8px 10px;
-        margin: 20px 0px;
+        padding: 15px;
+        margin: 20px 0 0 0;
         background-color: var(--bg2);
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
     }
-    #blog-content {
-        margin: -10px 5px;
+    #footer {
+        color: var(--gray2);
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10px;
+        margin-bottom: 100px;
     }
 </style>
