@@ -1,13 +1,15 @@
 ---
+import Header from '../components/Header.astro';
 ---
 
+<Header />
 <main id="page-container">
     <slot />
 </main>
 <style>
 	#page-container {
 		margin: 25px 0;
-		width: min(1050px, 100% - 4rem);
+		width: min(1000px, 100% - 4rem);
 		margin-inline: auto;
 	}
 </style>

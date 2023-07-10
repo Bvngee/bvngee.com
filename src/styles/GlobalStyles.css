@@ -31,13 +31,13 @@ body {
     /* Default Foreground / Backgrond */
     background-color: var(--bg1, #000000);
     color: var(--fg1);
-
-    font-family: 'Nunito', sans-serif;
-}
-body {
     margin: 0;
     padding: 0;
     font-size: 105%;
+    font-family: 'Nunito', sans-serif;
+}
+:root {
+    /* scrollbar-gutter: stable both-edges; fucks with the header :( */
 }
 ::selection {
     background-color:  #4f422e;

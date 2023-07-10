@@ -7,13 +7,13 @@ import PageContainer from '../components/PageContainer.astro';
 const blogPosts = await getCollection('blog');
 
 const finalBlogPosts = blogPosts.filter(p => !p.data.draft);
-const lastUpdatedDate = finalBlogPosts.pop()?.data.updatedDate;
+const lastUpdatedDate = finalBlogPosts[finalBlogPosts.length - 1]?.data.publishedDate;
 ---
 <BasePageLayout title="Blogs">
 	<PageContainer>
 		<div id="header">
 			<h1 id="header-title">Blogs</h1>
-			<div id="header-latest-date">Last Updated: {lastUpdatedDate}</div>
+			<div id="header-latest-date">Latest: {lastUpdatedDate}</div>
 		</div>
 
 		{finalBlogPosts.map(p => (
