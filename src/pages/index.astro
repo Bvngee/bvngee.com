@@ -11,7 +11,7 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 			<h2>Who?</h2>
 			<p>
 				I'm BvngeeCord, another guy on the internet who loves tech. In my free time you'll likely find me programming, playing minecraft, ricing Linux, 
-				or learning about computers. I bike here and there, and love to walk in the rain :) Check out <a id="blogs-link" href='/blogs/'>some articles</a>
+				or learning about computers. I bike here and there, and love to walk in the rain :) Check out <a id="blogs-link" href='/blogs/'>some blogs</a>
 				or read some more <a id="about-link" href='/about/'>about me</a>.
 			</p>
 		</div>
@@ -19,12 +19,12 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 			<h2>What?</h2>
 			<p>Some projects and things:</p>
 			<ul>
-				<li><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/94EYHt8qgw">Oracle SMP</a>: my technical Minecraft server, running since April 2021</li>
-				<li>My <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/.dotfiles/tree/main">Linux configs/dotfiles</a>: my journey of learning Linux, trying to understand how computers and OSes work (and to have fun)</li>
-				<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/BvngeeAddons">BvngeeAddons</a>: my own personal set of client-side modifications to Minecraft</li>
-				<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/bvngeecord.com">bvngeecord.com</a>: a mini-dive into how the web (frontend and backend) works</li>
-				<li>A plethora of <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord?tab=repositories&type=source">other projects</a> on GitHub: hackathons, AOCs, scripts, other Minecraft mods, and more</li>
-				<li>More nerdy things that only exist with me physically (a LEGO Technic obsession, for example)</li>
+			<li><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/94EYHt8qgw">Oracle SMP</a>: my technical Minecraft server (redstone, farms, blah blah nerd stuff). Running since April 2021</li>
+				<li>My <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/.dotfiles/tree/main">ArchLinux</a> and <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/nixconf/tree/main">NixOS</a> configurations: a journey into Linux, learning how computers and OSs work, and trying to build the perfect dev environment (forever almost there...)</li>
+				<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/BvngeeAddons">BvngeeAddons</a>: my personal set of client-side mods for Minecraft (screenshot helper, improved boss bar rendering, etc)</li>
+				<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/bvngeecord.com">bvngeecord.com</a>: this website! A fun exploration into how the web (frontend + backend) works</li>
+				<li>A plethora of <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord?tab=repositories&type=source">other projects</a> on GitHub: hackathons, AOCs, scripts, other Minecraft mods, etc</li>
+				<li>A bunch non-digital nerd stuff (LEGO Technic things)</li>
 			</ul>
 		</div>
 		<div class="box" id="how">
@@ -37,7 +37,6 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 				<SoftwareIconShield name="Lua" color="2C2D72" slug="lua" />
 				<SoftwareIconShield name="Python" color="3776AB" slug="python" />
 				<SoftwareIconShield name="Bash" color="4EAA25" slug="gnubash" />
-				<SoftwareIconShield name="Astro" color="FF5D01" slug="astro" />
 				<SoftwareIconShield name="HTML" color="E34F26" slug="html5" />
 				<SoftwareIconShield name="CSS" color="1572B6" slug="css3" />
 				<SoftwareIconShield name="JavaScript" color="3776AB" slug="javascript" />
@@ -47,12 +46,12 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 			<div class="icon-card-wrapper">
 				<SoftwareIconShield name="Neovim" color="57A143" slug="neovim" />
 				<SoftwareIconShield name="Linux" color="FCC624" slug="linux" />
-				<SoftwareIconShield name="Arch Linux" color="1793D1" slug="archlinux" />
+				<SoftwareIconShield name="Nix" color="5277C3" slug="nixos" />
 				<SoftwareIconShield name="Firefox" color="FF7139" slug="firefoxbrowser" />
 				<SoftwareIconShield name="Wayland" color="FFBC00" slug="wayland" />
-				<SoftwareIconShield name="OBS Studio" color="302E31" slug="obsstudio" />
 				<SoftwareIconShield name="Docker" color="2496ED" slug="docker" />
 				<SoftwareIconShield name="Nginx" color="009639" slug="nginx" />
+				<SoftwareIconShield name="Astro" color="FF5D01" slug="astro" />
 				<!-- <SoftwareIconShield name="Blender" color="FF7139" slug="blender" /> -->
 			</div>
 			<p>What I'd like to learn more: </p>
@@ -62,7 +61,6 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 				<SoftwareIconShield name="Zig" color="F7A41D" slug="zig" />
 				<SoftwareIconShield name="Rust" color="000000" slug="rust" />
 				<SoftwareIconShield name="Nix" color="5277C3" slug="nixos" />
-				<SoftwareIconShield name="Linux" color="FCC624" slug="linux" />
 				<SoftwareIconShield name="Nginx" color="009639" slug="nginx" />
 				<!-- <SoftwareIconShield name="CSS" color="1572B6" slug="css3" /> -->
 			</div>
@@ -74,7 +72,7 @@ import BasePageLayout from '../layouts/BasePageLayout.astro';
 				<!-- use http://www.google.com/s2/favicons?domain=www.example.com if the default doesn't work, like with Discord -->
 				<SocialLinkPreview title="GitHub" href="https://www.github.com/BvngeeCord/" favicon="https://www.github.com/favicon.ico" />
 				<SocialLinkPreview title="Discord" href="https://www.discordapp.com/users/BvngeeCord#2251" favicon="https://www.google.com/s2/favicons?domain=www.discord.com" />
-				<SocialLinkPreview title="Email" href="https://mailto:nystromjp@gmail.com" favicon="https://mail.google.com/favicon.ico" />
+				<SocialLinkPreview title="Email" href="https://mailto:nystromjp@gmail.com" favicon="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" />
 				<SocialLinkPreview title="YouTube" href="https://www.youtube.com/@BvngeeCord/" favicon="https://www.youtube.com/favicon.ico" />
 				<SocialLinkPreview title="Reddit" href="https://www.reddit.com/u/BvngeeCord/" favicon="https://www.reddit.com/favicon.ico" />
 				<SocialLinkPreview title="Spotify" href="https://open.spotify.com/user/9hhagw1x0v5mrioqkcvejlyke" favicon="https://www.google.com/s2/favicons?domain=www.spotify.com " />

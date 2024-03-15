@@ -1,8 +1,9 @@
 ---
-title: On Using and Learning Arch Linux (or any other distro, really)
+title: Why using Arch Linux is a good experience.
 tags: []
 publishedDate: Not yet
 updatedDate: []
 draft: true
 ---
 
+This will be a somewhat short (and probably still controversial) post which attempts to summarize my journey using Arch Linux and explain why I think it _can_ be a very worthwhile learning experience.
