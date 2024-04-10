@@ -1,32 +1,33 @@
 ---
-import PageContainer from '../components/PageContainer.astro';
-import BasePageLayout from '../layouts/BasePageLayout.astro';
+import PageContainer from "../components/PageContainer.astro";
+import BasePageLayout from "../layouts/BasePageLayout.astro";
 ---
 
 <BasePageLayout title="About">
-	<PageContainer>
-		<h1 id="about-title">About Me</h1>
-		<div id="about-card">
-			<p>Coming soon, I swear.</p>
-		</div>
-	</PageContainer>
+    <PageContainer>
+        <h1 id="about-title">About Me</h1>
+        <div id="about-card">
+          <p>Coming soon, I swear.</p>
+        </div>
+    </PageContainer>
 </BasePageLayout>
 <style>
-	#about-title {
+    #about-title {
         margin: 0 10px;
-		/* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
-	}
-	#about-card {
-		padding: 15px;
-		margin: 20px 0px;
+        /* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
+    }
+    #about-card {
+        padding: 15px;
+        margin: 20px 0px;
         background-color: var(--bg2);
         border-radius: 10px;
-		box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
-	}
-	#about-card :first-child {
-		margin-top: 0;
-	}
-	#about-card :last-child {
-		margin-bottom: 0;
-	}
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+    }
+    #about-card :first-child {
+        margin-top: 0;
+    }
+    #about-card :last-child {
+        margin-bottom: 0;
+    }
 </style>
+
