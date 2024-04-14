@@ -1,5 +1,5 @@
 ---
-title: Why using Arch Linux is a good experience.
+title: Why Arch Linux might be worth your time.
 tags: []
 publishedDate: Not yet
 updatedDate: []
