@@ -21,16 +21,13 @@ const lastUpdatedDate =
             finalBlogPosts.map((p) => (
                 <div id="blog-card">
                     <div id="blog-card-label">
-                        <a href={p.slug}>
-                            {" "}
-                            <h2 id="blog-title">{p.data.title}</h2>{" "}
-                        </a>
+                        <h2 id="blog-title">
+                            <a href={p.slug}>
+                                {p.data.title}
+                            </a>
+                        </h2>
                         <h id="blog-date">{p.data.publishedDate}</h>
                     </div>
-                    {/* <div id="blog-hrs"> */}
-                    {/* 	<div /> */}
-                    {/* 	<div /> */}
-                    {/* </div> */}
                     <div id="blog-content">
                         <BlogContentContainer post={p} />
                     </div>
@@ -72,22 +69,24 @@ const lastUpdatedDate =
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        padding-bottom: 2px;
     }
     #blog-title {
         margin: -2px 0 0 2px;
-        color: var(--blue);
         text-shadow: 2px 4px 7px rgba(0, 0, 0, 0.4);
+        max-width: 75%;
     }
     #blog-date {
         padding: 5px;
         font-size: 14px;
         color: var(--gray2);
     }
-    #blog-title:hover {
+    #blog-title > a:hover {
         color: var(--aqua);
     }
-    a {
+    #blog-title > a {
         text-decoration: none;
+        color: var(--blue);
     }
     #blog-hrs {
         display: flex;
@@ -126,4 +125,3 @@ const lastUpdatedDate =
         );
     }
 </style>
-

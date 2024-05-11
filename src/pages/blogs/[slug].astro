@@ -37,13 +37,14 @@ const { entry } = Astro.props;
     }
     #blog-title {
         flex-grow: 0;
-        margin: 0 0 0px 0;
+        margin: 0;
+        max-width: 75%;
         text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
     }
     #blog-date {
         min-width: max-content;
-        margin: 0 0 4px 20px;
-        align-self: flex-end;
+        align-content: end;
+        margin-bottom: 2px;
         color: var(--gray2)
     }
     #blog-card {
