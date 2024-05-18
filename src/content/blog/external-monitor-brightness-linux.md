@@ -12,7 +12,7 @@ unintuitive button interface?
 
 Me too! Thankfully, there's a widely supported protocol called
 [Display Data Channel (DDC)](https://en.wikipedia.org/wiki/Display_Data_Channel)
-based on i2c that lets us solve this exact problem in a nice way. It allows for
+based on i2c that lets us solve this problem in a nice way. It allows for
 communication between a computer display and a graphics adapter - things like
 setting color contrast, getting model name/date information, and of course,
 setting backlight brightness.
