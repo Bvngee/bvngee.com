@@ -198,7 +198,7 @@ of the setup:
 1. The Webhook server
 1. Requesting and Installing SSL Certs
 
-### Nginx & Webhook Server (1 & 2)
+## Nginx & Webhook Server (1 & 2)
 
 This part was easiest; I started by using the officially supported Golang
 container to build Webhook manually. Then, utilizing Docker's Multi-Stage builds
@@ -206,7 +206,7 @@ container to build Webhook manually. Then, utilizing Docker's Multi-Stage builds
 smaller final image), I copy the webhook binary into a fresh nginx container.
 Now all I had left to work out was SSL certs - the hardest part.
 
-### SSL Certs (3)
+## SSL Certs (3)
 
 What makes the SSL certs more annoying is that you don't want to re-request the
 certs from the certificate authority every single time you restart the
@@ -239,7 +239,7 @@ requesting `acme.sh` to add a file somewhere under the root (usually under
 if your webserver is set up correctly, it should receive it, and therefor know
 that you own the domain.
 
-### Challenges Automating SSL Certs (3)
+## Challenges Automating SSL Certs (3)
 
 The above strategy works well and good, except for a problem that arises when
 attempting to automate the process in Docker: My Nginx configuration is set to

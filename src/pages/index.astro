@@ -33,8 +33,9 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
                     trying forever to build the perfect dev environment (still not there...)
                 </li>
                 <li>
-                    This website! Written and hosted completely from scratch (using only Astro, nginx, and some bash). No preexisting integrations/deployments, manual SSL, etc
-                    (see <a target="_blank" rel="noopener noreferrer" href="/blogs/website-explanation">this blog post</a>). Learning a little about how the web works, the fun way :)
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/bvngeecord.com">This website!</a>
+                    Written and hosted completely from scratch (using only Astro, nginx, and some bash). No preexisting integrations/deployments, manual SSL, etc
+                    (see <a href="/blogs/website-explanation">this blog post</a>). Learning a little about how the web works, the fun way :)
                 </li>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/BvngeeAddons">BvngeeAddons</a>: 
@@ -141,6 +142,10 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
     }
     .box :last-child {
         margin-bottom: 0;
+    }
+    a {
+        text-decoration-color: var(--blue);
+        color: var(--blue);
     }
     a#blogs-link {
         text-decoration-color: var(--blue);
