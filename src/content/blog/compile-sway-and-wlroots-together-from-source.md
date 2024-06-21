@@ -110,9 +110,6 @@ pkgs.mkShell {
     librsvg
     wayland-protocols
     xorg.xcbutilwm
-    pkg-config
-    meson
-    ninja
     wayland-scanner
     scdoc
 
