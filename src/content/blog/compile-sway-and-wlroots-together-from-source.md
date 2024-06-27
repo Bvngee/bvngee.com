@@ -1,5 +1,5 @@
 ---
-title: How to compile Sway with wlroots from source (+ Nix shell)
+title: Compiling Sway with wlroots from source (+ Nix shell)
 tags: []
 publishedDate: May 25th, 2024
 updatedDate: []
