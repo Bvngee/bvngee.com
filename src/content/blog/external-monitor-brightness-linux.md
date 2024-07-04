@@ -62,9 +62,9 @@ Which is exactly what the
 [ddcci-driver-linux](https://gitlab.com/ddcci-driver-linux/ddcci-driver-linux)
 kernel module does!
 
-Upon proper installation of the ddcci-driver-linux kernel module, one will find
-`/sys/class/backlight/ddcci{n}` directories for each capable external monitor.
-Now any backlight program will work with them!
+After properly installing the ddcci-driver-linux kernel module,
+`/sys/class/backlight/ddcci{n}` directories will be created for each capable
+external monitor. Now any backlight program will work with them!
 
 ## Nvidia sucks
 
