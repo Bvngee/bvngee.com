@@ -54,7 +54,6 @@ if (entry.data.updatedDate.length > 0) {
         text-shadow: 2px 4px 9px rgba(0,0,0,0.4);
     }
     #blog-date {
-        min-width: max-content;
         align-content: end;
         margin-bottom: 2px;
         color: var(--gray2)
@@ -69,8 +68,12 @@ if (entry.data.updatedDate.length > 0) {
     #footer {
         color: var(--gray2);
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         margin: 0 10px;
         margin-bottom: 100px;
+    }
+    #footer > p {
+        display: inline;
     }
 </style>

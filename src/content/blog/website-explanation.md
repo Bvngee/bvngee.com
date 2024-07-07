@@ -2,7 +2,7 @@
 title: A Website? Explained.
 tags: []
 publishedDate: "July 9th, 2023"
-updatedDate: [ "June 17th, 2024" ]
+updatedDate: ["June 17th, 2024"]
 draft: false
 ---
 
@@ -260,13 +260,12 @@ generating and renewing SSL certs within the Docker container:
 
 # Results
 
-And, bam! If you're reading, that's because the setup is working.
+And, bam! If you're reading this, that's because the setup is working.
 
 Ignoring the fact that what I have now is a likely unmaintable, definitely
-overly-complicated and unnecessarily custom system, this is a success :P.
+overly-complicated and unnecessarily custom system, this is a success! :P
 
 Most importantly, I learned a shit ton of stuff throughout the process. That's
 what it was about anyways. There might be one or two other people that ever read
-things I post or appreciate the effort put into this site. That's not really
-what I'm doing it for. It's for myself and for fun--and that I have achieved :)
-
+things I post or appreciate the effort put into this site. I don't mind though.
+It's for myself and for fun--and that I have achieved :)
