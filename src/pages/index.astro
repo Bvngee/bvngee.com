@@ -13,16 +13,21 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
             <h2>Who?</h2>
             <p>
                 An aspiring programmer / software dev, Linux & neovim enthusiast, NixOS addict, and technical Minecrafter.
-                I also occasionally leave my room to mountain bike, play tennis, and run in the rain :P 
+                I also occasionally leave my room to mountain bike, play tennis, and enjoy runs in the rain :P 
                 I use the name BvngeeCord on the internet.
                 <br><br>
-                Currently 17; starting Computer Science @ UCSC ('28, College 10).
+                I'm currently 17, starting Computer Science @ UCSC ('28, College 10).
             </p>
         </div>
         <div class="box" id="what">
             <h2>What?</h2>
             <p>Some projects and things:</p>
             <ul>
+                <li>
+                    My <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/nixconf/tree/main"> NixOS config</a>: 
+                    a journey into Linux, learning how computers and OSs work from the bottom up, and my decent into madness 
+                    trying forever to build the perfect dev environment (still not there..)
+                </li>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/coordinate-mod">Coordinate Mod</a> 
                     and <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/anti-auto-jump">Anti Auto Jump</a>: 
@@ -34,17 +39,12 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
                     (see <a href="/blogs/website-explanation">this blog post</a>). Learning a little about how the web works, the fun way :)
                 </li>
                 <li>
-                    My <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/nixconf/tree/main"> NixOS config</a>: 
-                    a journey into Linux, learning how computers and OSs work from the bottom up, and my decent into madness 
-                    trying forever to build the perfect dev environment (still not there..)
-                </li>
-                <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord/BvngeeAddons">BvngeeAddons</a>: 
                     my personal set of client-side mods for Minecraft (screenshot helper, improved boss bar rendering, etc) - never uploaded publicly, yet the most polished of my mods
                 </li>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/94EYHt8qgw">Oracle SMP</a>: 
-                    my technical Minecraft server (redstone, perimeters, y'know - all the nerd stuff). Running since April 2021
+                    my technical Minecraft server (redstone, perimeters, etc - all the nerdy stuff). Running since April 2021
                 </li>
                 <li>
                     A bunch of other stuff (see <a target="_blank" rel="noopener noreferrer" href="https://github.com/BvngeeCord?tab=repositories&type=source">GitHub</a>): 
@@ -55,35 +55,42 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
         <div class="box" id="how">
             <!-- uses simpleicons.org, and devicon.dev -->
             <h2>How?</h2>
-            <p>Languages I like <em>and/or</em> know:</p>
-            <div class="icon-card-wrapper">
-                <SoftwareIconShield name="Rust" color="000000" slug="rust" />
-                <SoftwareIconShield name="Java" color="3776AB" slug="oracle" />
-                <SoftwareIconShield name="Nix" color="5277C3" slug="nixos" />
-                <SoftwareIconShield name="Lua" color="2C2D72" slug="lua" />
-                <SoftwareIconShield name="Python" color="3776AB" slug="python" />
-                <SoftwareIconShield name="Bash" color="4EAA25" slug="gnubash" />
-                <SoftwareIconShield name="HTML" color="E34F26" slug="html5" />
-                <SoftwareIconShield name="CSS" color="1572B6" slug="css3" />
-                <SoftwareIconShield name="JavaScript" color="3776AB" slug="javascript" />
-                <!-- <SoftwareIconShield name="Markdown" color="000000" slug="markdown" /> -->
-            </div>
-            <p>Things I use:</p>
-            <div class="icon-card-wrapper">
-                <SoftwareIconShield name="Neovim" color="57A143" slug="neovim" />
-                <SoftwareIconShield name="Linux" color="FCC624" slug="linux" />
-                <SoftwareIconShield name="Firefox" color="FF7139" slug="firefoxbrowser" />
-                <SoftwareIconShield name="Wayland" color="FFBC00" slug="wayland" />
-                <SoftwareIconShield name="Docker" color="2496ED" slug="docker" />
-                <SoftwareIconShield name="Nginx" color="009639" slug="nginx" />
-            </div>
-            <p>What I'd like to learn more:</p>
-            <div class="icon-card-wrapper">
-                <SoftwareIconShield name="C" color="A8B9CC" slug="c" />
-                <SoftwareIconShield name="C++" color="00599C" slug="cplusplus" />
-                <SoftwareIconShield name="Zig" color="F7A41D" slug="zig" />
-                <SoftwareIconShield name="Rust" color="000000" slug="rust" />
-                <SoftwareIconShield name="Nix" color="5277C3" slug="nixos" />
+            <div class="how-flexbox">
+                <div class="software-icons-section">
+                    <p>Languages I like <em>and/or</em> know:</p>
+                    <div class="icon-card-wrapper">
+                        <SoftwareIconShield name="Rust" color="000000" slug="rust" />
+                        <SoftwareIconShield name="Java" color="3776AB" slug="oracle" />
+                        <SoftwareIconShield name="Nix" color="5277C3" slug="nixos" />
+                        <SoftwareIconShield name="Lua" color="2C2D72" slug="lua" />
+                        <SoftwareIconShield name="Python" color="3776AB" slug="python" />
+                        <SoftwareIconShield name="Bash" color="4EAA25" slug="gnubash" />
+                        <SoftwareIconShield name="HTML" color="E34F26" slug="html5" />
+                        <SoftwareIconShield name="CSS" color="1572B6" slug="css3" />
+                        <SoftwareIconShield name="JavaScript" color="3776AB" slug="javascript" />
+                        <!-- <SoftwareIconShield name="Markdown" color="000000" slug="markdown" /> -->
+                    </div>
+                    <p>Things I use:</p>
+                    <div class="icon-card-wrapper">
+                        <SoftwareIconShield name="Neovim" color="57A143" slug="neovim" />
+                        <SoftwareIconShield name="Linux" color="FCC624" slug="linux" />
+                        <SoftwareIconShield name="Firefox" color="FF7139" slug="firefoxbrowser" />
+                        <SoftwareIconShield name="Wayland" color="FFBC00" slug="wayland" />
+                        <SoftwareIconShield name="Docker" color="2496ED" slug="docker" />
+                        <SoftwareIconShield name="Nginx" color="009639" slug="nginx" />
+                    </div>
+                    <p>What I'd like to learn more:</p>
+                    <div class="icon-card-wrapper">
+                        <SoftwareIconShield name="C" color="A8B9CC" slug="c" />
+                        <SoftwareIconShield name="C++" color="00599C" slug="cplusplus" />
+                        <SoftwareIconShield name="Zig" color="F7A41D" slug="zig" />
+                        <SoftwareIconShield name="Rust" color="000000" slug="rust" />
+                        <SoftwareIconShield name="Nix" color="5277C3" slug="nixos" />
+                    </div>
+                </div>
+                <div class="most-used-languages">
+                    <img src="http://bvngeecord.com:9000/top-langs?username=BvngeeCord&exclude_repo=pico,TestGL,.dotfiles-wsl2&theme=dark&langs_count=10&layout=compact&hide_border=true&bg_color=00000000" alt="Most Used Languages" />
+                </div>
             </div>
         </div>
         <div class="box" id="where">
@@ -127,6 +134,10 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
 </BasePageLayout>
 
 <style>
+    a {
+        text-decoration-color: var(--blue);
+        color: var(--blue);
+    }
     #home-title {
         margin: 0 10px 20px 10px;
         /* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
@@ -144,10 +155,6 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
     .box :last-child {
         margin-bottom: 0;
     }
-    a {
-        text-decoration-color: var(--blue);
-        color: var(--blue);
-    }
     .icon-card-wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -162,12 +169,25 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
     li {
         margin: 16px 0;
     }
-    #technologies {
-        background-color: var(--bg1);
-        border-radius: 10px;
+    .how-flexbox {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
-        margin: 0px 0px 18px 0px;
-        padding: 2px;
+        justify-content: space-evenly;
+    }
+    .software-icons-section {
+        flex: 1 1 20em;
+    }
+    .most-used-languages {
+        flex: 0 0 auto;
+        justify-content: center;
+        height: min-content;
+        align-self: center;
+        margin: 1.5em;
+    }
+    .most-used-languages > img {
+        background-color: var(--bg-dark);
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
     }
 </style>
