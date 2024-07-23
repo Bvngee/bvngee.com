@@ -1,17 +1,18 @@
 ---
 import BasePageLayout from '../../layouts/BasePageLayout.astro';
 import PageContainer from '../../components/PageContainer.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, CollectionEntry } from 'astro:content';
 import BlogContentContainer from '../../components/BlogContentContainer.astro';
 
 export async function getStaticPaths() {
     const blogs = await getCollection('blog');
     return blogs.map(entry => ({
-        params: { slug: entry.slug }, props: { entry },
+        params: { slug: entry.slug }, 
+        props: { entry },
     }));
 }
 
-const { entry } = Astro.props;
+const entry: CollectionEntry<'blog'> = Astro.props.entry;
 
 let dateString = entry.data.publishedDate;
 if (entry.data.updatedDate.length > 0) {
@@ -30,7 +31,8 @@ if (entry.data.updatedDate.length > 0) {
     <PageContainer>
         <div id="header">
             <h1 id="blog-title">{entry.data.title}</h1>
-            <h id="blog-date">{dateString}</h>
+            <!-- <h id="blog-date">{dateString}</h> -->
+            <h id="blog-date">{entry.data.publishedDate}</h>
         </div>
         <div id="blog-card">
             <BlogContentContainer post={entry}>

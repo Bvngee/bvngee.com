@@ -1,8 +1,8 @@
 ---
-title: Compiling Sway with wlroots from source (+ Nix shell)
+title: Compiling Sway with wlroots from source
 tags: []
-publishedDate: May 25th, 2024
-updatedDate: []
+publishedDate: May 25, 2024
+updatedDate: [ "July 22, 2024" ]
 draft: false
 ---
 
@@ -17,14 +17,12 @@ With that out of the way, here are the steps I used:
 
 ## wlroots
 
-1. Clone:
-
-`git clone https://gitlab.freedesktop.org/wlroots/wlroots`
+1. Clone (`git clone https://gitlab.freedesktop.org/wlroots/wlroots`)
 
 2. Obtain deps
 
-Use your system's package manager to obtain all of the dependencies listed
-[here](https://gitlab.freedesktop.org/wlroots/wlroots#building). A Nix shell
+Use your system's package manager to obtain all of wlroots' dependencies (listed
+[here](https://gitlab.freedesktop.org/wlroots/wlroots#building)). A Nix shell
 which accomplishes just that is at the bottom of this post.
 
 3. Setup build & Compile
@@ -41,9 +39,7 @@ ninja -C build install # installs headers and shared object files to the previou
 
 ## Sway
 
-1. Clone:
-
-`git clone https://github.com/swaywm/sway/`
+1. Clone (`git clone https://github.com/swaywm/sway/`)
 
 2. Obtain deps
 
@@ -63,7 +59,7 @@ ninja -C build
 
 ## Nix shell
 
-Running `nix develop` with this `shell.nix` in your CWD will add all of the
+Running `nix-shell` (or `nix develop -f ./shell.nix`) with this `shell.nix` in your CWD will add all of the
 listed dependencies to your environment without installing them to your system.
 
 ```nix

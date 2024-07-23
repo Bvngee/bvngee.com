@@ -6,7 +6,10 @@ import PageContainer from "../components/PageContainer.astro";
 
 const blogPosts = await getCollection("blog");
 
-const finalBlogPosts = blogPosts.filter((p) => !p.data.draft);
+const finalBlogPosts = blogPosts
+    .filter((p) => !p.data.draft)
+    .sort((a, b) => Date.parse(a.data.publishedDate) - Date.parse(b.data.publishedDate));
+
 const lastUpdatedDate =
     finalBlogPosts[finalBlogPosts.length - 1]?.data.publishedDate;
 ---
@@ -18,7 +21,7 @@ const lastUpdatedDate =
             <div id="header-latest-date">Latest: {lastUpdatedDate}</div>
         </div>
         {
-            finalBlogPosts.map((p) => (
+            finalBlogPosts.reverse().map((p) => (
                 <div id="blog-card">
                     <div id="blog-card-label">
                         <h2 id="blog-title">
