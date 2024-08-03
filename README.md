@@ -1,8 +1,10 @@
-Source code for my personal website, [bvngeecord.com](https://bvngeecord.com/)!
+Source code for my personal website, [bvngee.com](https://bvngee.com/)!
 
-As explained on the website, I chose to use Astro to build my website. It has everything I need, allows for as much opt in complexity as one could ever want, and is fun to work with!
+As explained in a blog, I chose to use Astro to build my website. It has everything I need, allows for as much opt in complexity as one could ever want, and is fun to work with!
 
-Directory tree:
+I will update this with more info later.
+
+Directory structure:
 ```
 .
 ├── src/
@@ -10,14 +12,13 @@ Directory tree:
 │   │   └── <reusable astro components>
 │   ├── content/
 │   │   └── blog/
-│   │       ├── first.md
-│   │       ├── second.md
+│   │       ├── a_post.md
 │   │       └── <blog posts>  
 │   ├── layouts/
 │   │   └── BasePageLayout.astro
 │   └── pages/
 │       ├── blogs/
-│       │   └── [title].astro    //page for viewing blog posts
+│       │   └── [slug].astro    //page for viewing blog posts
 │       ├── about.astro
 │       ├── blogs.astro
 │       ├── index.astro          //home page
@@ -28,7 +29,3 @@ Directory tree:
     ├── favicon.png
     └── ...
 ```
-
-Everything I use to host the website (Nginx, docker, webhook, blah blah) is hosted in a private repo.
-
-Yes, I know it's all overcomplicated. I know. It's more fun (and more to learn) that way :>
