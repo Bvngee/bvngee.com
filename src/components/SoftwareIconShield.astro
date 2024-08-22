@@ -1,12 +1,35 @@
 ---
 const { name, color, slug } = Astro.props;
+
+const src = "https://cdn.simpleicons.org/" + slug + "/ddc7a1"; //+ color;
+const size = 16;
+
+const colorStyle = "background-color: color-mix(in srgb, #" + color + " 70%, var(--bg4));";
 ---
 
-<img src={"https://img.shields.io/badge/" + name + "-" + color + "?style=for-the-badge&logo=" + slug + "&logoColor=white"} alt={name} />
+<!-- <img src={src} alt={name} /> -->
+<div class="container">
+    <img style={colorStyle} height={size} width={size} src={src} />
+    <p> {name} </p>
+</div>
 
 <style>
+    .container {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 5px;
+        background-color: var(--bg4);
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+    }
     img {
-        border-radius: 4px;
-        opacity: 80%;
+        padding: 6px 8px;
+        align-self: center;
+        border-radius: 5px;
+        /* TODO: FIGURE OUT HOW TO ADD DROP SHADOW TO ICON ONLY (wrapper?)*/
+        /* filter: brightness(1.1); */
+    }
+    p {
+        margin: 0 8px;
     }
 </style>

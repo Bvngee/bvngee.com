@@ -53,30 +53,30 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
             </ul>
         </div>
         <div class="box" id="how">
-            <!-- uses simpleicons.org, and devicon.dev -->
             <h2>How?</h2>
             <div class="how-flexbox">
                 <div class="software-icons-section">
                     <p>Languages I like <em>and/or</em> know:</p>
                     <div class="icon-card-wrapper">
-                        <SoftwareIconShield name="Rust" color="000000" slug="rust" />
-                        <SoftwareIconShield name="Java" color="3776AB" slug="oracle" />
-                        <SoftwareIconShield name="Nix" color="5277C3" slug="nixos" />
-                        <SoftwareIconShield name="Lua" color="2C2D72" slug="lua" />
-                        <SoftwareIconShield name="Python" color="3776AB" slug="python" />
-                        <SoftwareIconShield name="Bash" color="4EAA25" slug="gnubash" />
-                        <SoftwareIconShield name="HTML" color="E34F26" slug="html5" />
-                        <SoftwareIconShield name="CSS" color="1572B6" slug="css3" />
-                        <SoftwareIconShield name="JavaScript" color="3776AB" slug="javascript" />
-                        <!-- <SoftwareIconShield name="Markdown" color="000000" slug="markdown" /> -->
+                        <!-- Badges from simpleicons.org, icons from shields.io. also devicon.dev as a backup -->
+                        <!-- Determine colors using ../../get_language_color.sh (which uses github-linguists) --> 
+                        <SoftwareIconShield name="Rust" color="dea584" slug="rust" />
+                        <SoftwareIconShield name="Java" color="b07219" slug="oracle" />
+                        <SoftwareIconShield name="Nix" color="7e7eff" slug="nixos" />
+                        <SoftwareIconShield name="Lua" color="000080" slug="lua" />
+                        <SoftwareIconShield name="Python" color="3572A5" slug="python" />
+                        <SoftwareIconShield name="Bash" color="89e051" slug="gnubash" />
+                        <SoftwareIconShield name="HTML" color="e34c26" slug="html5" />
+                        <SoftwareIconShield name="CSS" color="563d7c" slug="css3" />
+                        <SoftwareIconShield name="JavaScript" color="f1e05a" slug="javascript" />
                     </div>
                     <p>What I'd like to learn more:</p>
                     <div class="icon-card-wrapper">
-                        <SoftwareIconShield name="C" color="A8B9CC" slug="c" />
-                        <SoftwareIconShield name="C++" color="00599C" slug="cplusplus" />
-                        <SoftwareIconShield name="Zig" color="F7A41D" slug="zig" />
-                        <SoftwareIconShield name="Rust" color="000000" slug="rust" />
-                        <SoftwareIconShield name="Nix" color="5277C3" slug="nixos" />
+                        <SoftwareIconShield name="C" color="555555" slug="c" />
+                        <SoftwareIconShield name="C++" color="f34b7d" slug="cplusplus" />
+                        <SoftwareIconShield name="Zig" color="ec915c" slug="zig" />
+                        <SoftwareIconShield name="Rust" color="dea584" slug="rust" />
+                        <SoftwareIconShield name="Nix" color="7e7eff" slug="nixos" />
                     </div>
                     <p>Other things I use:</p>
                     <div class="icon-card-wrapper">
@@ -89,7 +89,17 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
                     </div>
                 </div>
                 <div class="most-used-languages">
-                    <img src="http://github-readme-stats.bvngee.com/top-langs?username=Bvngee&exclude_repo=pico,TestGL,.dotfiles-wsl2&theme=dark&langs_count=10&layout=compact&hide_border=true&bg_color=00000000" alt="Most Used Languages" />
+                    <img src={
+                        "http://github-readme-stats.bvngee.com/top-langs?"
+                        + "username=Bvngee&exclude_repo=pico,TestGL,.dotfiles-wsl2"
+                        + "&theme=dark"
+                        + "&langs_count=10"
+                        + "&layout=compact"
+                        + "&hide_border=true"
+                        + "&bg_color=00000000"
+                        + "&text_color=ddc7a1"
+                        + "&title_color=ddc7a1"
+                    } alt="Most Used Languages" />
                 </div>
             </div>
         </div>
@@ -159,7 +169,7 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
+        gap: 12px;
         margin-top: -8px;
         margin-bottom: 20px;
     }
@@ -190,4 +200,7 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
         border-radius: 6px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
     }
+    /* .most-used-languages > img text { */
+    /*     fill: blue; */
+    /* } */
 </style>
