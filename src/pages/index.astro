@@ -55,7 +55,7 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
         <div class="box" id="how">
             <h2>How?</h2>
             <div class="how-flexbox">
-                <div class="software-icons-section">
+                <div class="language-icons-section">
                     <p>Languages I like <em>and/or</em> know:</p>
                     <div class="icon-card-wrapper">
                         <!-- Badges from simpleicons.org, icons from shields.io. also devicon.dev as a backup -->
@@ -66,7 +66,7 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
                         <SoftwareIconShield name="Lua" color="000080" slug="lua" />
                         <SoftwareIconShield name="Python" color="3572A5" slug="python" />
                         <SoftwareIconShield name="Bash" color="89e051" slug="gnubash" />
-                        <SoftwareIconShield name="HTML" color="e34c26" slug="html5" />
+                        <SoftwareIconShield name="Astro" color="ff5a03" slug="astro" />
                         <SoftwareIconShield name="CSS" color="563d7c" slug="css3" />
                         <SoftwareIconShield name="JavaScript" color="f1e05a" slug="javascript" />
                     </div>
@@ -78,28 +78,30 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
                         <SoftwareIconShield name="Rust" color="dea584" slug="rust" />
                         <SoftwareIconShield name="Nix" color="7e7eff" slug="nixos" />
                     </div>
-                    <p>Other things I use:</p>
-                    <div class="icon-card-wrapper">
-                        <SoftwareIconShield name="Neovim" color="57A143" slug="neovim" />
-                        <SoftwareIconShield name="Linux" color="FCC624" slug="linux" />
-                        <SoftwareIconShield name="Wayland" color="FFBC00" slug="wayland" />
-                        <SoftwareIconShield name="Firefox" color="FF7139" slug="firefoxbrowser" />
-                        <SoftwareIconShield name="Docker" color="2496ED" slug="docker" />
-                        <SoftwareIconShield name="Nginx" color="009639" slug="nginx" />
-                    </div>
                 </div>
                 <div class="most-used-languages">
                     <img src={
                         "http://github-readme-stats.bvngee.com/top-langs?"
-                        + "username=Bvngee&exclude_repo=pico,TestGL,.dotfiles-wsl2"
-                        + "&theme=dark"
-                        + "&langs_count=10"
-                        + "&layout=compact"
-                        + "&hide_border=true"
-                        + "&bg_color=00000000"
-                        + "&text_color=ddc7a1"
-                        + "&title_color=ddc7a1"
+                            + "username=Bvngee&exclude_repo=pico,TestGL,.dotfiles-wsl2"
+                            + "&theme=dark"
+                            + "&langs_count=10"
+                            + "&layout=compact"
+                            + "&hide_border=true"
+                            + "&bg_color=00000000"
+                            + "&text_color=ddc7a1ee" // TODO: make this css var(--fg1)
+                            + "&title_color=ddc7a1ee"
                     } alt="Most Used Languages" />
+                </div>
+            </div>
+            <div class="other-icons-section">
+                <p>Other things I use:</p>
+                <div class="icon-card-wrapper">
+                    <SoftwareIconShield name="Neovim" color="57A143" slug="neovim" />
+                    <SoftwareIconShield name="Linux" color="FCC624" slug="linux" />
+                    <SoftwareIconShield name="Wayland" color="FFBC00" slug="wayland" />
+                    <SoftwareIconShield name="Firefox" color="FF7139" slug="firefoxbrowser" />
+                    <SoftwareIconShield name="Docker" color="2496ED" slug="docker" />
+                    <SoftwareIconShield name="Nginx" color="009639" slug="nginx" />
                 </div>
             </div>
         </div>
@@ -162,7 +164,7 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
     .box > h2 {
         margin: 0;
     }
-    .box :last-child {
+    .box :is(h2,ul,li,.icon-card-wrapper):last-child {
         margin-bottom: 0;
     }
     .icon-card-wrapper {
@@ -184,8 +186,13 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        margin-bottom: 1em;
     }
-    .software-icons-section {
+    .language-icons-section {
+        flex: 1 1 20em;
+        margin-bottom: 1em;
+    }
+    .other-icons-section {
         flex: 1 1 20em;
     }
     .most-used-languages {
@@ -193,7 +200,7 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
         justify-content: center;
         height: min-content;
         align-self: center;
-        margin: 1.5em;
+        margin: 0 1.5em;
     }
     .most-used-languages > img {
         background-color: var(--bg-dark);

@@ -1,17 +1,19 @@
 ---
-import '../styles/GlobalStyles.css';
+import "../styles/GlobalStyles.css";
 
 const { title } = Astro.props;
 ---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/tacocat_small.png" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{title}</title>
-	</head>
-	<body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="/tacocat_small.png" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+    </head>
+    <body>
         <slot />
-	</body>
+    </body>
 </html>
+

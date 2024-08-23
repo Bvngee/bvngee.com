@@ -4,12 +4,14 @@ const { name, color, slug } = Astro.props;
 const src = "https://cdn.simpleicons.org/" + slug + "/ddc7a1"; //+ color;
 const size = 16;
 
-const colorStyle = "background-color: color-mix(in srgb, #" + color + " 70%, var(--bg4));";
+const colorStyle = "background-color: color-mix(in srgb, #" + color + " 75%, var(--bg-dark));";
 ---
 
 <!-- <img src={src} alt={name} /> -->
 <div class="container">
-    <img style={colorStyle} height={size} width={size} src={src} />
+    <div class="img-container" style={colorStyle}>
+        <img height={size} width={size} src={src} />
+    </div>
     <p> {name} </p>
 </div>
 
@@ -22,14 +24,18 @@ const colorStyle = "background-color: color-mix(in srgb, #" + color + " 70%, var
         background-color: var(--bg4);
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
     }
-    img {
-        padding: 6px 8px;
-        align-self: center;
+    .img-container {
+        padding: 0 8px;
+        display: flex;
+        align-self: stretch;
+        align-items: center;
+    }
+    .img-container img {
         border-radius: 5px;
-        /* TODO: FIGURE OUT HOW TO ADD DROP SHADOW TO ICON ONLY (wrapper?)*/
+        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
         /* filter: brightness(1.1); */
     }
     p {
-        margin: 0 8px;
+        margin: 2px 8px;
     }
 </style>

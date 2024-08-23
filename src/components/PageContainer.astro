@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
 ---
 
 <Header />
@@ -7,9 +7,11 @@ import Header from '../components/Header.astro';
     <slot />
 </main>
 <style>
-	#page-container {
-		margin: 25px 0;
-		width: min(1000px, 100% - 1.5rem);
-		margin-inline: auto;
-	}
+    #page-container {
+	/* TODO: nav is restricted by body when overflowing horizontally*/
+        padding: 25px 1rem;
+        /* width: min(1000px, max(100%, 500px) - 1.5rem); */
+        width: min(1000px, max(100%, 500px) - 2rem);
+        margin-inline: auto;
+    }
 </style>
