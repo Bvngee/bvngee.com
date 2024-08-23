@@ -1,6 +1,7 @@
 ---
 ---
 
+<!-- prettier-ignore -->
 <nav id="nav-links">
     <a id="home" href="/"><span class="icon" id="home-logo"> </span>Home</a>
     <a id="about" href="/about/"><span class="icon" id="about-logo"> </span>About</a>
@@ -9,7 +10,14 @@
 
 <style>
     #nav-links {
-        height: 50px;
+        /* height: 50px; */
+        /* This is kind of a hack; when the screen width is very small,
+         * the width of the page-container becomes larger than the body,
+         * but the nav is by default restricted to the width of the body
+         * so it looks bad. This says if overflowing, use min width as
+         * defined in src/Components/PageContainer.astro */
+        width: max(100%, 300px);
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -19,8 +27,8 @@
         font-weight: 600;
     }
     a {
-        margin: 8px 20px;
-        padding: 4px 6px;
+        margin: 12px 26px;
+        text-align: center;
         font-size: 18px;
         text-decoration: none;
         transform: perspective(1px) translateZ(0);
@@ -30,6 +38,7 @@
         transition-duration: 0.1s;
         transition-property: transform;
     }
+    /* :before targets the <span>'s that contain the icons */
     a:before {
         content: "";
         position: absolute;
@@ -43,7 +52,7 @@
         transition-duration: 0.2s;
     }
     a:hover:before {
-		right: 6px;
+        right: 6px;
     }
     a#home:before {
         background-color: var(--green);
@@ -66,6 +75,6 @@
         color: var(--blue);
     }
     .icon {
-        font-family: 'CaskaydiaCove Nerd Font';
+        font-family: "CaskaydiaCove Nerd Font";
     }
 </style>

@@ -5,9 +5,10 @@ const src = "https://cdn.simpleicons.org/" + slug + "/ddc7a1"; //+ color;
 const size = 16;
 
 const colorStyle = "background-color: color-mix(in srgb, #" + color + " 75%, var(--bg-dark));";
+// const colorStyle = "background-color: color-mix(in srgb, #" + color + " 65%, var(--bg-dark));";
 ---
 
-<!-- <img src={src} alt={name} /> -->
+<!-- <div class="container" style={colorStyle}> -->
 <div class="container">
     <div class="img-container" style={colorStyle}>
         <img height={size} width={size} src={src} />
@@ -26,16 +27,19 @@ const colorStyle = "background-color: color-mix(in srgb, #" + color + " 75%, var
     }
     .img-container {
         padding: 0 8px;
+        border-radius: 5px;
         display: flex;
         align-self: stretch;
         align-items: center;
     }
     .img-container img {
         border-radius: 5px;
+        /* margin-right: -8px; */
         filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
         /* filter: brightness(1.1); */
     }
     p {
         margin: 2px 8px;
+        /* filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25)); */
     }
 </style>
