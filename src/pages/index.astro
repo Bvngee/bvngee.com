@@ -169,7 +169,9 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
     .box > h2 {
         margin: 0;
     }
-    .box :is(h2,ul,li,.icon-card-wrapper):last-child {
+    /* Hack; without the :is() too much gets selected but just 
+     * having first-level last-child doesn't get everything */
+    .box :is(p,h2,ul,li,.icon-card-wrapper):last-child {
         margin-bottom: 0;
     }
     .icon-card-wrapper {
