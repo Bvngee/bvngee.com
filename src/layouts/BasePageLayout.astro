@@ -1,6 +1,10 @@
 ---
 import "../styles/GlobalStyles.css";
 
+interface Props {
+    children: any; // enforce <slot> being filled
+    title: string;
+};
 const { title } = Astro.props;
 ---
 
