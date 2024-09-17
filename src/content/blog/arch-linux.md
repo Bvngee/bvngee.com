@@ -2,7 +2,7 @@
 title: Why Arch Linux might be worth your time.
 tags: []
 publishedDate: ""
-updatedDate: []
+edits: [ ]
 draft: true
 ---
 

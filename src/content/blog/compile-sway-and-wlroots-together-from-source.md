@@ -2,7 +2,9 @@
 title: Compiling Sway with wlroots from source
 tags: []
 publishedDate: May 25, 2024
-updatedDate: [ "July 22, 2024" ]
+edits: [
+  { date: "July 22, 2024", desc: "Make more consice" }
+]
 draft: false
 ---
 
@@ -59,8 +61,9 @@ ninja -C build
 
 ## Nix shell
 
-Running `nix-shell` (or `nix develop -f ./shell.nix`) with this `shell.nix` in your CWD will add all of the
-listed dependencies to your environment without installing them to your system.
+Running `nix-shell` (or `nix develop -f ./shell.nix`) with this `shell.nix` in
+your CWD will add all of the listed dependencies to your environment without
+installing them to your system.
 
 ```nix
 { pkgs ? import <nixpkgs> { }, ... }:

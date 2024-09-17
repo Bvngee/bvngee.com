@@ -2,7 +2,7 @@
 title: Nix is *almost* a perfect container builder
 tags: []
 publishedDate: July 11, 2024
-updatedDate: []
+edits: []
 draft: true
 ---
 
