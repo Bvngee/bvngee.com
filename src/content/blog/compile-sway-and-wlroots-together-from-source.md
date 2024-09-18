@@ -3,7 +3,7 @@ title: Compiling Sway with wlroots from source
 tags: []
 publishedDate: May 25, 2024
 edits: [
-  { date: "July 22, 2024", desc: "Make more consice" }
+  { date: "July 22, 2024", desc: "Made more consice" }
 ]
 draft: false
 ---
