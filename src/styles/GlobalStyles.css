@@ -40,7 +40,7 @@ body {
     /* scrollbar-gutter: stable both-edges; fucks with the header :( */
 }
 ::selection {
-    background-color:  #4f422e;
+    background-color: #4f422e;
 }
 a {
     color: var(--fg1);
