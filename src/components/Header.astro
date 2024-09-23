@@ -47,8 +47,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                         if (interval >= 1) {
                             intervalType = "minute";
                         } else {
-                            interval = seconds;
-                            intervalType = "second";
+                            return "<1 minute"
                         }
                     }
                 }
@@ -147,7 +146,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         color: var(--blue);
     }
     #commit-time {
-        color: var(--gray2);
+        color: var(--gray1);
     }
     .icon {
         font-family: "CaskaydiaCove Nerd Font";
