@@ -14,12 +14,12 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     </div>
 
     <div id="right">
-        <a id="commit-time" href="https://github.com/Bvngee/bvngee.com/">
-            <span class="icon" id="github-logo">󰊤 </span>
-            <span id="commit-time-text" data-time-of-last-commit={timeOfLastCommit}>
-                Calculating...
-            </span>
-        </a>
+            <a id="commit-time" href="https://github.com/Bvngee/bvngee.com/">
+                <span class="icon" id="github-logo">󰊤 </span>
+                <span id="commit-time-text" data-time-of-last-commit={timeOfLastCommit}>
+                    Calculating...
+                </span>
+            </a>
     </div>
 </nav>
 
@@ -78,28 +78,34 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
          * defined in src/Components/PageContainer.astro */
         width: max(100%, 300px);
 
+        padding: 10px 0;
         display: flex;
         align-items: center;
+        column-gap: 10px;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
         background-color: var(--bg2);
-        margin-bottom: 10px;
         font-weight: 600;
     }
     #center {
         display: flex;
+        width: min(70%, 330px);
+        justify-content: space-between;
     }
     #left {
         flex: 1;
-        text-align: left;
     }
     #right {
         flex: 1;
-        text-align: right;
+    }
+    #commit-time {
+        text-align: center;
+        float: right;
+        margin-right: 20px;
     }
     a {
-        margin: 8px 20px;
         padding: 4px 6px;
         text-align: center;
+        line-height: 120%;
         font-size: 18px;
         text-decoration: none;
         transform: perspective(1px) translateZ(0);
@@ -110,7 +116,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         transition-property: transform;
     }
     /* :before targets the <span>'s that contain the icons */
-    a:before {
+    #center a:before {
         content: "";
         position: absolute;
         z-index: -1;
