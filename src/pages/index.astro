@@ -211,7 +211,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
             "Last updated "
             + timeSince(new Date(parseInt(timeOfLastCommit)))
             + " ago ("
-            + lastCommitHash.substring(0, 8)
+            + lastCommitHash.substring(0, 7)
             + ")"
     } else {
         commit!.innerHTML = "???";
