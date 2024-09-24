@@ -12,6 +12,7 @@ export default defineConfig({
     vite: {
         define: {
             TIME_OF_LAST_COMMIT: (execSync("git log -1 --pretty=format:'%at'") * 1000).toString(),
+            LAST_COMMIT_HASH: new String(execSync("git log -1 --pretty=format:'%H'")),
         },
     },
     markdown: {

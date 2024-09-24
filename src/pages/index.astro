@@ -3,6 +3,11 @@ import PageContainer from "../components/PageContainer.astro";
 import SocialLinkPreview from "../components/SocialLinkPreview.astro";
 import SoftwareIconShield from "../components/SoftwareIconShield.astro";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
+
+// @ts-ignore-next-line
+const lastCommitHash = LAST_COMMIT_HASH;
+// @ts-ignore-next-line
+const timeOfLastCommit = TIME_OF_LAST_COMMIT;
 ---
 
 <!-- prettier-ignore -->
@@ -149,14 +154,71 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
                 />
             </div>
         </div>
+        <a id="commit-time" href={"https://github.com/Bvngee/bvngee.com/commit/" + lastCommitHash}>
+            <span class="icon">󰊤 </span>
+            <span 
+                id="commit-time-text"
+                data-time-of-last-commit={timeOfLastCommit}
+                data-last-commit-hash={lastCommitHash}
+            >
+                Calculating...
+            </span>
+        </a>
    </PageContainer>
 </BasePageLayout>
 
-<style>
-    a {
-        text-decoration-color: var(--blue);
-        color: var(--blue);
+<script>
+    function timeSince(date: Date) {
+        const seconds = Math.floor((+new Date() - +date) / 1000);
+        let intervalType;
+        let interval = Math.floor(seconds / 31536000);
+        if (interval >= 1) {
+            intervalType = "year";
+        } else {
+            interval = Math.floor(seconds / 2592000);
+            if (interval >= 1) {
+                intervalType = "month";
+            } else {
+                interval = Math.floor(seconds / 86400);
+                if (interval >= 1) {
+                    intervalType = "day";
+                } else {
+                    interval = Math.floor(seconds / 3600);
+                    if (interval >= 1) {
+                        intervalType = "hour";
+                    } else {
+                        interval = Math.floor(seconds / 60);
+                        if (interval >= 1) {
+                            intervalType = "minute";
+                        } else {
+                            return "less than 1 minute"
+                        }
+                    }
+                }
+            }
+        }
+        if (interval > 1 || interval === 0) {
+            intervalType += "s";
+        }
+        return interval + " " + intervalType;
     }
+
+    const commit = document.getElementById("commit-time-text");
+    const timeOfLastCommit = commit?.dataset.timeOfLastCommit;
+    const lastCommitHash = commit?.dataset.lastCommitHash;
+    if (timeOfLastCommit !== undefined && lastCommitHash !== undefined) {
+        commit!.innerText =
+            "Last updated "
+            + timeSince(new Date(parseInt(timeOfLastCommit)))
+            + " ago ("
+            + lastCommitHash.substring(0, 8)
+            + ")"
+    } else {
+        commit!.innerHTML = "???";
+    }
+</script>
+
+<style>
     #home-title {
         margin: 0 10px 20px 10px;
         /* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
@@ -175,6 +237,10 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
      * having first-level last-child doesn't get everything */
     .box :is(p,h2,ul,li,.icon-card-wrapper):last-child {
         margin-bottom: 0;
+    }
+    .box a {
+        text-decoration-color: var(--blue);
+        color: var(--blue);
     }
     .icon-card-wrapper {
         display: flex;
@@ -216,7 +282,19 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
         border-radius: 6px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
     }
-    /* .most-used-languages > img text { */
-    /*     fill: blue; */
-    /* } */
+    #commit-time {
+        color: var(--gray1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        margin-top: -10px;
+        text-decoration: none;
+    }
+    #commit-time .icon {
+        font-size: 20px;
+        font-family: "CaskaydiaCove Nerd Font";
+        margin: 14px;
+    }
 </style>
+

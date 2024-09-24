@@ -1,6 +1,4 @@
 ---
-// @ts-ignore-next-line
-const timeOfLastCommit = TIME_OF_LAST_COMMIT;
 ---
 
 <!-- prettier-ignore -->
@@ -13,60 +11,8 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         <a id="blog" href="/blogs/"><span class="icon" id="blog-logo">󱀂 </span>Blogs</a>
     </div>
 
-    <div id="right">
-            <a id="commit-time" href="https://github.com/Bvngee/bvngee.com/">
-                <span class="icon" id="github-logo">󰊤 </span>
-                <span id="commit-time-text" data-time-of-last-commit={timeOfLastCommit}>
-                    Calculating...
-                </span>
-            </a>
-    </div>
+    <div id="right"></div>
 </nav>
-
-<script>
-    function timeSince(date: Date) {
-        const seconds = Math.floor((+new Date() - +date) / 1000);
-        let intervalType;
-        let interval = Math.floor(seconds / 31536000);
-        if (interval >= 1) {
-            intervalType = "year";
-        } else {
-            interval = Math.floor(seconds / 2592000);
-            if (interval >= 1) {
-                intervalType = "month";
-            } else {
-                interval = Math.floor(seconds / 86400);
-                if (interval >= 1) {
-                    intervalType = "day";
-                } else {
-                    interval = Math.floor(seconds / 3600);
-                    if (interval >= 1) {
-                        intervalType = "hour";
-                    } else {
-                        interval = Math.floor(seconds / 60);
-                        if (interval >= 1) {
-                            intervalType = "minute";
-                        } else {
-                            return "<1 minute"
-                        }
-                    }
-                }
-            }
-        }
-        if (interval > 1 || interval === 0) {
-            intervalType += "s";
-        }
-        return interval + " " + intervalType;
-    }
-
-    const commit = document.getElementById("commit-time-text");
-    let timeOfLastCommit = commit?.dataset.timeOfLastCommit;
-    if (timeOfLastCommit !== undefined) {
-        commit!.innerText = timeSince(new Date(parseInt(timeOfLastCommit))) + " ago";
-    } else {
-        commit!.innerHTML = "???";
-    }
-</script>
 
 <style>
     #nav-links {
@@ -88,19 +34,13 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     }
     #center {
         display: flex;
-        width: min(70%, 330px);
+        width: min(80%, 330px);
         justify-content: space-between;
     }
-    #left {
+    /* Currently unused; previously I had content on the right side, left here
+     * in case I change my mind again */
+    #left, #right {
         flex: 1;
-    }
-    #right {
-        flex: 1;
-    }
-    #commit-time {
-        text-align: center;
-        float: right;
-        margin-right: 20px;
     }
     a {
         padding: 4px 6px;
@@ -150,9 +90,6 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     }
     #blog-logo {
         color: var(--blue);
-    }
-    #commit-time {
-        color: var(--gray1);
     }
     .icon {
         font-family: "CaskaydiaCove Nerd Font";
