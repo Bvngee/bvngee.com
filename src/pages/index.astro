@@ -17,13 +17,20 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         <div class="box" id="who">
             <h2>Who?</h2>
             <p>
-                An aspiring software dev, Linux & neovim enthusiast, NixOS addict, and technical Minecrafter.
-                I'm interested in all things programming but especially systems and low level software.
-                I also occasionally go outside to mountain bike, play tennis, and enjoy the sun :P
+                An aspiring software developer, Linux & neovim user, NixOS
+                addict, and technical Minecrafter. I'm interested in all things
+                programming but especially systems and low level software. I'm
+                also a current Computer Science student at UC Santa Cruz!
                 <br>
-                My name is Jack, but I go by Bvngee on the internet.
+                When I'm not on my computer I also occasionally mountain bike,
+                play tennis, and enjoy the sun :P
                 <br><br>
-                I'm currently 18, soon to start Computer Science @ UC Santa Cruz (co28, JRLC)!
+                My name is Jack, but I go by Bvngee 
+                <a
+                    href="#where"
+                    style="color: unset; text-decoration-color: var(--gray2);"
+                >on the internet</a>.
+
             </p>
         </div>
         <div class="box" id="what">
@@ -36,7 +43,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                 </li>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/18LBs0AmaSnT2yeP5mM6TQh5jgIuw7PlEmnaEUqvHnw0/edit?usp=sharing">SAR project</a>: 
-                    I had the opportunity to help direct/organize/construct my highschool's new Electronics class,
+                    I got to help direct/organize/construct my highschool's new Electronics class,
                     consisting of <i>tons</i> of fun work and research (over very little time) that's summarized well by this class documentation I put together
                 </li>
                 <li>
@@ -45,14 +52,14 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                     (see <a href="/blogs/website-explanation">this blog post</a>). Learning a little about how the web works, the fun way :)
                 </li> 
                 <li>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/BvngeeAddons">BvngeeAddons</a>: 
+                my personal set of client-side fixes & features for Minecraft, including a screenshot helper, improved boss bar rendering, and more.
+                My most polished mod, yet never uploaded publicly
+                </li>
+                <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/coordinate-mod">Coordinate Mod</a> 
                     and <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/anti-auto-jump">Anti Auto Jump</a>: 
                     my first two Minecraft mods, at somewhere around 15k total downloads (released in 2020@age 13)
-                </li>
-                <li>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/BvngeeAddons">BvngeeAddons</a>: 
-                    my personal set of client-side fixes & features for Minecraft (screenshot helper, improved boss bar rendering, etc) - 
-                    my most polished mod, yet never uploaded publicly
                 </li>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/94EYHt8qgw">Oracle SMP</a>: 
@@ -168,6 +175,8 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
    </PageContainer>
 </BasePageLayout>
 
+
+
 <script>
     function timeSince(date: Date) {
         const seconds = Math.floor((+new Date() - +date) / 1000);
@@ -192,7 +201,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                         if (interval >= 1) {
                             intervalType = "minute";
                         } else {
-                            return "less than 1 minute"
+                            return "less than 1 minute";
                         }
                     }
                 }
@@ -209,11 +218,11 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     const lastCommitHash = commit?.dataset.lastCommitHash;
     if (timeOfLastCommit !== undefined && lastCommitHash !== undefined) {
         commit!.innerText =
-            "Last updated "
-            + timeSince(new Date(parseInt(timeOfLastCommit)))
-            + " ago ("
-            + lastCommitHash.substring(0, 7)
-            + ")"
+            "Last updated " +
+            timeSince(new Date(parseInt(timeOfLastCommit))) +
+            " ago (" +
+            lastCommitHash.substring(0, 7) +
+            ")";
     } else {
         commit!.innerHTML = "???";
     }
@@ -236,7 +245,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     }
     /* Hack; without the :is() too much gets selected but just 
      * having first-level last-child doesn't get everything */
-    .box :is(p,h2,ul,li,.icon-card-wrapper):last-child {
+    .box :is(p, h2, ul, li, .icon-card-wrapper):last-child {
         margin-bottom: 0;
     }
     .box a {
@@ -298,4 +307,3 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         margin: 14px;
     }
 </style>
-
