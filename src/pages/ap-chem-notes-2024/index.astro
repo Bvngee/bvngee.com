@@ -6,7 +6,7 @@ const glob = import.meta.glob("./*.html");
 // chapter number, url, pretty name
 const pageMap: [number, string, string][] = Object.keys(glob).map((s) => [
     parseInt(s.match(/\d+/)![0]),
-    Astro.url + s.substring(1),
+    Astro.url.pathname + s.substring(2),
     s.replace(/^\.\/(.+).html$/, "$1").replaceAll("_", " "),
 ]);
 pageMap.sort((a, b) => a[0] - b[0]);
