@@ -1,6 +1,6 @@
 /* Global CSS Styles */
 
-@import 'https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+@import "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap";
 body {
     /* Variable Declaration */
     --bg-darker: #141617;
@@ -12,21 +12,19 @@ body {
     --bg4: #45403d;
     --bg5: #5a525c;
 
-    --gray1: #665C54;
-    --gray2 : #928374;
+    --gray1: #665c54;
+    --gray2: #928374;
 
-    
     --fg1: #ddc7a1;
     --fg2: #d4be98;
 
     --orange: #e78a4e;
     --yellow: #d8a657;
-    --green:  #a9b665;
-    --aqua:   #89b482;
-    --blue:   #7daea3;
+    --green: #a9b665;
+    --aqua: #89b482;
+    --blue: #7daea3;
     --purple: #d3869b;
-    --red:    #ea6962;
-
+    --red: #ea6962;
 
     /* Default Foreground / Backgrond */
     background-color: var(--bg1, #000000);
@@ -34,7 +32,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 105%;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 :root {
     /* scrollbar-gutter: stable both-edges; fucks with the header :( */
@@ -45,11 +43,39 @@ body {
 a {
     color: var(--fg1);
 }
+/*
+    <pre> is used to indicate whitespace significance (so that multiline works),
+    <code> is used to signify any instance of code
+*/
+/* did moving these from BlogContentContainer to
+ * GlobalStyles cause any issues?*/
+code, pre {
+    background-color: var(--bg-dark);
+}
+pre {
+    padding: 8px;
+    border-radius: 6px;
+    max-height: 350px;
+}
+code {
+    font-family: "CaskaydiaCove Nerd Font";
+    font-size: 85%;
+    padding: 2px 5px 3px 5px;
+    border-radius: 4px;
+    background-color: var(--bg-dark);
+    color: var(--gray2);
+}
+pre > code {
+    padding: 0px; /* this makes non-multi-line <code> have padding without messing up multi-line <pre><code> blocks. */
+    white-space: pre; /* Do I want this? Might get annoying */
+    opacity: 100%;
+    background-color: var(--bg1);
+}
 a[target="_blank"]:not(.no-icon) {
     color: var(--blue);
 }
 a[target="_blank"]:not(.no-icon):after {
-    font-family: 'CaskaydiaCove Nerd Font';
+    font-family: "CaskaydiaCove Nerd Font";
     content: " "; /* content: "󰌹"; */
     font-size: 85%;
     padding: 1px 7px 0 2px;
@@ -59,30 +85,38 @@ a[target="_blank"]:not(.no-icon):after {
 }
 
 /* Custom Font */
-@font-face { /* NORMAL */
-    font-family: 'CaskaydiaCove Nerd Font';
-    src: url('/fonts/Caskaydia Cove Nerd Font Complete Regular.otf') format('opentype');
+@font-face {
+    /* NORMAL */
+    font-family: "CaskaydiaCove Nerd Font";
+    src: url("/fonts/Caskaydia Cove Nerd Font Complete Regular.otf")
+        format("opentype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-@font-face { /* NORMAL ITALIC */
-    font-family: 'CaskaydiaCove Nerd Font';
-    src: url('/fonts/Caskaydia Cove Nerd Font Complete Italic.otf') format('opentype');
+@font-face {
+    /* NORMAL ITALIC */
+    font-family: "CaskaydiaCove Nerd Font";
+    src: url("/fonts/Caskaydia Cove Nerd Font Complete Italic.otf")
+        format("opentype");
     font-weight: normal;
     font-style: italic;
     font-display: swap;
 }
-@font-face { /* BOLD */
-    font-family: 'CaskaydiaCove Nerd Font';
-    src: url('/fonts/Caskaydia Cove Nerd Font Complete SemiBold.otf') format('opentype');
+@font-face {
+    /* BOLD */
+    font-family: "CaskaydiaCove Nerd Font";
+    src: url("/fonts/Caskaydia Cove Nerd Font Complete SemiBold.otf")
+        format("opentype");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
-@font-face { /* BOLD ITALIC */
-    font-family: 'CaskaydiaCove Nerd Font';
-    src: url('/fonts/Caskaydia Cove Nerd Font Complete SemiBold Italic.otf') format('opentype');
+@font-face {
+    /* BOLD ITALIC */
+    font-family: "CaskaydiaCove Nerd Font";
+    src: url("/fonts/Caskaydia Cove Nerd Font Complete SemiBold Italic.otf")
+        format("opentype");
     font-weight: bold;
     font-style: italic;
     font-display: swap;

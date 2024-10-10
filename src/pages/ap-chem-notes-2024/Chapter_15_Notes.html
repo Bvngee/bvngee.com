@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chapter 15 Notes</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<p><strong>Chapter 15 Notes - Acid-Base Equilibria</strong></p>
+<p>The six (common) strong <em>acids</em> (assume the rest are
+weak):</p>
+<p>HCl, HBr, HI, HNO<sub>3</sub>, H<sub>2</sub>SO<sub>4</sub>,
+HClO<sub>4</sub></p>
+<p>The six (common) strong <em>bases</em> (assume the rest are
+weak):</p>
+<p>LiOH, NaOH, KOH, Ca(OH)<sub>2</sub>, Sr(OH)<sub>2</sub>,
+Ba(OH)<sub>2</sub></p>
+<p><strong>Buffer Problems</strong></p>
+<p>A <strong>buffer</strong> is a solution of a weak acid or base and
+its salt (which is its conjugate).</p>
+<p><u>A buffer resists a change in pH</u>.</p>
+<p>How it works: since a buffer consists of both an acid or base and its
+conjugate, an acid and a base are present in all buffer solutions. Thus
+if a little strong acid is added to the buffer, there is already a base
+complement ready and waiting to neutralize the “invader,” reacting
+together to form salt (which was already present in the solution). Same
+goes for some base; if a small amount of strong base is added to a
+buffer, the acid reacts with it to form salt (and water).</p>
+<p>Remember:</p>
+<ul>
+<li><p>K<sub>a</sub> * K<sub>b</sub> = K<sub>w</sub> =
+[H<sup>+</sup>][OH<sup>-</sup>] (K<sub>w</sub> = 1*10<sup>14</sup>
+<em>only at 25C!!)</em></p></li>
+<li><p>pH = -log[H<sup>+</sup>] , pOH = -log[OH<sup>-</sup>] , pH + pOH
+= 14</p></li>
+<li><p>Any titration involving a weak A/B is a buffer problem.</p></li>
+</ul>
+<p><em>The one and only buffer equation:</em><br />
+[H<sup>+</sup>] = K<sub>a</sub> <span class="math inline">$\frac{\lbrack
+Weak\ Acid\rbrack}{\lbrack Weak\ Base\rbrack}$</span></p>
+<p>If <u>acid</u> is added to the buffer, add the moles (convert
+everything to moles, not molarity) of acid to the numerator and subtract
+it from the denominator (think how a buffer works: the base is
+self-sacrificing to neutralize the incoming acid). If <u>base</u> is
+added to the buffer, do the reverse: add the moles of base to the
+denominator and subtract it from the numerator.</p>
+<p>Note: When the concentration of weak acid equals the concentration of
+weak base,</p>
+<p>[H<sup>+</sup>] = K<sub>a</sub> and thus pH = pK<sub>a</sub> =
+-log(K<sub>a</sub>) ! This is useful when asked to construct a buffer of
+a specific pH given a table of K<sub>a</sub>’s; choose a K<sub>a</sub>
+with an exponent close to the desired pH and use equal concentrations of
+the acid and base.</p>
+<p>When the concentrations of acid and base in a buffer are equal, it is
+a perfect buffer; that is, it has equal ability to neutralize invader
+base and invader acid. When asked “which system works best” in buffer
+creation problems, the one with the [WA]/[WB] ratio <em>closest to
+one</em> is the one that works best.</p>
+<p><strong>Acid / Base Titration Curves</strong></p>
+<p>Just look for the geometric midpoint of the straight vertical bit -
+that’s the equivalence point.</p>
+<p>A weak acid will have a pH level that starts higher and usually with
+an initial bump:</p>
+<p><img src="data:image/png;base64,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" style="width:5.78125in;height:3.95833in" /></p>
+<p>If the acid AND the base are BOTH strong, the equivalence point pH
+will be 7. Otherwise, you have to do an equilibrium problem. In reality,
+it’s just a stoichiometry problem with a limiting reactant (the excess
+is responsible for the pH).</p>
+<p>To know if the pH <u>at the equivalence point</u> will be greater or
+less than 7, just look at which is stronger:</p>
+<p><u>strong</u> acid + weak base =&gt; pH &lt; 7</p>
+<p>weak acid + <u>strong</u> base =&gt; pH &gt; 7</p>
+<p><u>strong</u> acid + <u>strong</u> base =&gt; pH = 7</p>
+<p>Equivalence point =/= <em>end</em> point:</p>
+<p>The end point is when the indicator changes color.</p>
+<p>The equivalence point is when the # of moles of acid equals the # of
+moles of base.</p>
+<p>If you’ve made a careful choice, they’ll be achieved at the same
+time.</p>
+<p><strong>Things to Note on Titration Curves</strong></p>
+<ul>
+<li><p>Weak acids have a little bump initially, strong acids
+don’t</p></li>
+<li><p>pH at the <em>midpoint</em> of the titration (the ½ equivalence
+point). Since halfway to the equivalence point ½ of the acid/base has
+been neutralized, [WA]/[WB] = 1, thus [H<sup>+</sup>] = kA and pH =
+pKa.</p></li>
+<li><p>pH at the <em>equivalence point</em>. It just represents the pH
+of the salt, as all of the acid/base has been neutralized (into salt and
+water). Use #moles of salt / V<sub>T</sub> to get M<sub>salt</sub>, use
+that as the <em>initial</em> in the RICE table.</p></li>
+<li><p>pH <em>after</em> the equivalence point. Now pH is &gt; 7; you
+can calculate it using</p></li>
+</ul>
+<blockquote>
+<p>pH = 14 - pOH if needed.</p>
+</blockquote>
+<p><strong>Hydrolysis</strong>: essentially the reverse of a
+neutralization reaction. Written in net ionic form.</p>
+<ul>
+<li><p>If a strong base is reacted with a weak acid, “Strong wins!” and
+the salt is basic, thus OH<sup>-</sup> forms as a product.</p></li>
+<li><p>If a strong acid is reacted with a weak base, “Strong wins!” and
+the salt is acidic, thus H<sup>+</sup> forms as a product.</p></li>
+<li><p>The “strong” portion of the acid or base is the source of the
+“spectator” ion (does NOT react with the water).</p></li>
+<li><p>The remaining ion (or neutral molecule) is the reactant that
+reacts with the water.</p></li>
+</ul>
+<p>Steps the write the hydrolysis reaction (using NaCN salt as an
+example):</p>
+<ol type="1">
+<li><p>Which acid? Which base? (HCN, NaOH)</p></li>
+<li><p>Is the acid strong or weak? (HCN, weak) Is the base strong or
+weak? (NaOH, strong) “Strong wins!” (salt is basic, OH<sup>-</sup> forms
+as product) “Strong is the spectator” (Na<sup>+</sup> spectates,
+CN<sup>-</sup> reacts with the water)</p></li>
+<li><p>CN<sup>-</sup> + HOH -&gt; OH<sup>-</sup> + HCN Done! (HOH is
+just H<sub>2</sub>O)</p></li>
+<li><p>In an acid/base titration where <em>either</em> participant is
+weak, this final equation is what you use in the R part of a RICE table
+to solve for pH / pOH. (note: at eq.pnt., <em>moles acid = moles base =
+moles salt</em>)</p></li>
+</ol>
+<p>Indicators are weak acids. Important: <u>an indicator’s useful
+range</u> = pKa ± 1 (i.e. for an indicator with Ka = 1.0 * 10^-5, the
+useful range is about 4 to 6.</p>
+</body>
+</html>

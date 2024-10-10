@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chapter 8 Notes</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<p>Jack Nystrom</p>
+<p>AP Chemistry</p>
+<p><strong>Chapter 8 Notes</strong> (Bonding - General Concepts)</p>
+<p><strong>Bond energy</strong>: the energy required to break a
+bond.</p>
+<p>The energy of interaction between a pair of ions can be calculated
+using <strong>Coulomb&#39;s Law</strong>, in the form: E = (2.31 * 10^-19
+J*nm) * (Q<sub>1</sub>Q<sub>2</sub>/r), where r is the distance between
+the ion centers in nanometers, and Q<sub>1</sub> and Q<sub>2</sub> are
+the numerical ion charges. It can also be used to calculate the
+repulsive energy when two like-charged ions are brought together.</p>
+<p>The distance between two atoms where energy is minimal is called the
+<strong>Bond Length</strong>.</p>
+<p>Electrons shared between identical atoms = covalent bond. Electrons
+transferred to form two ions = ionic bond. But in the middle are cases
+where not-so-different atoms share electrons unequally, which are
+<strong>polar covalent</strong> <strong>bonds</strong>. For example, H-F
+.</p>
+<p><strong>Electronegativity</strong>: The ability of an atom in a
+molecule to attract shared electrons to itself.</p>
+<p>Considering a hypothetical molecule, HX, the relative
+electronegativity of the two atoms (H and X) is calculated by comparing
+their measured bond energy with their “expected” bond energy (expected
+is found by H-H bond energy + X-X bond energy / 2).</p>
+<p>Δ = (H-X)<sub>act</sub> - (H-X)<sub>exp</sub> . If H and X have
+identical electronegativities, the actual and expected bond energies
+will be the same and thus Δ = 0. But if X has a greater
+electronegativity than H, electrons will spend more time around the X
+atom, so it will have a slightly negative charge (thus Δ will not = 0).
+(such a bond can be viewed as ionic and covalent.) The attraction
+between the partially and oppositely charged atoms leads to a greater
+bond strength, so (H-X)<sub>act</sub> will be the greater value.</p>
+<p>A molecule (such as HF) that has a center of positive charge and a
+center of negative charge is said to be <strong>dipolar</strong>, or to
+have a <strong>dipole moment</strong>.</p>
+<p>Some molecules have polar bonds but do not have a dipole moment; this
+happens because its bond polarities are aligned in such a way that they
+cancel each other out (for example, in CO2, as both O atoms are on
+opposite sides of the C atom).</p>
+<p><strong>lattice energy</strong>: the change in energy that takes
+place when separated gaseous ions are packed together to form an ionic
+solid. This indicates how strongly the two ions attract each other in an
+ionic compound in the solid state. Often referred to as <em>the amount
+of energy released when an ionic solid forms from its ions</em>. As this
+process is exothermic, the sign of lattice energy is negative.</p>
+<p>Consider a hypothetical in which two ions form an ionic solid:</p>
+<p>M<sup>+</sup>(s) + X<sup>-</sup>(g) -&gt; MX(s)</p>
+<p>To find the lattice energy, we utilize the fact that energy is a
+state function and break the process into steps. Each step corresponds
+to some amount of energy, which together can be used to find the lattice
+energy.</p>
+<ol type="1">
+<li><p>Sublimation (taking from solid state to gas state) of M</p></li>
+<li><p>Ionization of M (taking away 1 electron to make into</p></li>
+<li><p>Formation of X<sup>-</sup> ions from X - corresponds to X’s
+electron affinity</p></li>
+</ol>
+<p>A more complex example might involve the dissociation of diatomic gas
+molecules into singular atoms, for example.</p>
+<p>Lattice energy can also be represented by a modified form of
+Coulomb’s Law,</p>
+<p>E = k * (Q<sub>1</sub>Q<sub>2</sub>/r), where k is a proportionality
+constant that depends on the solid’s structure and ions’ electron
+configurations, and again Q<sub>1</sub> and Q<sub>2</sub> are the
+charges of the ions. E will have a negative sign with two oppositely
+charged ions, as their bonding is exothermic (arrives at a lesser-energy
+state).</p>
+<p>Since there is really no good way to classify a molecule as having a
+strictly ionic or polar bond, the adopted definition for an ionic
+compound is: <em>any compound that when melted conducts electricity will
+be classified as ionic</em>.</p>
+<p>As the number of shared electron pairs in a bond increases, the bond
+length shortens.</p>
+<p>Bond energies can be used to calculate approximate energies for
+reactions. Take, for example, H<sub>2</sub> + F<sub>2</sub> -&gt; 2HF .
+This involves breaking two bonds (endothermic), H-H and F-F, and forming
+two bonds (exothermic), both H-F . The total enthalpy change of these
+processes can be written as <em>ΔH = ∑n * D (bonds broken) - ∑n * D
+(bonds formed)</em>, where D represents the bond energy per mole of
+bonds (D is <em>always</em> positive), and n represents the moles of a
+particular type of bond. In English, the change in enthalpy of the
+reaction is the total (absorbed) energy of all bonds broken minus the
+total (released) energy of all bonds formed. For our example, <em>ΔH =
+D<sub>H-H</sub> + D<sub>F-F</sub> - 2D<sub>H-F</sub></em> .</p>
+<p><strong>Localized Electron (LE) Model</strong>: a simple model used
+to describe covalent bonds that assumes that <em>a molecule is composed
+of atoms that are bound together by sharing pairs of electrons using the
+atomic orbitals of the bound atoms</em>. Electron pairs in the molecule
+are assumed to be localized on a particular atom OR in the space between
+two atoms (their locations are never this simple in real life). Electron
+pairs localized on an atom are called <strong>lone pairs</strong>, and
+those localized between two atoms are called <strong>bonding
+pairs</strong>.</p>
+<p>The <strong>Lewis structure</strong> of a molecule shows how the
+valence electrons are arranged among the atoms in the molecule.</p>
+<p>From experiment, chemists have learned that <em>the most important
+requirement for the formation of a stable compound is that the atoms
+achieve noble gas configurations.</em></p>
+<p><strong>Resonance</strong> is invoked when multiple valid Lewis
+structures exist for a given molecule AND that molecule has at least one
+double bond. It is assumed that the molecule’s correct description is
+not given by any of the valid structures but rather a superposition of
+all of them. The situation is usually represented by double-headed
+arrows between all valid structures.</p>
+<p>Since the localized electron model is based on electron pairs, it
+does not work with any molecules that have an off number of electrons
+(NO, NO<sub>2</sub>) and another model is needed.</p>
+<p>The <strong>formal charge</strong> of an atom in a molecule is the
+difference between the number of valence electrons on the free atom and
+the number of valence electrons assigned to the atom in the molecule. It
+represents a prediction of atoms’ charges within the molecule, similar
+to oxidation states (but in practice produces better, less exaggerated
+results).</p>
+<p><em>Atom’s Formal Charge = (# of valence e<sup>-</sup>’s on free
+atom) - (# of valence e<sup>-</sup>’s assigned to the atom in the
+molecule)</em></p>
+<p>To do so, we assign the valence electrons in the molecule to the
+various atoms making the following assumptions:</p>
+<ol type="1">
+<li><p>Lone pair electrons belong entirely to the atom in
+question</p></li>
+<li><p>Shared electrons are divided equally between the two sharing
+atoms</p></li>
+</ol>
+<p>Atoms’ formal charges in molecules are useful as we can make the
+following two fundamental assumptions:</p>
+<ol type="1">
+<li><p>Atoms in molecules try to have formal charges as close to 0 as
+possible</p></li>
+<li><p>Any negative formal charges are expected to reside on the most
+electronegative atoms</p></li>
+</ol>
+<p><strong>Valence Shell Electron-Pair Repulsion (VSEPR) model</strong>:
+A model used to predict approximate molecular structure by minimizing
+electron-pair repulsion.</p>
+<p>Steps to apply:</p>
+<ol type="1">
+<li><p>Draw the Lewis structure of the molecule</p></li>
+<li><p>Count the electron pairs and arrange them in the way that
+minimizes repulsion</p></li>
+<li><p>Determine the positions of the atoms from the <em>way the
+electron pairs are shared</em>.</p></li>
+<li><p>Determine the name of the molecular structure from the
+<em>positions of the atoms</em>.</p></li>
+</ol>
+<p>Important: the exact structure type is determined by the placement of
+<u>electron pairs</u>, but the actual structure name is determined only
+by the positions of the <u>atoms</u>.</p>
+<p>Important general rules:</p>
+<ul>
+<li><p>For the VSEPR model, multiple bonds (double, triple bonds etc)
+count as one effective electron pair.</p></li>
+<li><p>For molecules with resonance (multiple valid Lewis structures),
+any one of the Lewis structures can be used to predict the molecular
+structure using the VSEPR model.</p></li>
+</ul>
+</body>
+</html>

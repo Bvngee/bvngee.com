@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chapter 17 Notes</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<p><strong>Chapter 17 Notes - Spontaneity, Entropy, and Free
+Energy</strong></p>
+<p>A process is said to be <em>spontaneous</em> if it occurs <em>without
+outside intervention.</em> <strong>Spontaneous processes</strong> may be
+fast or slow.</p>
+<p><strong>Entropy</strong> (denoted by the symbol S): although there is
+no simple definition, it can be viewed as a measure of molecular
+randomness or disorder. <u>The driving force for a spontaneous process
+is an increase in the entropy of the universe</u>.</p>
+<p>Second law of thermodynamics: <u>In any <em>spontaneous</em> process
+there is always an increase in the entropy of the universe.</u>
+ΔS<sub>univ</sub> = ΔS<sub>sys</sub> + ΔS<sub>surr</sub> It is the sign
+of ΔS<sub>univ</sub> that tells us whether or not a process is
+spontaneous. If ΔS<sub>surr</sub> is negative and overpowers the
+positive ΔS<sub>sys</sub> , ΔS<sub>univ</sub> will also be negative and
+thus the process will not be favorable. How do we know which one will
+overpower and control the situation? It depends on temperature! With the
+example of evaporation of water, the process is only favorable /
+spontaneous / ΔS<sub>univ</sub> &gt; 0 at temperatures above 100 degrees
+C. Otherwise, condensation is the favorable reaction.</p>
+<p>The entropy changes in the surroundings are primarily determined by
+heat flow.</p>
+<p>The impact of the transfer of a given quantity of heat energy to or
+from the surroundings will be greater at lower temperatures (i.e. giving
+$50 to someone broke vs a millionaire).</p>
+<p>The sign of ΔS<sub>surr</sub> depends on the direction of heat flow
+(exothermic process in system =&gt; surroundings gain heat =&gt;
+increase ΔS<sub>surr</sub>)</p>
+<p>The magnitude of ΔS<sub>surr</sub> depends directly on the quantity
+of heat transferred and inversely on temperature.</p>
+<p>Exothermic process:</p>
+<p>ΔS<sub>surr</sub> = quantity of heat (J) / temperature (K)</p>
+<p>Endothermic process:</p>
+<p>ΔS<sub>surr</sub> = - quantity of heat (J) / temperature (K)</p>
+<p>Since heat flow at constant pressure = change in enthalpy (ΔH),</p>
+<p>ΔS<sub>surr</sub> = - ΔH / T</p>
+<p><strong>Gibbs free energy</strong>: ΔG = ΔH - TΔS, where H is
+enthalpy, T is temperature (kelvin), and S is entropy. At constant
+temperature and pressure, ΔS<sub>univ</sub> = - ΔG / T . Thus a process
+(at constant T and P) is spontaneous when ΔG is negative (direction of
+decreasing free energy).</p>
+<p>Third law of thermodynamics: the entropy of a perfect crystal at 0K
+is zero.</p>
+<p>ΔS°<sub>reaction</sub> = ∑n<sub>p</sub>S°<sub>products</sub> -
+∑n<sub>r</sub>S°<sub>reactants</sub></p>
+<p><strong>Standard free energy change</strong>: the change in free
+energy that will occur if the reactants in their standard states are
+converted to the products in their standard states.</p>
+<p><strong>Standard free energy of formation</strong> (ΔG°<sub>f</sub>):
+the change in free energy that accompanies the formation of 1 mole of
+that substance from its constituent elements with all reactants and
+products in their standard states.</p>
+<p>S <sub>large volume</sub> &gt; S <sub>small volume</sub></p>
+<p>S <sub>low pressure</sub> &gt; S <sub>high pressure</sub></p>
+<p>A chemical system will always seek the <em>lowest</em> possible free
+energy, which is the equilibrium position.</p>
+<p>The maximum possible useful work obtainable from a process at
+constant T and P is equal to the change in free energy: w<sub>max</sub>
+= ΔG . IRL, obtaining all this energy is not possible; some will always
+be wasted (thus the second law of thermodynamics).</p>
+<p>First law of thermodynamics: You can’t win, you can only break
+even.</p>
+<p>Second law of thermodynamics: You can’t break even.</p>
+<p>ΔG° = -RTlnK , where K is the equilibrium constant.</p>
+</body>
+</html>

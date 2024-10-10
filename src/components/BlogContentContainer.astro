@@ -56,32 +56,6 @@ const { Content } = await post.render();
         margin-top: 1em; /*1.33em*/
         margin-bottom: -0.33em; /*1.33em*/
     }
-    /*
-        <pre> is used to indicate whitespace significance (so that multiline works),
-        <code> is used to signify any instance of code
-    */
-    .container :global(code, pre) {
-        background-color: var(--bg-dark);
-    }
-    .container :global(pre) {
-        padding: 8px;
-        border-radius: 6px;
-        max-height: 350px;
-    }
-    .container :global(code) {
-        font-family: "CaskaydiaCove Nerd Font";
-        font-size: 85%;
-        padding: 2px 5px 3px 5px;
-        border-radius: 4px;
-        background-color: var(--bg-dark);
-        color: var(--gray2);
-    }
-    .container :global(pre > code) {
-        padding: 0px; /* this makes non-multi-line <code> have padding without messing up multi-line <pre><code> blocks. */
-        white-space: pre; /* Do I want this? Might get annoying */
-        opacity: 100%;
-        background-color: var(--bg1);
-    }
     .container :global(img, svg, picture) {
         max-width: 100%;
         display: block;
