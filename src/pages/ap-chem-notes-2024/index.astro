@@ -4,11 +4,14 @@ import BasePageLayout from "../../layouts/BasePageLayout.astro";
 
 const glob = import.meta.glob("./*.html");
 // chapter number, url, pretty name
-const pageMap: [number, string, string][] = Object.keys(glob).map((s) => [
-    parseInt(s.match(/\d+/)![0]),
-    Astro.url.pathname + s.substring(2),
-    s.replace(/^\.\/(.+).html$/, "$1").replaceAll("_", " "),
-]);
+const pageMap: [number, string, string][] = Object.keys(glob).map((path) => {
+    const trimmedPath = path.replace(/^\.\/(.+).html$/, "$1");
+    return [
+        parseInt(path.match(/\d+/)![0]),
+        Astro.url.pathname + trimmedPath,
+        trimmedPath.replaceAll("_", " "),
+    ];
+});
 pageMap.sort((a, b) => a[0] - b[0]);
 ---
 
