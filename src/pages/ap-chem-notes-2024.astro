@@ -8,7 +8,7 @@ const pageMap: [number, string, string][] = Object.keys(glob).map((path) => {
     const trimmedPath = path.replace(/^.*notes-2024\/(.+)\/index.html$/, "$1");
     return [
         parseInt(trimmedPath.match(/\d+/)![0]),
-        Astro.url.pathname + trimmedPath + "/index.html",
+        Astro.url.pathname + "/" + trimmedPath + "/index.html",
         trimmedPath.replaceAll("_", " "),
     ];
 });
