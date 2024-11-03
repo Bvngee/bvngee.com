@@ -39,10 +39,10 @@ any non-native CPU architecture.
 
 With user mode emulation, QEMU emulates only the CPU of an non-native binary,
 allowing, for example, a powerpc or armv6 binary to be run on an x86_64 machine.
-This uses performant dynamic binary translation for instruction sets, syscall
-translation (fixes endianness and pointer-width mismatches), signal handling and
-threading emulation (basically magic). Notably it's much faster than system
-emulation, which emulates the kernel, peripheral devices, and more.
+This uses dynamic binary translation for instruction sets, syscalls
+(fixing endianness and pointer-width mismatches), signal handling and
+threading emulation - in other words, basically magic. Notably it's much faster than system
+emulation, which has to emulate the kernel, peripheral devices, and more.
 
 As I mentioned earlier, our goal is to emulate the docker build process so we
 can generate non-native container images; i.e., `docker build -t my-container .`
@@ -239,3 +239,7 @@ The end! Hope you learned something. Here are some resources I used:
 -   https://discourse.nixos.org/t/docker-ignoring-platform-when-run-in-nixos/21120/16?u=bvngeecord
 -   https://docs.docker.com/build/building/multi-platform/#qemu
 -   https://drpdishant.medium.com/multi-arch-images-with-docker-buildx-and-qemu-141e0b6161e7
+
+P.S.
+In my of my coming posts, Ill talk about how I irradicated Dockerfiles
+completely, replacing them with pure-nix :) more to come!
