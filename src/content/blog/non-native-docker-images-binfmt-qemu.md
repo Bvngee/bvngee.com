@@ -241,5 +241,5 @@ The end! Hope you learned something. Here are some resources I used:
 -   https://drpdishant.medium.com/multi-arch-images-with-docker-buildx-and-qemu-141e0b6161e7
 
 P.S.
-In my of my coming posts, Ill talk about how I irradicated Dockerfiles
-completely, replacing them with pure-nix :) more to come!
+In one of my next posts, Ill talk about how I irradicated Dockerfiles
+completely, replacing them with pure nix :) more to come!
