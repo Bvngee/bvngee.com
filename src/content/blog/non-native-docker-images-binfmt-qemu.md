@@ -83,12 +83,12 @@ registrations for qemu persistently on my host kernel??
 These "intaller" containers utilize Docker's `--privileged` mode to mount the
 `/proc/sys/fs/binfmt_misc` directory, which will be the same for the host and in
 the container. They contain statically compiled builds of qemu with user mode
-only (qemu-user-static), and register those directly to files within the mounted
-binfmt_misc directory. When the container exits, the registrations persist on
-this host machine. You'll end up with registrations looking like this:
+only (qemu-user-static), and register them directly to the mounted binfmt_misc
+directory. When the container exits, the registrations persist on this host
+machine. You'll end up with registrations looking like this:
 
 ```
-$ cat /proc/sys/fs/binfmt_misc/qemu-arm
+$ cat /proc/sys/fs/binfmt_misc/qemu-arm   # host machine
 enabled
 interpreter /usr/bin/qemu-arm-static
 flags: F
@@ -131,9 +131,10 @@ correct me if I'm wrong!): when the installer container registers
 qemu-arm-static to binfmt_misc, it's immediately loaded by the kernel using the
 valid path from within the installer container, and the given file descriptor
 for it persists after the container exits. It doesn't persist on reboot though,
-which is why the best solution I could find online
+which is why the best
 [solution](https://github.com/multiarch/qemu-user-static/issues/160#issuecomment-1010179295)
-is literally to rerun the installer on every boot with a systemd service!
+I could find online is literally to rerun the installer on every boot with a
+systemd service!
 
 # Docker Build
 
