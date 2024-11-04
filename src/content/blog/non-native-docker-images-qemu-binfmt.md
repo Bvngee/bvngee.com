@@ -1,8 +1,10 @@
 ---
-title: Building Non-Native Docker Images with binfmt and QEMU
+title: Building Non-Native Docker Images with QEMU and binfmt
 tags: []
 publishedDate: "November 2, 2024"
-edits: []
+edits: [
+    { date: "November 3, 2024", desc: "Improved some wording; clarified NixOS qemu symlink in Btop" }
+]
 draft: false
 ---
 
@@ -10,11 +12,11 @@ So, you've finally finished the perfect Dockerfile for your project. You build
 it and test it on your machine; all is working well. You export the tarball,
 `scp` it over to your production server, and load it into the docker daemon -
 but wait! You forgot that your server has an Arm CPU and your laptop is x86_64.
-This won't work; it's an architecture mismatch!
+This won't work, it's an architecture mismatch! Womp womp.
 
 There's 3 solutions to the problem.
 
-1. Build the Dockerfile on your production server (or another arm64 computer).
+1. Build the Dockerfile on your production server (or another Arm computer).
    You'll have to move over your project's source code and dependencies for this
    too... Ew!
 2. Rewrite your Dockerfile to support
@@ -161,7 +163,7 @@ $ docker buildx create \
   --use --bootstrap
 ```
 
-Then, just run your build and specify the platform!
+Lastly, just run your build and specify the target platform!
 
 ```
 $ docker buildx build -t my-container-image --platform=linux/arm64 .
@@ -170,7 +172,8 @@ $ docker buildx build -t my-multiplatform-container-image --platform=linux/arm64
 ```
 
 You'll know it's working if you see something like this (this is a NextJS build,
-emulated for aarch64 - note that NixOS paths are slightly sifferent)
+emulated for aarch64. Note that NixOS paths are slightly sifferent; the
+underlined path is a symlink to qemu-user-static for aarch64)
 
 ![docker-qemu-binfmt.png](/images/docker-binfmt-qemu.png)
 
@@ -183,10 +186,10 @@ Instead of needing to use container-based qemu-user-static binfmt_misc
 installers (on every boot), NixOS provides a module for binfmt:
 `boot.binfmt.emulatedSystems`. This sets up qemu-\* for the given systems
 architectures automatically, even including wasmtime for wasm files and wine for
-Window's exe's! To ensure the enterpreters are statically linked versions
+Window's exe's! To ensure the enterpreters are statically compiled versions
 (qemu-\*-static), we can use `pkgsStatic.qemu-user` (requires nixpkgs-unstable;
 see [nixpkgs#314998](https://github.com/NixOS/nixpkgs/pull/314998) and
-[nixpkgs#334859](https://github.com/NixOS/nixpkgs/pull/334859).) Lastly, to set
+[nixpkgs#334859](https://github.com/NixOS/nixpkgs/pull/334859)). Lastly, to set
 the F flag for the registrations, we can use `fixBinary = true;`. Here's what we
 end up with (thanks to Ten for
 [this dicourse comment](https://discourse.nixos.org/t/docker-ignoring-platform-when-run-in-nixos/21120/18?u=bvngeecord)!):
