@@ -2,9 +2,17 @@
 title: Building Non-Native Docker Images with QEMU and binfmt
 tags: []
 publishedDate: "November 2, 2024"
-edits: [
-    { date: "November 3, 2024", desc: "Improved some wording; clarified NixOS qemu symlink in Btop" }
-]
+edits:
+    [
+        {
+            date: "November 3, 2024",
+            desc: "Improved wording, clarified the NixOS qemu symlink in Btop",
+        },
+        {
+            date: "November 21, 2024",
+            desc: "Added conclusion header, improved more wording",
+        },
+    ]
 draft: false
 ---
 
@@ -41,10 +49,10 @@ any non-native CPU architecture.
 
 With user mode emulation, QEMU emulates only the CPU of an non-native binary,
 allowing, for example, a powerpc or armv6 binary to be run on an x86_64 machine.
-This uses dynamic binary translation for instruction sets, syscalls
-(fixing endianness and pointer-width mismatches), signal handling and
-threading emulation - in other words, basically magic. Notably it's much faster than system
-emulation, which has to emulate the kernel, peripheral devices, and more.
+This uses dynamic binary translation for instruction sets, syscalls (fixing
+endianness and pointer-width mismatches), signal handling and threading
+emulation - in other words, basically magic. Notably it's much faster than
+system emulation, which has to emulate the kernel, peripheral devices, and more.
 
 As I mentioned earlier, our goal is to emulate the docker build process so we
 can generate non-native container images; i.e., `docker build -t my-container .`
@@ -183,10 +191,10 @@ Of course, NixOS has a super fun and declarative way to set this all up and I
 can't help but share that here as well.
 
 Instead of needing to use container-based qemu-user-static binfmt_misc
-installers (on every boot), NixOS provides a module for binfmt:
+installers (on every boot), NixOS provides a configuration module for binfmt:
 `boot.binfmt.emulatedSystems`. This sets up qemu-\* for the given systems
 architectures automatically, even including wasmtime for wasm files and wine for
-Window's exe's! To ensure the enterpreters are statically compiled versions
+Windows executables! To ensure the enterpreters are statically compiled versions
 (qemu-\*-static), we can use `pkgsStatic.qemu-user` (requires nixpkgs-unstable;
 see [nixpkgs#314998](https://github.com/NixOS/nixpkgs/pull/314998) and
 [nixpkgs#334859](https://github.com/NixOS/nixpkgs/pull/334859)). Lastly, to set
@@ -216,7 +224,7 @@ boot.binfmt.emulatedSystems =
   in
   emulationsBySystem.${pkgs.system};
 
-# backport for preferStaticEmulators nixos-24.05
+# backport of preferStaticEmulators to nixos-24.05
 boot.binfmt.registrations = lib.mergeAttrsList (system:
   {
     ${system}={
@@ -233,7 +241,14 @@ nixos-unstable and nixos-24.11 it will become just
 boot.binfmt.preferStaticEmulators = true;
 ```
 
-The end! Hope you learned something. Here are some resources I used:
+# Conclusion
+
+In this post I (attempted to) explain the process of using QEMU user mode
+emulation and binfmt_misc registrations to automagically build non-native docker
+images. I hope you learned something! Feel free to bother me with questions,
+comments, or corrections.
+
+Here are some of the resources I used:
 
 -   https://lwn.net/Articles/679309/
 -   https://dbhi.github.io/qus/context.html
@@ -243,6 +258,5 @@ The end! Hope you learned something. Here are some resources I used:
 -   https://docs.docker.com/build/building/multi-platform/#qemu
 -   https://drpdishant.medium.com/multi-arch-images-with-docker-buildx-and-qemu-141e0b6161e7
 
-P.S.
-In one of my next posts, Ill talk about how I irradicated Dockerfiles
-completely, replacing them with pure nix :) more to come!
+P.S. In one of my next posts, I'll talk about how I irradicated Dockerfiles
+alltogether, replacing them completely with pure nix :) More to come!
