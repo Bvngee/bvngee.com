@@ -5,22 +5,43 @@ interface Props {
     slug: string;
     dark_fg?: boolean;
 }
-const { name, color, slug, dark_fg=false } = Astro.props;
+const { name, color, slug, dark_fg = false } = Astro.props;
 
-const fg_color = dark_fg ? "282828" : "ddc7a1";
+// Stolen from https://stackoverflow.com/a/35970186/11424968
+function pickFgColor(hex: string) {
+    if (hex.indexOf("#") === 0) {
+        hex = hex.slice(1);
+    }
+    // convert 3-digit hex to 6-digits.
+    if (hex.length === 3) {
+        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    if (hex.length !== 6) {
+        throw new Error("Invalid HEX color.");
+    }
+    let r = parseInt(hex.slice(0, 2), 16);
+    let g = parseInt(hex.slice(2, 4), 16);
+    let b = parseInt(hex.slice(4, 6), 16);
+    // https://stackoverflow.com/a/3943023/112731
+    console.log(r * 0.299 + g * 0.587 + b * 0.114);
+    return r * 0.299 + g * 0.587 + b * 0.114 > 170 ? "#282828" : "#ddc7a1";
+}
+
+const fg_color = pickFgColor(color);
 const src = "https://cdn.simpleicons.org/" + slug + "/" + "ddc7a1";
 const size = 16;
 
-const colorStyle = "background-color: color-mix(in srgb, #" + color + " 70%, var(--bg-darker)";
+const colorStyle =
+    "background-color: color-mix(in srgb, " + color + " 70%, var(--bg-darker)";
 ---
 
 <div class="container" style={colorStyle}>
-<!-- <div class="container"> -->
+    <!-- <div class="container"> -->
     <div class="img-container">
-    <!-- <div class="img-container" style={colorStyle}> -->
+        <!-- <div class="img-container" style={colorStyle}> -->
         <img height={size} width={size} src={src} />
     </div>
-    <p style={"color: #" + fg_color + ";"}> {name} </p>
+    <p style={"color: " + fg_color + ";"}>{name}</p>
     <!-- <p> {name} </p> -->
 </div>
 
@@ -31,7 +52,7 @@ const colorStyle = "background-color: color-mix(in srgb, #" + color + " 70%, var
         overflow: hidden;
         border-radius: 5px;
         background-color: var(--bg4);
-        box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
     }
     .img-container {
         padding: 0 7px;
