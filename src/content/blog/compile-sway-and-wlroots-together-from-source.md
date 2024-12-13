@@ -1,5 +1,5 @@
 ---
-title: Compiling Sway with wlroots from source
+title: Compiling Sway with wlroots from Source
 tags: []
 publishedDate: May 25, 2024
 edits: [

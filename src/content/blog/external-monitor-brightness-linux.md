@@ -1,5 +1,5 @@
 ---
-title: How to control external monitor brightness in Linux
+title: How to Control External Monitor Brightness in Linux
 tags: []
 publishedDate: May 11, 2024
 edits: []
