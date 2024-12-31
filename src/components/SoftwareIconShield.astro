@@ -3,9 +3,8 @@ interface Props {
     name: string;
     color: string;
     slug: string;
-    dark_fg?: boolean;
 }
-const { name, color, slug, dark_fg = false } = Astro.props;
+const { name, color, slug } = Astro.props;
 
 // Stolen from https://stackoverflow.com/a/35970186/11424968
 function pickFgColor(hex: string) {
@@ -35,13 +34,14 @@ const colorStyle =
 ---
 
 <div class="container" style={colorStyle}>
-    <!-- <div class="container"> -->
-    <div class="img-container">
-        <!-- <div class="img-container" style={colorStyle}> -->
-        <img height={size} width={size} src={src} />
-    </div>
+    {
+        slug == "" ? null : (
+            <div class="img-container">
+                <img height={size} width={size} src={src} />
+            </div>
+        )
+    }
     <p style={"color: " + fg_color + ";"}>{name}</p>
-    <!-- <p> {name} </p> -->
 </div>
 
 <style>
