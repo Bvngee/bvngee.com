@@ -60,10 +60,10 @@ present on the system to run.
 On most linux/unix systems this is all well and good as the libraries are
 present in /usr/local/lib/ and the dynamic library loader
 (/lib/ld-linux-x86-64.so.2) which python is linked against knows how to find
-them there. However on NixOS, those libraries don't exist there, but rather in
+them there. However, on NixOS, those libraries don't exist there, but rather in
 the Nix store (/nix/store/...)! And since we don't control the compilation
 process of python libraries from pypi, we aren't able to `patchelf` them
-automatically to use those paths instead.
+automatically to reference the nix store library paths instead.
 
 Of course since python is so popular there is a dedicated
 [wiki.nixos.org](https://wiki.nixos.org/wiki/Python#Running_compiled_libraries)
