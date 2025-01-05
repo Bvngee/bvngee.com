@@ -1,7 +1,7 @@
 ---
 import BasePageLayout from "../../layouts/BasePageLayout.astro";
 import PageContainer from "../../components/PageContainer.astro";
-import { getCollection, CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import BlogContentContainer from "../../components/BlogContentContainer.astro";
 
 export async function getStaticPaths() {
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
     }));
 }
 
-const entry: CollectionEntry<"blog"> = Astro.props.entry;
+const entry = Astro.props.entry as CollectionEntry<"blog">;
 
 let edits: string[] = entry.data.edits.map(
     (edit) => edit.date + ": " + edit.desc,
@@ -24,7 +24,7 @@ let edits: string[] = entry.data.edits.map(
         <div id="header">
             <h1 id="blog-title">{entry.data.title}</h1>
             <p id="blog-date">
-                {entry.data.publishedDate}
+                {entry.data.publishedDate!.longFormat}
                 {
                     entry.data.edits.length > 0 ? (
                         <span>
@@ -44,18 +44,41 @@ let edits: string[] = entry.data.edits.map(
                         <>
                             <p>Edits:</p>
                             <ul>
-                                {edits.map((str) => (
-                                    <li>{str}</li>
+                                {entry.data.edits.map((e) => (
+                                    <li>
+                                        {e.date}: {e.desc}
+                                    </li>
                                 ))}
                             </ul>
                         </>
                     ) : null
                 }
             </div>
-            <p>© Bvngee - {entry.data.publishedDate}</p>
+            <div id="right">
+                <p id="copyright">
+                    © {entry.data.publishedDate!.dateObject.getFullYear()}
+                    Jack N.
+                </p>
+                <a id="back-to-top" href="#nav-links">
+                    <em>(back to top)</em>
+                </a>
+            </div>
         </div>
     </PageContainer>
 </BasePageLayout>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const backToTop = document.getElementById("back-to-top");
+        function checkScroll() {
+            if (window.scrollY > 0) {
+                backToTop!.style.display = "block";
+            }
+        }
+        checkScroll(); // page load
+        window.addEventListener("scroll", checkScroll);
+        window.addEventListener("resize", checkScroll);
+    });
+</script>
 <style>
     #header {
         display: flex;
@@ -74,7 +97,7 @@ let edits: string[] = entry.data.edits.map(
         color: var(--gray2);
     }
     #blog-date span {
-        padding-left: 0.2rem;
+        padding-left: 0.2em;
     }
     #blog-date a {
         color: var(--gray2);
@@ -86,12 +109,6 @@ let edits: string[] = entry.data.edits.map(
         background-color: var(--bg2);
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
-    }
-    p#nametag {
-        color: var(--gray2);
-        margin: 20px 15px;
-        justify-content: right;
-        display: flex;
     }
     #footer {
         color: var(--gray2);
@@ -106,8 +123,30 @@ let edits: string[] = entry.data.edits.map(
         display: inline;
         margin: 2px;
     }
+    #edits {
+        max-width: 55%;
+        /* text-wrap: balance; */
+    }
     #edits ul {
         margin: 0;
-        padding-left: 1.8rem;
+        padding-left: 2em;
+    }
+    #edits li {
+        padding: 0.2em 0;
+    }
+    #right {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.3em;
+    }
+    #right #copyright {
+        /* stay one line */
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    #right #back-to-top {
+        display: none; /* updated in js if page is scrolled */
+        color: var(--gray2);
     }
 </style>

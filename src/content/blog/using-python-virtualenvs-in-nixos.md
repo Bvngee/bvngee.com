@@ -1,7 +1,7 @@
 ---
 title: Using Python VirtualEnvs in NixOS
 tags: []
-publishedDate: December 13, 2024
+publishedDate: "2024-12-13"
 edits: []
 draft: false
 ---

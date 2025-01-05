@@ -8,28 +8,29 @@ const blogPosts = await getCollection("blog");
 
 const finalBlogPosts = blogPosts
     .filter((p) => !p.data.draft)
-    .sort((a, b) => Date.parse(a.data.publishedDate) - Date.parse(b.data.publishedDate));
+    .sort(
+        (a, b) =>
+            b.data.publishedDate!.unix -
+            a.data.publishedDate!.unix,
+    );
 
-const lastUpdatedDate =
-    finalBlogPosts[finalBlogPosts.length - 1]?.data.publishedDate;
+const lastUpdatedDate = finalBlogPosts[0]?.data.publishedDate;
 ---
 
 <BasePageLayout title="Blogs">
     <PageContainer>
         <div id="header">
             <h1 id="header-title">Blogs</h1>
-            <div id="header-latest-date">Latest: {lastUpdatedDate}</div>
+            <div id="header-latest-date">Latest: {lastUpdatedDate!.longFormat}</div>
         </div>
         {
-            finalBlogPosts.reverse().map((p) => (
+            finalBlogPosts.map((p) => (
                 <div id="blog-card">
                     <div id="blog-card-label">
                         <h2 id="blog-title">
-                            <a href={p.slug}>
-                                {p.data.title}
-                            </a>
+                            <a href={p.slug}>{p.data.title}</a>
                         </h2>
-                        <h id="blog-date">{p.data.publishedDate}</h>
+                        <h id="blog-date">{p.data.publishedDate!.longFormat}</h>
                     </div>
                     <div id="blog-content">
                         <BlogContentContainer post={p} />

@@ -1,15 +1,15 @@
 ---
 title: Building Non-Native Docker Images with QEMU and binfmt
 tags: []
-publishedDate: "November 2, 2024"
+publishedDate: "2024-11-02"
 edits:
     [
         {
-            date: "November 3, 2024",
+            date: "2024-11-03",
             desc: "Improved wording, clarified the NixOS qemu symlink in Btop",
         },
         {
-            date: "November 21, 2024",
+            date: "2024-11-21",
             desc: "Added conclusion header, improved more wording",
         },
     ]

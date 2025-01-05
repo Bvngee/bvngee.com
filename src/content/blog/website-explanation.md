@@ -1,10 +1,8 @@
 ---
 title: A Website? Explained.
 tags: []
-publishedDate: "July 9, 2023"
-edits: [
-    { date: "June 17, 2024", desc: "Shorten some sections" }
-]
+publishedDate: "2023-07-09"
+edits: [{ date: "2024-06-17", desc: "Shorten some sections" }]
 draft: false
 ---
 

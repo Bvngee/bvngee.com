@@ -52,24 +52,31 @@ a {
 code, pre {
     background-color: var(--bg-dark);
 }
-pre {
+pre { /* whitespace significances */
     padding: 8px;
     border-radius: 6px;
     max-height: 350px;
+    /* border: 1px solid var(--bg-darker); */
+    border: 1px solid color-mix(in srgb, var(--bg-darker), var(--bg1) 60%);
 }
-code {
+code { /* any instance of code */
     font-family: "CaskaydiaCove Nerd Font";
     font-size: 85%;
     padding: 2px 5px 3px 5px;
     border-radius: 4px;
-    background-color: var(--bg-dark);
-    color: var(--gray2);
+    background-color: var(--bg1);
+    /* color: var(--gray2); */
+    color: color-mix(in srgb, var(--gray2), var(--fg1));
+    border: 1px solid var(--bg4);
 }
-pre > code {
-    padding: 0px; /* this makes non-multi-line <code> have padding without messing up multi-line <pre><code> blocks. */
+pre > code { /* multi-line code only */
+    /* this makes multi-line <code> not have padding while
+     * multi-line <pre><code> blocks still do. */
+    padding: 0px; 
     white-space: pre; /* Do I want this? Might get annoying */
     opacity: 100%;
     background-color: var(--bg1);
+    border: none;
 }
 a[target="_blank"]:not(.no-icon) {
     color: var(--blue);
