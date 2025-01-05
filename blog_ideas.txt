@@ -1,0 +1,7 @@
+:'<,'>g/console.log(.*);/norm yy/<p>^[P
+:'<,'>g/(x) {/norm fx@@
+
+:lua= vim.inspect(vim.treesitter.highlighter.active[vim.api.nvim_get_current_buf()]._queries, {depth = 1})
+
+HOLY MOLY LOL
+d:r!echo """ | sh -c 'nix-shell -p "python3.withPackages (p: [p.dateutil])" --command "python -c \"from dateutil.parser import parse; print(parse(input()).strftime(\\\"\%Y-\%m-\%d\\\"))\""'kJsaiW"
