@@ -24,7 +24,7 @@ let edits: string[] = entry.data.edits.map(
         <div id="header">
             <h1 id="blog-title">{entry.data.title}</h1>
             <p id="blog-date">
-                {entry.data.publishedDate!.longFormat}
+                {entry.data.publishedDate?.longFormat}
                 {
                     entry.data.edits.length > 0 ? (
                         <span>
@@ -56,7 +56,7 @@ let edits: string[] = entry.data.edits.map(
             </div>
             <div id="right">
                 <p id="copyright">
-                    © {entry.data.publishedDate!.dateObject.getFullYear()}
+                    © {entry.data.publishedDate?.dateObject.getUTCFullYear()}
                     Jack N.
                 </p>
                 <a id="back-to-top" href="#nav-links">
