@@ -18,7 +18,6 @@
     "remark-toc": "^8.0.1"
   },
   "devDependencies": {
-    "@astrojs/language-server": "^2.15.3",
     "prettier-plugin-astro": "^0.13.0"
   }
 }
