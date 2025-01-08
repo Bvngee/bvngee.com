@@ -15,6 +15,10 @@
     "rehype-external-links": "^2.1.0",
     "rehype-slug": "^5.1.0",
     "rehype-toc": "^3.0.2",
+    "remark-collapse": "^0.1.2",
+    "remark-gfm": "^4.0.0",
+    "remark-smartypants": "^3.0.2",
+    "remark-supersub": "^1.0.0",
     "remark-toc": "^8.0.1"
   },
   "devDependencies": {

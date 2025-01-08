@@ -4,6 +4,7 @@ import PageContainer from "../../components/PageContainer.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import BlogContentContainer from "../../components/BlogContentContainer.astro";
 
+// Defines the final routes for each blog content entry
 export async function getStaticPaths() {
     const blogs = await getCollection("blog");
     return blogs.map((entry) => ({
@@ -12,7 +13,12 @@ export async function getStaticPaths() {
     }));
 }
 
-const entry = Astro.props.entry as CollectionEntry<"blog">;
+interface Props {
+    entry: CollectionEntry<"blog">;
+}
+const entry = Astro.props.entry;
+
+const { Content, headings } = await entry.render();
 
 let edits: string[] = entry.data.edits.map(
     (edit) => edit.date + ": " + edit.desc,
@@ -34,8 +40,15 @@ let edits: string[] = entry.data.edits.map(
                 }
             </p>
         </div>
+        <div id="blog-toc">
+            <!-- TODO: do something with these! -->
+            <!-- {headings[0].text} -->
+        </div>
         <div id="blog-card">
-            <BlogContentContainer post={entry} />
+            <!-- this just applies BlogContentStyles.css to the rendered html -->
+            <BlogContentContainer>
+                <Content />
+            </BlogContentContainer>
         </div>
         <div id="footer">
             <div id="edits">

@@ -3,37 +3,48 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
 import BlogContentContainer from "../components/BlogContentContainer.astro";
 import { getCollection } from "astro:content";
 import PageContainer from "../components/PageContainer.astro";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import { type CollectionEntry } from "astro:content";
 
 const blogPosts = await getCollection("blog");
 
-const finalBlogPosts = blogPosts
+const sortedPosts = blogPosts
     .filter((p) => !p.data.draft)
-    .sort(
-        (a, b) =>
-            b.data.publishedDate!.unix -
-            a.data.publishedDate!.unix,
-    );
+    .sort((a, b) => b.data.publishedDate!.unix - a.data.publishedDate!.unix);
 
-const lastUpdatedDate = finalBlogPosts[0]?.data.publishedDate;
+const postContent = await Promise.all(
+    sortedPosts.map((p) => p.render().then((p) => p.Content)),
+);
+
+const postsAndContent: [CollectionEntry<"blog">, AstroComponentFactory][] =
+    sortedPosts.map((p, i) => [p, postContent[i]]);
+
+const lastUpdatedDate = sortedPosts[0]?.data.publishedDate;
 ---
 
 <BasePageLayout title="Blogs">
     <PageContainer>
         <div id="header">
             <h1 id="header-title">Blogs</h1>
-            <div id="header-latest-date">Latest: {lastUpdatedDate!.longFormat}</div>
+            <div id="header-latest-date">
+                Latest: {lastUpdatedDate!.longFormat}
+            </div>
         </div>
         {
-            finalBlogPosts.map((p) => (
+            postsAndContent.map(([post, Content]) => (
                 <div id="blog-card">
                     <div id="blog-card-label">
                         <h2 id="blog-title">
-                            <a href={p.slug}>{p.data.title}</a>
+                            <a href={post.slug}>{post.data.title}</a>
                         </h2>
-                        <h id="blog-date">{p.data.publishedDate!.longFormat}</h>
+                        <h id="blog-date">
+                            {post.data.publishedDate!.longFormat}
+                        </h>
                     </div>
                     <div id="blog-content">
-                        <BlogContentContainer post={p} />
+                        <BlogContentContainer>
+                            <Content />
+                        </BlogContentContainer>
                     </div>
                 </div>
             ))

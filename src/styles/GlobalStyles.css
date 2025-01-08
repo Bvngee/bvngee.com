@@ -33,22 +33,26 @@ body {
     padding: 0;
     font-size: 105%;
     font-family: "Nunito", sans-serif;
+    text-underline-offset: 2px;
 }
-:root {
+
+/* :root { */
     /* scrollbar-gutter: stable both-edges; fucks with the header :( */
-}
+/* } */
+
 ::selection {
     background-color: #4f422e;
 }
+
 a {
     color: var(--fg1);
 }
+
 /*
     <pre> is used to indicate whitespace significance (so that multiline works),
     <code> is used to signify any instance of code
 */
-/* did moving these from BlogContentContainer to
- * GlobalStyles cause any issues?*/
+/* should I keep these in GlobalStyles versus BlogContentContainer? */
 code, pre {
     background-color: var(--bg-dark);
 }
@@ -56,18 +60,19 @@ pre { /* whitespace significances */
     padding: 8px;
     border-radius: 6px;
     max-height: 350px;
-    /* border: 1px solid var(--bg-darker); */
-    border: 1px solid color-mix(in srgb, var(--bg-darker), var(--bg1) 60%);
+
+    border: 1px solid color-mix(in srgb, var(--bg-darker), var(--bg1) 40%);
 }
 code { /* any instance of code */
     font-family: "CaskaydiaCove Nerd Font";
     font-size: 85%;
     padding: 2px 5px 3px 5px;
     border-radius: 4px;
-    background-color: var(--bg1);
-    /* color: var(--gray2); */
+
+    background-color: color-mix(in srgb, var(--bg1), var(--bg-dark) 70%);
     color: color-mix(in srgb, var(--gray2), var(--fg1));
-    border: 1px solid var(--bg4);
+    /* color: color-mix(in srgb, var(--purple), var(--gray1) 10%); */
+    border: 1px solid color-mix(in srgb, var(--bg4) 80%, transparent);
 }
 pre > code { /* multi-line code only */
     /* this makes multi-line <code> not have padding while
@@ -75,8 +80,9 @@ pre > code { /* multi-line code only */
     padding: 0px; 
     white-space: pre; /* Do I want this? Might get annoying */
     opacity: 100%;
-    background-color: var(--bg1);
     border: none;
+    background-color: var(--bg1);
+    color: color-mix(in srgb, var(--gray2), var(--fg1));
 }
 a[target="_blank"]:not(.no-icon) {
     color: var(--blue);
