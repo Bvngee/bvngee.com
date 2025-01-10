@@ -84,6 +84,19 @@ pre > code { /* multi-line code only */
     background-color: var(--bg1);
     color: color-mix(in srgb, var(--gray2), var(--fg1));
 }
+
+/* I have <aside>s look very similar to multiline code blocks */
+aside {
+    padding: 8px;
+    border-radius: 6px;
+    margin: 0.5em 2em;
+
+    font-size: 90%;
+
+    background-color: var(--bg1);
+    border: 1px solid color-mix(in srgb, var(--bg-darker), var(--bg1) 40%);
+}
+
 a[target="_blank"]:not(.no-icon) {
     color: var(--blue);
 }

@@ -6,7 +6,6 @@ import rehypeExternalLinks from "rehype-external-links";
 import rehypeAutolinkHeadings from "rehype-autolink-headings/lib";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import remarkToc from "remark-toc";
 import remarkSupersub from "remark-supersub";
 import remarkSmartypants from "remark-smartypants";
 // todo: remake this as custom thing?
@@ -29,8 +28,6 @@ export default defineConfig({
             theme: gruvboxMaterialDark,
         },
         remarkPlugins: [
-            // Autofills heading titled "contents" with links if it exists
-            [remarkToc, { heading: "contents" }],
             //
             // [
             //     remarkCollapse,

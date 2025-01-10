@@ -94,12 +94,12 @@ libraries using environment variables.
 There's one problem with this though, which is mentioned in nix-ld's
 [readme](https://wiki.nixos.org/wiki/Python#Running_compiled_libraries): This
 breaks subtly when using interpreters from nixpkgs that load the unpatched
-dynamically compiled libraries; which is exactly our case with Nixpkgs python. This
-is because in order for the nix-ld shared library path to be used by the interpreter
-when loading the compiled libary, the interpreter needs to have been started using
-the _wrapper_ dynamical library loader created by nix-ld, as it does the task of
-inserting the path into \$LD_LIBRARY_PATH of the child process. We can see that
-it's still failing, even after installing nix-ld:
+dynamically compiled libraries; which is exactly our case with Nixpkgs python.
+This is because in order for the nix-ld shared library path to be used by the
+interpreter when loading the compiled libary, the interpreter needs to have been
+started using the _wrapper_ dynamical library loader created by nix-ld, as it
+does the task of inserting the path into \$LD_LIBRARY_PATH of the child process.
+We can see that it's still failing, even after installing nix-ld:
 
 ```sh
 python main.py

@@ -11,7 +11,7 @@ without knowing how said thing works under the hood. A personal website is no
 different. In fact, I put off this project for so long for just that reason; I
 knew how much I didn't know about the web, and knew that I wanted to learn it
 all properly instead of skimping out for some existing already-built-for-you
-solution.[^1]
+solution.
 
 I had never properly worked with the web before; things like how JavaScript
 frameworks work, what a web server does, or how SSL certificates are granted
@@ -269,6 +269,3 @@ Most importantly, I learned a shit ton of stuff throughout the process. That's
 what it was about anyways. There might be one or two other people that ever read
 things I post or appreciate the effort put into this site. I don't mind though.
 It's for myself and for fun--and that I have achieved :)
-
-
-[^1]: asldkfj
