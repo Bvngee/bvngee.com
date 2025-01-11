@@ -4,6 +4,7 @@ tags: []
 publishedDate: "2023-07-09"
 edits: [{ date: "2024-06-17", desc: "Shorten some sections" }]
 draft: false
+showToc: true
 ---
 
 When it comes to building and making things, I almost never feel satisfied

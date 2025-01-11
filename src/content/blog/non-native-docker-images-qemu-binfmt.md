@@ -14,6 +14,7 @@ edits:
         },
     ]
 draft: false
+showToc: true
 ---
 
 So, you've finally finished the perfect Dockerfile for your project. You build

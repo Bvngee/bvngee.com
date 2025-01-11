@@ -1,51 +1,34 @@
 /* Styles to be applied to rendered blog content */
 
 /* make blog card padding even on all sides */
-#blog :not(aside):first-child {
+#blog > :first-child {
     margin-top: 0;
 }
-#blog :last-child {
+#blog > :last-child {
     margin-bottom: 0;
+}
+
+/* if the toc comes first, it needs more top padding */
+#blog > aside#toc:first-child {
+    margin-top: 0.3em;
 }
 /* this "replaces" the margin-top of the first text child to keep padding
  * sensible, and also makes toc different from regular aside's by having less
  * horizontal padding */
 #blog aside#toc {
-    margin: 0.5em 0.5em 1em 0.5em;
+    /* margin: 0.5em 0.5em 1em 0.5em; */
+    margin-bottom: 1em;
 }
 
+/* A couple misc stylistic choices (for the toc only) */
 #blog aside#toc ul {
-    /* margin: 0; */
     list-style-type: disc;
 }
-#blog aside#toc li {
-    margin: 0.7em 0.5em;
+#blog aside#toc ul li {
+    margin: 0.5em;
 }
-#blog aside#toc li::marker {
-    color: var(--gray2);
-}
-#blog aside#toc details summary {
-    padding-left: 0.3em;
-}
-#blog aside#toc details[open] summary {
-    border-bottom: 1px solid
-        /* color-mix(in srgb, var(--bg-darker), var(--bg1) 40%); */
-        var(--bg-darker);
-    padding-bottom: 0.5em;
-}
-#blog aside#toc:hover details summary {
-    cursor: pointer;
-}
-#blog aside#toc details summary::marker {
-    content: " "; /*󰁔 */
-    color: var(--blue);
-    font-family: "CaskaydiaCove Nerd Font";
-}
-#blog aside#toc:hover details summary::marker {
-    color: var(--aqua);
-}
-#blog aside#toc details[open] summary::marker {
-    content: " "; /*󰁅 */
+#blog aside#toc ul li::marker {
+    color: var(--gray1);
 }
 
 /* main divider line */
@@ -118,5 +101,5 @@ picture {
     margin: auto;
 }
 #blog ul {
-    padding-left: 28px;
+    padding-left: 1.8em;
 }

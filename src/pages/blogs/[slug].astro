@@ -57,26 +57,24 @@ let edits: string[] = entry.data.edits.map(
         <div id="blog-card">
             <!-- this just applies BlogContentStyles.css to its contents -->
             <!-- (which is the only good way to style the rendered html) -->
-            <BlogContentContainer>
-                <aside id="toc">
-                    <details open>
-                        <summary><strong>Table of Contents</strong></summary>
-                        <Fragment set:html={tocHTML} />
-                        <!-- <ul> -->
-                        <!--     { -->
-                        <!--         headings.map((h) => ( -->
-                        <!--             <li> -->
-                        <!--                 <a href={"#" + h.slug}>{h.text}</a> -->
-                        <!--             </li> -->
-                        <!--         )) -->
-                        <!--     } -->
-                        <!-- </ul> -->
-                    </details>
-                </aside>
-                <article>
+            <article>
+                <BlogContentContainer>
+                    {
+                        entry.data.showToc ? (
+                            <aside id="toc">
+                                <details open>
+                                    <summary>
+                                        <strong>Table of Contents</strong>
+                                    </summary>
+                                    <Fragment set:html={tocHTML} />
+                                </details>
+                            </aside>
+                        ) : null
+                    }
+
                     <Content />
-                </article>
-            </BlogContentContainer>
+                </BlogContentContainer>
+            </article>
         </div>
         <div id="footer">
             <div id="edits">
@@ -150,9 +148,6 @@ let edits: string[] = entry.data.edits.map(
         background-color: var(--bg2);
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
-    }
-    #blog-card aside#toc {
-        border:;
     }
     #footer {
         color: var(--gray2);

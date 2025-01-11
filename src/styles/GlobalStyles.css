@@ -44,10 +44,6 @@ body {
     background-color: #4f422e;
 }
 
-a {
-    color: var(--fg1);
-}
-
 /*
     <pre> is used to indicate whitespace significance (so that multiline works),
     <code> is used to signify any instance of code
@@ -87,9 +83,9 @@ pre > code { /* multi-line code only */
 
 /* I have <aside>s look very similar to multiline code blocks */
 aside {
-    padding: 8px;
+    padding: 8px 10px;
     border-radius: 6px;
-    margin: 0.5em 2em;
+    margin: 1em 1.5em;
 
     font-size: 90%;
 
@@ -97,6 +93,32 @@ aside {
     border: 1px solid color-mix(in srgb, var(--bg-darker), var(--bg1) 40%);
 }
 
+/* improved look for details/summary blocks */
+/* (most useful in blog posts but can be used elsewhere) */
+details summary {
+    cursor: pointer;
+    /* padding-left: 0.3em; */
+}
+details summary::marker {
+    content: " "; /*󰁔 */
+    /* color: var(--blue); */
+    font-family: "CaskaydiaCove Nerd Font";
+}
+details[open] summary::marker {
+    content: " "; /*󰁅 */
+}
+
+/* Add some space between <li>'s bullet and contents */
+li {
+    padding-left: 0.3em;
+    margin: 0.3em 0;
+}
+
+/* replace <a> tags' default color (instead of the ugly purple) */
+a {
+    color: var(--fg1);
+}
+/* <a> tags with external links shoulld have an icon afterwards */
 a[target="_blank"]:not(.no-icon) {
     color: var(--blue);
 }

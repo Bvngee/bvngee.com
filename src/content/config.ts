@@ -34,9 +34,8 @@ const blogCollection = defineCollection({
                 .string()
                 .date()
                 .pipe(z.coerce.date())
-                .transform((date) => dateFormats(date) )
+                .transform((date) => dateFormats(date))
                 .optional(),
-
             edits: z.array(
                 z.object({
                     date: z.string().date(),
@@ -44,6 +43,8 @@ const blogCollection = defineCollection({
                 }),
             ),
             draft: z.boolean(),
+            // whether to show a table of contents
+            showToc: z.boolean().default(false),
         })
         .refine(
             (data) => data.draft == true || data.publishedDate !== undefined,
