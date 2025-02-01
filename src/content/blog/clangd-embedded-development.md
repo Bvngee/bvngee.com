@@ -1,7 +1,7 @@
 ---
 title: Clangd Setup for Embedded Development
 tags: []
-publishedDate: "2025-01-31"
+publishedDate: "2025-02-01"
 edits: []
 draft: false
 showToc: true
