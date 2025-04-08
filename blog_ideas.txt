@@ -8,3 +8,6 @@ d:r!echo """ | sh -c 'nix-shell -p "python3.withPackages (p: [p.dateutil])" --c
 
 lmfaoo
 echo $(echo "["; find FS-2/Parquet -type f -name '*.pq' -o -name '*.parquet' | while read f; do python -c "import polars as pl; c = pl.read_parquet(\"${f}\"); print(c.columns)"; echo ","; done; echo "]") | python -c "from collections import Counter; import ast; import json; i=ast.literal_eval(input()); print(json.dumps(dict(Counter(sum(i, [])))))" | jq 'to_entries | sort_by(.value) | reverse | from_entries'
+
+STM32CubeMX:
+`NIXPKGS_ALLOW_UNFREE=1 nix run --impure github:mrubli/nixpkgs/stm32cubemx-bugfixes#stm32cubemx`
