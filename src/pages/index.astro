@@ -18,9 +18,10 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
             <h2>Who?</h2>
             <p>
                 An aspiring software developer, Linux & neovim user, NixOS addict, 
-                and technical Minecrafter. I'm interested in all things technology
-                but especially systems programming and low level software. I'm
-                also a first-year Computer Science student at UC Santa Cruz! When I'm
+                and Computer Science student at UC Santa Cruz.
+                I'm interested in all things
+                technology but especially systems programming and low level
+                software. I love learning about how things work! When I'm
                 not on my computer I also occasionally mountain bike, play tennis,
                 and enjoy the sun :P
                 <br><br>
@@ -34,7 +35,13 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         </div>
         <div class="box" id="what">
             <h2>What?</h2>
-            <p>Some projects and things:</p>
+            <p>Nowadays most of my time is spent in 
+                <a href="https://formulaslug.com/">Formula Slug</a>'s lab space working
+                on a variety of projects from live telemetry radio
+                communication, to data visualization, embedded programming, and PCB
+                debugging. Eventually I will write more about it on this site :)
+            </p>
+            <p>Here are a bunch of other projects I care about, past and present:</p>
             <ul>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/nixconf/tree/main">NixOS config</a>: 
@@ -42,9 +49,9 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                 </li>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/SAR">SAR project</a>: 
-                    I helped construct/organize my highschool's brand new Electronics class,
+                    I helped construct/organize my highschool's brand new electronics class,
                     consisting of <i>tons</i> of fun research, building, embedded programming,
-                    and debugging (over very little time). This is the result of that!
+                    and debugging. This is the result of that!
                 </li>
                 <li>
                     This website! (<a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/bvngee.com">src</a>):
@@ -53,17 +60,19 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                 </li> 
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/BvngeeAddons">BvngeeAddons</a>: 
-                    my personal client-side fixes & features for Minecraft, including screenshot management utils, improved boss bar rendering, bug fixes, and more.
-                    My most polished mod, yet never uploaded publicly
+                    my personal set of client-side fixes & features for Minecraft,
+                    including screenshot management utils, improved boss bar
+                    rendering, bug fixes, and more! Made purely for myself
+                    to resolve my own annoyances with the game.
                 </li>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/coordinate-mod">CoordinateMod</a> 
                     and <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/anti-auto-jump">AntiAutoJump</a>: 
-                    my first two Minecraft mods, at somewhere around 15k total downloads (released in 2020@age 13)
+                    my first two Minecraft mods, at somewhere around 16k total downloads (released in 2020@age 13)
                 </li>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/94EYHt8qgw">Oracle SMP</a>: 
-                    my technical Minecraft server (redstone, perimeters, etc - all the nerdy stuff). Running since April 2021
+                    my technical Minecraft server (redstone, farms, automation, etc - all the nerdy stuff). Running since April 2020
                 </li>
                 <li>
                     A bunch of other stuff (see <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee?tab=repositories&type=source">GitHub</a>): 
@@ -79,11 +88,11 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                     <div class="icon-card-wrapper">
                         <!-- Badges from simpleicons.org (no longer used - fully custom now), icons from shields.io. also devicon.dev as a backup -->
                         <!-- Determine colors using ../../get_language_color.sh (which uses github-linguists) --> 
-                        <SoftwareIconShield name="Rust" color="#dea584" slug="rust" />
                         <!-- TODO: replace all these with NF icons via icon update branch? -->
                         <SoftwareIconShield name="Java" color="#b07219" slug="" />
                         <SoftwareIconShield name="Nix" color="#7e7eff" slug="nixos" />
                         <SoftwareIconShield name="Lua" color="#000080" slug="lua" />
+                        <SoftwareIconShield name="Rust" color="#dea584" slug="rust" />
                         <SoftwareIconShield name="C++" color="#f34b7d" slug="cplusplus" />
                         <SoftwareIconShield name="Python" color="#3572A5" slug="python" />
                         <SoftwareIconShield name="Bash" color="#89e051" slug="gnubash" />
@@ -91,6 +100,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                         <SoftwareIconShield name="CSS" color="#563d7c" slug="css3" />
                         <SoftwareIconShield name="JavaScript" color="#f1e05a" slug="javascript" />
                         <SoftwareIconShield name="TypeScript" color="#3178c6" slug="typescript" />
+                        <SoftwareIconShield name="React" color="#61dafb" slug="react" />
                     </div>
                     <p>What I'm currently interested in:</p>
                     <div class="icon-card-wrapper">
@@ -124,7 +134,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                     <SoftwareIconShield name="Wayland" color="#FFBC00" slug="wayland" />
                     <SoftwareIconShield name="Firefox" color="#FF7139" slug="firefoxbrowser" />
                     <SoftwareIconShield name="Docker" color="#2496ED" slug="docker" />
-                    <SoftwareIconShield name="Nginx" color="#009639" slug="nginx" />
+                    <!-- <SoftwareIconShield name="Nginx" color="#009639" slug="nginx" /> -->
                 </div>
             </div>
         </div>
@@ -137,11 +147,6 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                     title="GitHub"
                     href="https://www.github.com/Bvngee/"
                     favicon="https://www.github.com/favicon.ico"
-                />
-                <SocialLinkPreview
-                    title="Discord"
-                    href="https://www.discordapp.com/users/484519672235163648"
-                    favicon="https://www.google.com/s2/favicons?domain=www.discord.com"
                 />
                 <SocialLinkPreview
                     title="Email"
@@ -157,6 +162,11 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                     title="Reddit"
                     href="https://www.reddit.com/u/BvngeeCord/"
                     favicon="https://www.reddit.com/favicon.ico"
+                />
+                <SocialLinkPreview
+                    title="Discord"
+                    href="https://www.discordapp.com/users/484519672235163648"
+                    favicon="https://www.google.com/s2/favicons?domain=www.discord.com"
                 />
                 <SocialLinkPreview
                     title="Spotify"
