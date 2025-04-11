@@ -11,3 +11,6 @@ echo $(echo "["; find FS-2/Parquet -type f -name '*.pq' -o -name '*.parquet' | w
 
 STM32CubeMX:
 `NIXPKGS_ALLOW_UNFREE=1 nix run --impure github:mrubli/nixpkgs/stm32cubemx-bugfixes#stm32cubemx`
+
+(i forgot what this one did)
+:'<,'>norm ^saiw"f:ld$a,^[
