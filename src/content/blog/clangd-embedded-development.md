@@ -41,7 +41,7 @@ When writing code for embedded devices, or even any devices with a different
 system architecture, things change up a bit!
 
 <aside>
-Disclaimer: I am by know means an embedded expert. I'll use embedded Arm
+Disclaimer: I am by no means an embedded expert. I'll use embedded Arm
 development (gcc-arm-embedded) as the example as that's what I am familiar
 with.
 </aside>
