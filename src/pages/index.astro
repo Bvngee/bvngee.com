@@ -84,7 +84,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
             <h2>How?</h2>
             <div class="how-flexbox">
                 <div class="language-icons-section">
-                    <p>Things I like <em>and/or</em> have used a lot:</p>
+                    <p>Things I've used a lot:</p>
                     <div class="icon-card-wrapper">
                         <!-- Badges from simpleicons.org (no longer used - fully custom now), icons from shields.io. also devicon.dev as a backup -->
                         <!-- Determine colors using ../../get_language_color.sh (which uses github-linguists) --> 
@@ -102,7 +102,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                         <SoftwareIconShield name="TypeScript" color="#3178c6" slug="typescript" />
                         <SoftwareIconShield name="React" color="#61dafb" slug="react" />
                     </div>
-                    <p>What I'm currently interested in:</p>
+                    <p>What I'm actually interested in:</p>
                     <div class="icon-card-wrapper">
                         <SoftwareIconShield name="C" color="#555555" slug="c" />
                         <SoftwareIconShield name="C++" color="#f34b7d" slug="cplusplus" />
@@ -111,20 +111,24 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                         <!-- <SoftwareIconShield name="Nix" color="#7e7eff" slug="nixos" /> -->
                     </div>
                 </div>
-                <div class="most-used-languages">
-                    <img src={
-                        "https://github-readme-stats.bvngee.com/top-langs?"
-                            + "username=Bvngee"
-                            + "&theme=dark"
-                            + "&langs_count=10"
-                            + "&hide=typst"
-                            + "&layout=compact"
-                            + "&hide_border=true"
-                            + "&bg_color=00000000"
-                            + "&text_color=ddc7a1ee" // TODO: make this css var(--fg1)
-                            + "&title_color=ddc7a1ee"
-                    } alt="Most Used Languages" />
-                </div>
+
+                <!-- Until GitHub implements something like -->
+                <!-- https://github.com/orgs/community/discussions/18230#discussioncomment-14514129, -->
+                <!-- this is too innacurate. -->
+                <!-- <div class="most-used-languages"> -->
+                <!--     <img src={ -->
+                <!--         "https://github-readme-stats.bvngee.com/top-langs?" -->
+                <!--             + "username=Bvngee" -->
+                <!--             + "&theme=dark" -->
+                <!--             + "&langs_count=10" -->
+                <!--             + "&hide=typst" -->
+                <!--             + "&layout=compact" -->
+                <!--             + "&hide_border=true" -->
+                <!--             + "&bg_color=00000000" -->
+                <!--             + "&text_color=ddc7a1ee" // TODO: make this css var(--fg1) -->
+                <!--             + "&title_color=ddc7a1ee" -->
+                <!--     } alt="Most Used Languages" /> -->
+                <!-- </div> -->
             </div>
             <!-- <div style="margin: 1.5em 0" /> --> <!-- Meh -->
             <div class="other-icons-section">
@@ -296,18 +300,18 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     .other-icons-section {
         flex: 1 1 20em;
     }
-    .most-used-languages {
-        flex: 0 0 auto;
-        justify-content: center;
-        height: min-content;
-        align-self: center;
-        margin: 0 1.5em;
-    }
-    .most-used-languages > img {
-        background-color: var(--bg-dark);
-        border-radius: 6px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
-    }
+    /* .most-used-languages { */
+    /*     flex: 0 0 auto; */
+    /*     justify-content: center; */
+    /*     height: min-content; */
+    /*     align-self: center; */
+    /*     margin: 0 1.5em; */
+    /* } */
+    /* .most-used-languages > img { */
+    /*     background-color: var(--bg-dark); */
+    /*     border-radius: 6px; */
+    /*     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px; */
+    /* } */
     #commit-time {
         color: var(--gray2);
         display: flex;
