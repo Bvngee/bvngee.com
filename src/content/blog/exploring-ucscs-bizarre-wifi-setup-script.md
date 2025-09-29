@@ -2,7 +2,7 @@
 title: Exploring UCSC's Bizarre WiFi Setup Script
 tags: []
 publishedDate: "2025-09-26"
-edits: []
+edits: [{ date: "2025-09-27", desc: "Add info about JoinNow being a SecureW2 product"}]
 draft: false
 showToc: true
 ---
@@ -29,8 +29,8 @@ In the rest of this post I hope to summarize how it works and showcase my most
 interesting discoveries. Hopefully you'll find this as entertaining as I did!
 
 _note: the setup script was not written by UCSC, but rather by a contractor used
-by many universities - more on that later. I will be talking about the Linux
-version only._
+by many universities to automate the setup of Eduroam connections - more on that
+later. I will be talking about the Linux version only._
 
 # Innocent Shell Script
 
@@ -309,6 +309,14 @@ out how to connect you to the eduroam network and make it persist on the
 machine. I still have no idea what `type="8"` means, nor where that certificate
 actually comes into play during the connection process (it's not the same as the
 802-1x ca-certificate!).
+
+<aside>
+    I later found out that this entire script was not written by UCSC but rather
+    by a company called [SecureW2](https://www.securew2.com/joinnow-platform).
+    "JoinNow" is their main product, which is a "platform" for streamlining
+    setup and authentication for Eduroam WiFi networks (Eduroam is an
+    intra-university WiFi network complex).
+</aside>
 
 # Declarative NixOS config
 
