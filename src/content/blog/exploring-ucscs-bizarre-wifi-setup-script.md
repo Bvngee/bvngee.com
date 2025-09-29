@@ -2,7 +2,7 @@
 title: Exploring UCSC's Bizarre WiFi Setup Script
 tags: []
 publishedDate: "2025-09-26"
-edits: [{ date: "2025-09-27", desc: "Add info about JoinNow being a SecureW2 product"}]
+edits: [{ date: "2025-09-27", desc: "Added info about JoinNow being a SecureW2 product"}]
 draft: false
 showToc: true
 ---
@@ -312,7 +312,7 @@ actually comes into play during the connection process (it's not the same as the
 
 <aside>
     I later found out that this entire script was not written by UCSC but rather
-    by a company called [SecureW2](https://www.securew2.com/joinnow-platform).
+    by a company called <a href="https://www.securew2.com/joinnow-platform" target="_blank" rel="noopener noreferrer">SecureW2</a>
     "JoinNow" is their main product, which is a "platform" for streamlining
     setup and authentication for Eduroam WiFi networks (Eduroam is an
     intra-university WiFi network complex).
