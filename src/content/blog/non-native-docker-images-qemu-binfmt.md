@@ -41,7 +41,7 @@ open source machine emulator and virtualizer." It's super powerful and honestly
 feels like some black magic; but I'll leave that for you to discover! It has two
 main modes: System Emulation and User Mode Emulation.
 
-![QEMU Zsh autocomplete list](/images/qemu-zsh-autocomplete-list.png)
+![QEMU Zsh autocomplete list](@assets/qemu-zsh-autocomplete-list.png)
 
 With system emulation, QEMU emulates an entire foreign computer (optionally
 paired with a hypervisor like KVM/Xen to take advantage of native virtualization
@@ -184,7 +184,7 @@ You'll know it's working if you see something like this (this is a NextJS build,
 emulated for aarch64. Note that NixOS paths are slightly sifferent; the
 underlined path is a symlink to qemu-user-static for aarch64)
 
-![docker-qemu-binfmt.png](/images/docker-binfmt-qemu.png)
+![docker-qemu-binfmt.png](@assets/docker-binfmt-qemu.png)
 
 # NixOS
 

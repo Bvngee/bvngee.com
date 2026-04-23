@@ -1,25 +1,29 @@
 ---
-import BasePageLayout from "../layouts/BasePageLayout.astro";
-import BlogContentContainer from "../components/BlogContentContainer.astro";
+import BasePageLayout from "@layouts/BasePageLayout.astro";
+import BlogContentContainer from "@components/BlogContentContainer.astro";
+import PageContainer from "@components/PageContainer.astro";
 import { getCollection } from "astro:content";
-import PageContainer from "../components/PageContainer.astro";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import { type CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 
 const blogPosts = await getCollection("blog");
+
+if (blogPosts.length == 0) {
+    throw new Error("No blogs found!");
+}
 
 const sortedPosts = blogPosts
     .filter((p) => !p.data.draft)
     .sort((a, b) => b.data.publishedDate!.unix - a.data.publishedDate!.unix);
 
 const postContent = await Promise.all(
-    sortedPosts.map((p) => p.render().then((p) => p.Content)),
+    sortedPosts.map((p) => render(p).then((p) => p.Content)),
 );
 
 const postsAndContent: [CollectionEntry<"blog">, AstroComponentFactory][] =
     sortedPosts.map((p, i) => [p, postContent[i]]);
 
-const lastUpdatedDate = sortedPosts[0]?.data.publishedDate;
+const lastUpdatedDate = sortedPosts[0].data.publishedDate;
 ---
 
 <BasePageLayout title="Blogs">
@@ -35,7 +39,7 @@ const lastUpdatedDate = sortedPosts[0]?.data.publishedDate;
                 <div id="blog-card">
                     <div id="blog-card-label">
                         <h2 id="blog-title">
-                            <a href={post.slug}>{post.data.title}</a>
+                            <a href={post.id}>{post.data.title}</a>
                         </h2>
                         <h id="blog-date">
                             {post.data.publishedDate!.longFormat}

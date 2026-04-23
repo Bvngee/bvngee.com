@@ -189,7 +189,7 @@ Interesting. Let's check it out!
 Not wanting to run the script blindly just yet, I executed the commands
 manually. And...
 
-![SecureW2_JoinNow-python-jumpscare](/images/SecureW2_JoinNow-python-jumpscare.png)
+![SecureW2_JoinNow-python-jumpscare](@assets/SecureW2_JoinNow-python-jumpscare.png)
 
 Good lord, what is all this?! All you have to do is connect me to the WiFi..
 right? _(exasperated emoji)_
@@ -199,7 +199,7 @@ The first thing I did, even before browsing the python, was open
 was some important text embedded, as I could clearly read fragments of what
 looked to be dialog labels for some GUI:
 
-![SecureW2_cloudconfig](/images/SecureW2_cloudconfig_small.png)
+![SecureW2_cloudconfig](@assets/SecureW2_cloudconfig_small.png)
 
 I spent some more time digging before running anything. Following the `main.py`
 entrypoint to `PaladinClient` led me straight to the first intersting thing

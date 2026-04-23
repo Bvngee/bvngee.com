@@ -1,4 +1,6 @@
-import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
+import { defineCollection } from "astro:content";
 
 function dateFormats(date: Date) {
     const longDateFormatOpts: Intl.DateTimeFormatOptions = {
@@ -9,7 +11,7 @@ function dateFormats(date: Date) {
     };
     return {
         // JS Date works internally by just storing a time in UTC since the unix
-        // epoch. Therefor when creating a Date in your local time and calling
+        // epoch. Therefore when creating a Date in your local time and calling
         // getMonth on it, it will immediately be wrong, because it assumes UTC
         // and converts the getMonth result to the caller's timezone. Bleh. So
         // instead of dealing with that we'll just pretend that the date
@@ -25,20 +27,19 @@ function dateFormats(date: Date) {
 }
 
 const blogCollection = defineCollection({
-    type: "content",
+    loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
     schema: z
         .object({
             title: z.string(),
             tags: z.array(z.string()).optional(),
-            publishedDate: z
-                .string()
+            publishedDate: z.iso
                 .date()
                 .pipe(z.coerce.date())
                 .transform((date) => dateFormats(date))
                 .optional(),
             edits: z.array(
                 z.object({
-                    date: z.string().date(),
+                    date: z.iso.date(),
                     desc: z.string(),
                 }),
             ),

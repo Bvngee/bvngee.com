@@ -1,15 +1,15 @@
 ---
-import BasePageLayout from "../../layouts/BasePageLayout.astro";
-import PageContainer from "../../components/PageContainer.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
-import BlogContentContainer from "../../components/BlogContentContainer.astro";
-import type { MarkdownHeading } from "astro";
+import BasePageLayout from "@layouts/BasePageLayout.astro";
+import PageContainer from "@components/PageContainer.astro";
+import BlogContentContainer from "@components/BlogContentContainer.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+// import type { MarkdownHeading } from "astro";
 
 // Defines the final routes for each blog content entry
 export async function getStaticPaths() {
     const blogs = await getCollection("blog");
     return blogs.map((entry) => ({
-        params: { slug: entry.slug },
+        params: { slug: entry.id },
         props: { entry },
     }));
 }
@@ -19,7 +19,7 @@ interface Props {
 }
 const entry = Astro.props.entry;
 
-const { Content, headings } = await entry.render();
+const { Content, headings } = await render(entry);
 // TODO: fix footers
 let tocHTML = "";
 let depth = -1;
@@ -148,6 +148,11 @@ let edits: string[] = entry.data.edits.map(
         background-color: var(--bg2);
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+    }
+    #blog-card img {
+        max-width: 100%;
+        height: auto; /* Ensures aspect ratio is maintained */
+        border: 100px red;
     }
     #footer {
         color: var(--gray2);

@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.6",
+    "astro": "^6.1.9",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^2.1.0",
     "rehype-slug": "^5.1.0",
@@ -21,6 +21,7 @@
     "remark-supersub": "^1.0.0"
   },
   "devDependencies": {
+    "@astrojs/language-server": "^2.16.6",
     "prettier-plugin-astro": "^0.13.0"
   }
 }

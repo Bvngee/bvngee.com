@@ -94,6 +94,7 @@ svg,
 picture {
     max-width: 100%;
     display: block;
+    height: auto;
     border-radius: 5px;
     transform: scale(98.5%);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;

@@ -13,6 +13,11 @@ import remarkSmartypants from "remark-smartypants";
 
 // https://astro.build/config
 export default defineConfig({
+    devToolbar: { enabled: false },
+    image: {
+        responsiveStyles: true,
+        layout: "constrained",
+    },
     vite: {
         define: {
             TIME_OF_LAST_COMMIT: (
@@ -79,5 +84,3 @@ export default defineConfig({
         syntaxHighlight: "shiki",
     },
 });
-
-// TODO:

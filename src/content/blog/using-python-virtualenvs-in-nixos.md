@@ -21,7 +21,7 @@ python dependency hell and version conflict. They're super nice; each project
 gets its own venv which houses all the project's dependencies/libraries
 separately from everything else on the system in a simple and familiar layout:
 
-![python-venv-structure.png](/images/python-venv-structure.png)
+![python-venv-structure.png](@assets/python-venv-structure.png)
 
 Creating one is as simple as `python -m venv .venv` using your system-installed
 python, which is then set to be the python interpreter for that venv via a

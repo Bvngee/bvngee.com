@@ -176,7 +176,7 @@ server!
 An over-engineered diagram of the setup at this stage (I got carried away with
 Excalidraw lol):
 
-![Website Hosting Diagram](/images/website-hosting-diagram.png)
+![Website Hosting Diagram](@assets/website-hosting-diagram.png)
 
 # The Backend, Revisited (Dockerization)
 
@@ -257,7 +257,7 @@ script, which then becomes the ENTRYPOINT of the docker container.
 Here's (another over-engineered) diagram of the setup for automatically
 generating and renewing SSL certs within the Docker container:
 
-![SSL Certs Automation](/images/ssl-certs-automation.png)
+![SSL Certs Automation](@assets/ssl-certs-automation.png)
 
 # Results
 
