@@ -4,6 +4,8 @@ import SocialLinkPreview from "../components/SocialLinkPreview.astro";
 import SoftwareIconShield from "../components/SoftwareIconShield.astro";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
 
+import { Image } from "astro:assets";
+
 // @ts-ignore-next-line
 const lastCommitHash = LAST_COMMIT_HASH;
 // @ts-ignore-next-line
@@ -17,23 +19,16 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         <div class="box" id="who">
             <h2>Who?</h2>
             <p>
-                A second year CS/EE student at UC Santa Cruz. I'm interested in all
+                I'm second year CS/EE student at UC Santa Cruz. I'm interested in all
                 things technology but especially low-level programming,
                 electronics, and embedded systems. I am currently the Firmware
                 Lead for <a target="_blank" rel="noopener noreferrer"
-                href="https://formulaslug.com/">Formula Slug</a>. I am also a
-                passionate Linux / neovim user and NixOS addict :) When I'm not
+                href="https://formulaslug.com/">Formula Slug</a> :) I am also a
+                passionate Linux / neovim user and NixOS addict... But when I'm not
                 at my computer or in the lab I also occasionally mountain bike,
                 play tennis, and enjoy the sun and Santa Cruz mountains.
             </p>
             
-            <!-- <p> -->
-            <!--     Computer Science student at UC Santa Cruz. I'm interested in all -->
-            <!--     things technology but especially systems programming and low -->
-            <!--     level software. I love learning about how things work! When I'm -->
-            <!--     not on my computer I also occasionally mountain bike, play -->
-            <!--     tennis, and enjoy the sun :P -->
-            <!-- </p> -->
             <p>
                 I go by bvngee
                 <a
@@ -122,11 +117,11 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                     </div>
                 </div>
                 <p>
-                    For electronics I'm a fan of KiCad and enjoy working with STM32s. I've used
-                    FreeRTOS and Arm MbedOS, as well as AVR's baremetal SDK
-                    on an ATtiny. I'm a proponent of compatible and open
-                    build systems; the last thing you'll see me using is
-                    some proprietary IDE :)
+                    For electronics I'm a fan of KiCad and enjoy working
+                    with STM32s. I've used FreeRTOS and Arm MbedOS, as well as
+                    AVR's baremetal SDK on an ATtiny. I'm a big proponent of
+                    compatible and open build systems, and will do anything I
+                    can to stay out of proprietary IDEs and in my Neovim!
                 </p>
 
                 <!-- Until GitHub implements something like -->
