@@ -14,3 +14,5 @@ STM32CubeMX:
 
 (i forgot what this one did)
 :'<,'>norm ^saiw"f:ld$a,^[
+
+for d in $(docker ps | tail +2 | awk '{print $1}'); do docker inspect $d -f json | jq '.. | .Mounts? // empty, .User? // empty'; echo; done
