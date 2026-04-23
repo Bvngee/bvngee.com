@@ -3,7 +3,7 @@ import { execSync } from "child_process";
 import gruvboxMaterialDark from "./gruvbox_syntax_highlighting_theme.json";
 
 import rehypeExternalLinks from "rehype-external-links";
-import rehypeAutolinkHeadings from "rehype-autolink-headings/lib";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkSupersub from "remark-supersub";
