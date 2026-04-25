@@ -1,20 +1,25 @@
 ---
-import PageContainer from "../components/PageContainer.astro";
-import BasePageLayout from "../layouts/BasePageLayout.astro";
+import PageContainer from "@components/PageContainer.astro";
+import BasePageLayout from "@layouts/BasePageLayout.astro";
 ---
 
 <BasePageLayout title="About">
     <PageContainer>
         <h1 id="about-title">About Me</h1>
         <div id="about-card">
-            <p> 
-                Tbh, I haven't really thought through what to put on this page
-                yet. That's a lot of effort :P
-                <br>
-                <br>
-                Perhaps I'll put my resume here at some point? 🤔
+            <p>
+                TODO: Updating very soon! Come back later in a day or two.
             </p>
+            <!-- <p> -->
+            <!--     In my free time, I love having fun with software development, as -->
+            <!--     well as the occasional mountain bike ride. I spend the vast -->
+            <!--     majority of my time these days with my Formula student team, -->
+            <!--     writing firmware, working on various electrical things, and -->
+            <!--     doing embedded code review :) -->
+            <!-- </p> -->
         </div>
+
+        <!-- <embed id="resume" src="/Resume_Jack_Nystrom.pdf" /> -->
     </PageContainer>
 </BasePageLayout>
 <style>
@@ -34,5 +39,10 @@ import BasePageLayout from "../layouts/BasePageLayout.astro";
     }
     #about-card :last-child {
         margin-bottom: 0;
+    }
+    #resume {
+        width: 50%;
+        height: 100em;
+        justify-content: center;
     }
 </style>

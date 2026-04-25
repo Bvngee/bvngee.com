@@ -4,6 +4,8 @@ import SocialLinkPreview from "@components/SocialLinkPreview.astro";
 import SoftwareIconShield from "@components/SoftwareIconShield.astro";
 import BasePageLayout from "@layouts/BasePageLayout.astro";
 
+import { Image } from "astro:assets";
+import img from "@assets/1_small_cropped.jpg";
 
 // @ts-ignore-next-line
 const lastCommitHash = LAST_COMMIT_HASH;
@@ -11,31 +13,48 @@ const lastCommitHash = LAST_COMMIT_HASH;
 const timeOfLastCommit = TIME_OF_LAST_COMMIT;
 ---
 
-<!-- prettier-ignore -->
 <BasePageLayout title="Home">
     <PageContainer>
         <h1 id="home-title">Hi, I'm Jack!</h1>
-        <div class="box" id="who">
-            <h2>Who?</h2>
-            <p>
-                I'm second year CS/EE student at UC Santa Cruz. I'm interested in all
-                things technology but especially low-level programming,
-                electronics, and embedded systems. I am currently the Firmware
-                Lead for <a target="_blank" rel="noopener noreferrer"
-                href="https://formulaslug.com/">Formula Slug</a> :) I am also a
-                passionate Linux / neovim user and NixOS addict... But when I'm not
-                at my computer or in the lab I also occasionally mountain bike,
-                play tennis, and enjoy the sun and Santa Cruz mountains.
-            </p>
-            
-            <p>
-                I go by bvngee
-                <a
-                    href="#where"
-                    style="color: unset; text-decoration-color: var(--gray2);"
-                >on the internet</a>.
+        <div id="intro-headshot-container">
+            <div class="box" id="who">
+                <h2>Who?</h2>
 
-            </p>
+                <p>
+                    A second year CS/EE student at UC Santa Cruz. I'm interested
+                    in all things technology but especially systems programming
+                    and electronics. I am currently the Firmware Lead for <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://formulaslug.com/">Formula Slug</a
+                    >! I am also a passionate Linux / neovim user and NixOS
+                    addict... But when I'm not at my computer or in the lab I
+                    also occasionally mountain bike, play tennis, and enjoy the
+                    sun and Santa Cruz mountains.
+                </p>
+
+                <p>
+                    I go by bvngee
+                    <a
+                        href="#where"
+                        style="color: unset; text-decoration-color: var(--gray2);"
+                        >on the internet</a
+                    >
+                    . Read more
+                    <a
+                        href="/about"
+                        style="color: unset; text-decoration-color: var(--orange);"
+                        >here</a
+                    >!
+                </p>
+            </div>
+
+            <Image
+                id="headshot"
+                src={img}
+                layout="full-width"
+                alt="Jack Nystrom"
+            />
         </div>
         <div class="box" id="what">
             <h2>What?</h2>
@@ -46,101 +65,183 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                 analysis and more. Eventually I will write more about it on this
                 site.
             </p>
-            <p>Here are a bunch of other projects I care about, past and present:</p>
+            <p>
+                Here are a bunch of other projects I care about, past and
+                present:
+            </p>
             <ul>
                 <li>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/nixconf/tree/main">NixOS config</a>: 
-                    my journey into Linux, learning how OS's work from the bottom up, and my descent into madness trying to build the perfect dev environment
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee/nixconf/tree/main"
+                        >NixOS config</a
+                    >: my journey into Linux, learning how OS's work from the
+                    bottom up, and my descent into madness trying to build the
+                    perfect dev environment
                 </li>
                 <li>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/SAR">SAR project</a>: 
-                    I helped construct/organize my highschool's brand new
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee/SAR">SAR project</a
+                    >: I helped construct/organize my highschool's brand new
                     electronics class, leading to tons of fun research, embedded
                     programming, and debugging. This is the result of that!
                 </li>
                 <li>
-                    This website! (<a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/bvngee.com">source</a>):
-                    Written and hosted from scratch using only Astro, nginx, and some bash. Custom automated deployment, manual SSL, etc
-                    (see <a href="/blogs/website-explanation">this blog post</a>).
-                </li> 
-                <li>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee/BvngeeAddons">BvngeeAddons</a>: 
-                    my personal set of client-side fixes & features for Minecraft 1.17,
-                    including screenshot management utils, improved boss bar
-                    rendering, bug fixes, and more! Made purely for myself
-                    to resolve my own annoyances with the game.
+                    This website! (<a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee/bvngee.com">source</a
+                    >): Written and hosted from scratch using only Astro, nginx,
+                    and some bash. Custom automated deployment, manual SSL, etc
+                    (see <a href="/blogs/website-explanation">this blog post</a
+                    >).
                 </li>
                 <li>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/coordinate-mod">CoordinateMod</a> 
-                    and <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/anti-auto-jump">AntiAutoJump</a>: 
-                    my first two Minecraft mods, somewhere around 16k total downloads (circa 2020)
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee/BvngeeAddons"
+                        >BvngeeAddons</a
+                    >: my personal set of client-side fixes & features for
+                    Minecraft 1.17, including screenshot management utils,
+                    improved boss bar rendering, bug fixes, and more! Made
+                    purely for myself to resolve my own annoyances with the
+                    game.
                 </li>
                 <li>
-                    <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/94EYHt8qgw">Oracle SMP</a>: 
-                    my technical Minecraft server - farms, automation, redstone, etc - all the nerdy stuff. (2020-2024)
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.curseforge.com/minecraft/mc-mods/coordinate-mod"
+                        >CoordinateMod</a
+                    >
+                    and <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.curseforge.com/minecraft/mc-mods/anti-auto-jump"
+                        >AntiAutoJump</a
+                    >: my first two Minecraft mods, somewhere around 16k total
+                    downloads (circa 2020)
                 </li>
                 <li>
-                    A bunch of other stuff (see <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bvngee?tab=repositories&type=source">GitHub</a>): 
-                    hackathons, AOCs, scripts, other Minecraft mods, and more
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://discord.gg/94EYHt8qgw">Oracle SMP</a
+                    >: my technical Minecraft server - farms, automation,
+                    redstone, etc - all the nerdy stuff. (2020-2024)
+                </li>
+                <li>
+                    A bunch of other stuff (see <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee?tab=repositories&type=source"
+                        >GitHub</a
+                    >): hackathons, AOCs, scripts, other Minecraft mods, and
+                    more
                 </li>
             </ul>
         </div>
         <div class="box" id="how">
             <h2>How?</h2>
-            <div class="how-flexbox">
-                <div class="language-icons-section">
-                    <p>My primary background is in software development.  Languages I've used a lot:</p>
-                    <div class="icon-card-wrapper">
-                        <!-- Icons from simpleicons.org, also devicon.dev as a backup -->
-                        <!-- Determine colors using ../../get_language_color.sh (which uses github-linguists) --> 
-                        <!-- TODO: replace all these with NF icons via icon update branch? -->
-                        <SoftwareIconShield name="Java" color="#b07219" slug="" />
-                        <SoftwareIconShield name="Rust" color="#dea584" slug="rust" />
-                        <SoftwareIconShield name="Lua" color="#000080" slug="lua" />
-                        <SoftwareIconShield name="C" color="#555555" slug="c" />
-                        <SoftwareIconShield name="C++" color="#f34b7d" slug="cplusplus" />
-                        <SoftwareIconShield name="Python" color="#3572A5" slug="python" />
-                        <SoftwareIconShield name="Bash" color="#89e051" slug="gnubash" />
-                        <SoftwareIconShield name="TypeScript" color="#3178c6" slug="typescript" />
-                        <SoftwareIconShield name="Astro" color="#ff5a03" slug="astro" />
-                        <SoftwareIconShield name="React" color="#61dafb" slug="react" />
-                        <SoftwareIconShield name="Nix" color="#7e7eff" slug="nixos" />
-                    </div>
-                    <p>What I actually enjoy writing:</p>
-                    <div class="icon-card-wrapper">
-                        <SoftwareIconShield name="Rust" color="#dea584" slug="rust" />
-                        <SoftwareIconShield name="Zig" color="#ec915c" slug="zig" />
-                        <SoftwareIconShield name="C" color="#555555" slug="c" />
-                        <SoftwareIconShield name="C++" color="#f34b7d" slug="cplusplus" />
-                        <!-- <SoftwareIconShield name="Nix" color="#7e7eff" slug="nixos" /> -->
-                    </div>
-                </div>
+            <div>
                 <p>
-                    For electronics I'm a fan of KiCad and enjoy working
-                    with STM32s. I've used FreeRTOS and Arm MbedOS, as well as
-                    AVR's baremetal SDK on an ATtiny. I'm a big proponent of
-                    compatible and open build systems, and will do anything I
-                    can to stay out of proprietary IDEs and in my Neovim!
+                    My primary background is in software development. Languages
+                    I've used a lot:
                 </p>
-
-                <!-- Until GitHub implements something like -->
-                <!-- https://github.com/orgs/community/discussions/18230#discussioncomment-14514129, -->
-                <!-- this is too innacurate. -->
-                <!-- <div class="most-used-languages"> -->
-                <!--     <img src={ -->
-                <!--         "https://github-readme-stats.bvngee.com/top-langs?" -->
-                <!--             + "username=Bvngee" -->
-                <!--             + "&theme=dark" -->
-                <!--             + "&langs_count=10" -->
-                <!--             + "&hide=typst" -->
-                <!--             + "&layout=compact" -->
-                <!--             + "&hide_border=true" -->
-                <!--             + "&bg_color=00000000" -->
-                <!--             + "&text_color=ddc7a1ee" // TODO: make this css var(--fg1) -->
-                <!--             + "&title_color=ddc7a1ee" -->
-                <!--     } alt="Most Used Languages" /> -->
-                <!-- </div> -->
+                <div class="icon-card-wrapper">
+                    <!-- Icons from simpleicons.org, also devicon.dev as a backup -->
+                    <!-- Determine colors using ../../get_language_color.sh (which uses github-linguists) -->
+                    <!-- TODO: replace all these with NF icons via icon update branch? -->
+                    <SoftwareIconShield name="Java" color="#b07219" slug="" />
+                    <SoftwareIconShield
+                        name="Rust"
+                        color="#dea584"
+                        slug="rust"
+                    />
+                    <SoftwareIconShield name="Lua" color="#000080" slug="lua" />
+                    <SoftwareIconShield name="C" color="#555555" slug="c" />
+                    <SoftwareIconShield
+                        name="C++"
+                        color="#f34b7d"
+                        slug="cplusplus"
+                    />
+                    <SoftwareIconShield
+                        name="Python"
+                        color="#3572A5"
+                        slug="python"
+                    />
+                    <SoftwareIconShield
+                        name="Bash"
+                        color="#89e051"
+                        slug="gnubash"
+                    />
+                    <SoftwareIconShield
+                        name="TypeScript"
+                        color="#3178c6"
+                        slug="typescript"
+                    />
+                    <SoftwareIconShield
+                        name="Astro"
+                        color="#ff5a03"
+                        slug="astro"
+                    />
+                    <SoftwareIconShield
+                        name="React"
+                        color="#61dafb"
+                        slug="react"
+                    />
+                    <SoftwareIconShield
+                        name="Nix"
+                        color="#7e7eff"
+                        slug="nixos"
+                    />
+                </div>
+                <p>What I actually enjoy writing:</p>
+                <div class="icon-card-wrapper">
+                    <SoftwareIconShield
+                        name="Rust"
+                        color="#dea584"
+                        slug="rust"
+                    />
+                    <SoftwareIconShield name="Zig" color="#ec915c" slug="zig" />
+                    <SoftwareIconShield name="C" color="#555555" slug="c" />
+                    <SoftwareIconShield
+                        name="C++"
+                        color="#f34b7d"
+                        slug="cplusplus"
+                    />
+                    <!-- <SoftwareIconShield name="Nix" color="#7e7eff" slug="nixos" /> -->
+                </div>
             </div>
+            <p>
+                For electronics I'm a fan of KiCad and enjoy working with
+                STM32s. I've used FreeRTOS and Arm MbedOS, as well as AVR's
+                baremetal SDK on an ATtiny. I'm a big proponent of compatible
+                and open build systems, and will do anything I can to stay out
+                of proprietary IDEs and in my Neovim!
+            </p>
+
+            <!-- Until GitHub implements something like -->
+            <!-- https://github.com/orgs/community/discussions/18230#discussioncomment-14514129, -->
+            <!-- this is too innacurate. -->
+            <!-- <div class="most-used-languages"> -->
+            <!--     <img src={ -->
+            <!--         "https://github-readme-stats.bvngee.com/top-langs?" -->
+            <!--             + "username=Bvngee" -->
+            <!--             + "&theme=dark" -->
+            <!--             + "&langs_count=10" -->
+            <!--             + "&hide=typst" -->
+            <!--             + "&layout=compact" -->
+            <!--             + "&hide_border=true" -->
+            <!--             + "&bg_color=00000000" -->
+            <!--             + "&text_color=ddc7a1ee" // TODO: make this css var(--fg1) -->
+            <!--             + "&title_color=ddc7a1ee" -->
+            <!--     } alt="Most Used Languages" /> -->
+            <!-- </div> -->
         </div>
         <div class="box" id="where">
             <h2>Where?</h2>
@@ -179,9 +280,13 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                 />
             </div>
         </div>
-        <a id="commit-time" href={"https://github.com/Bvngee/bvngee.com/commit/" + lastCommitHash}>
+        <a
+            id="commit-time"
+            href={"https://github.com/Bvngee/bvngee.com/commit/" +
+                lastCommitHash}
+        >
             <span class="icon">󰊤 </span>
-            <span 
+            <span
                 id="commit-time-text"
                 data-time-of-last-commit={timeOfLastCommit}
                 data-last-commit-hash={lastCommitHash}
@@ -189,10 +294,8 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                 Calculating...
             </span>
         </a>
-   </PageContainer>
+    </PageContainer>
 </BasePageLayout>
-
-
 
 <script>
     function timeSince(date: Date) {
@@ -277,6 +380,30 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         margin-top: -8px;
         margin-bottom: 20px;
     }
+    #intro-headshot-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        margin: 20px 0;
+    }
+    #intro-headshot-container .box#who {
+        flex: 3 1;
+        margin: 0;
+        min-width: 15em;
+    }
+    #intro-headshot-container #headshot {
+        flex: 1 1;
+
+        max-width: 100%;
+        height: auto;
+        min-width: 12em;
+
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+        border-radius: 10px;
+        filter: brightness(90%);
+    }
     ul {
         /* make bullets a little closer to left wall of box */
         padding-left: 2em;
@@ -284,16 +411,6 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     li {
         /* add a little vertical space between bullets */
         margin: 0.5em 0;
-    }
-    .how-flexbox {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    .language-icons-section {
-        flex: 1 1 20em;
-        margin-bottom: 1em;
     }
     /* .most-used-languages { */
     /*     flex: 0 0 auto; */
