@@ -5,11 +5,93 @@ import BasePageLayout from "@layouts/BasePageLayout.astro";
 
 <BasePageLayout title="About">
     <PageContainer>
-        <h1 id="about-title">About Me</h1>
-        <div id="about-card">
-            <p>
-                TODO: Updating very soon! Come back later in a day or two.
-            </p>
+        <h1 id="about-title" style="text-align: center;">About Me</h1>
+        <div class="box">
+            <h2>Unsorted</h2>
+            A bunch of things in no particular order:
+            <ul>
+                <li>
+                    I'm a second-year undergraduate at UC Santa Cruz, studying
+                    CS and EE
+                </li>
+                <li>
+                    My classes can't keep up with my apetite for learning and
+                    engineering, so I spend most of my time with Formula Slug
+                    working on our EV race car
+                </li>
+                <li>
+                    Will talk about electronics and software development for
+                    hours
+                    <ul>
+                        <li>
+                            To not be a nerd or passionate about something is to
+                            be boring, in my opinion
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    I Love Mountain Biking, but like mostly as a social activity
+                    and I'm still kinda mediocre tbh
+                </li>
+                <li>
+                    I listen to music mostly for the harmonic/melocic
+                    experience. I love Jazz, Dubstep, Rap, Metal, Rock, Choir,
+                    Jacob Collier... lots of instrumentals and really anything
+                    but pop
+                </li>
+                <li>I love Neovim, I can't stand IDEs</li>
+                <li>
+                    Big fan of programming languages that expose the details
+                    without compromising useful abstractions
+                    <ul>
+                        <li>
+                            I'm very excited by Zig's new IO interface, and hope
+                            that the colorless-async and code-reusability dream
+                            will be as applicable in embedded programming
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    I use NixOS, not because it necessarily saves me time in the
+                    long run but because I love nothing more than getting to
+                    control and understand the pieces of my OS, and the
+                    reproducibility of everything down to the specific build
+                    flags and kernel parameters. And because having isolated
+                    tooling is super fun :)
+                </li>
+                <li>
+                    I drive a Chevy Volt, because it was the only affordable
+                    electric powered (hybrid) car I could get my hands on and I
+                    just love EVs too much
+                </li>
+                <li>
+                    I am very concerned by the state of politics, our
+                    practically dysfunctional government, the inexplicable scale
+                    of corruption, the political polarization, the inability to
+                    pursue any remotely radical progressive change, the
+                    intentionally mindwashing media, the voter suppression, the
+                    ever-increasing national debt and defense budget, the
+                    administration full of guilty but unstoppable narcissists,
+                    and the embarassment of a national leader
+                </li>
+                <li>
+                    I am extremely happy to get to Ebike to campus every day,
+                    and think that more places should be designed around
+                    pedestrian and bike accessibility over 8-lane highways and
+                    20ft tall trucks
+                </li>
+                <li>
+                    I think AI is way overvalued, and that these companies are
+                    succeeding at the worlds largest marketing campaign to
+                    convince us that their technology is all-powerful to raise
+                    their stock values. I am not remotely scared for my job, but
+                    for the injustices that AI will bring, and for the shitty
+                    software that us everyday people will have to use that's
+                    full of AI-generated garbage that nobody understands or can
+                    maintain.
+                </li>
+            </ul>
+
             <!-- <p> -->
             <!--     In my free time, I love having fun with software development, as -->
             <!--     well as the occasional mountain bike ride. I spend the vast -->
@@ -19,30 +101,96 @@ import BasePageLayout from "@layouts/BasePageLayout.astro";
             <!-- </p> -->
         </div>
 
-        <!-- <embed id="resume" src="/Resume_Jack_Nystrom.pdf" /> -->
+        <div class="box">
+            <h2>Qualifications</h2>
+
+            <p>
+                I've done software development of all kinds: web dev, CI/CD,
+                systems programming, linux sysadmin, embedded programming, game
+                modding, basic graphics programming, etc. But my interest is
+                really in low-level and embedded programming. I could talk for
+                hours about microcontrollers, memory optimization, communication
+                protocols, single-threaded event loops and task switching,
+                device drivers, etc.
+            </p>
+            <p>
+                I also have an unsatiable interest in electronics, mostly thanks
+                to Formula Student. Among my main interests are motor
+                controllers, power converters, high speed digital PCB design,
+                and analog circuit design. I'd jump at the chance to
+                develop/debug PCBs professionally :)
+            </p>
+
+            <p>
+                I'm always looking for exciting new work opportunities. If you
+                know of an opening in Embedded Systems / Software Development /
+                Electrical Engineering or a related field, please feel free to
+                reach me <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="mailto:nystromjp@gmail.com">by email</a
+                >!
+            </p>
+            <p>
+                Here's my resume. It's a constant work in progress, so I'll do
+                my best to keep this updated when it changes.
+            </p>
+
+            <details open>
+                <summary style="margin-bottom: 8px;">
+                    <h3 style="display: inline;">Resume</h3>
+                </summary>
+                <div id="resume-container">
+                    <object
+                        id="resume"
+                        data="/Resume_Jack_Nystrom.pdf#navpanes=0&statusbar=0&messages=0&scrollbar=0&view=fit&zoom=100"
+                        type="application/pdf"
+                        width="100%"
+                        height="100%"
+                    >
+                        <p>
+                            It appears your browser doesn't have a PDF support.
+                            You can <a href="/Resume_Jack_Nystrom.pdf"
+                                >click here to download the resume PDF.</a
+                            >
+                        </p>
+                    </object>
+                    <br />
+                </div>
+            </details>
+        </div>
     </PageContainer>
 </BasePageLayout>
 <style>
+    .box {
+        padding: 15px;
+        border-radius: 10px;
+        background-color: var(--bg2);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+        margin: 20px 0;
+    }
+    .box > p {
+    }
+    .box > h2 {
+        margin-top: 0;
+    }
     #about-title {
         margin: 0 10px;
         /* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
     }
-    #about-card {
-        padding: 15px;
-        margin: 20px 0px;
-        background-color: var(--bg2);
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
-    }
-    #about-card :first-child {
-        margin-top: 0;
-    }
-    #about-card :last-child {
-        margin-bottom: 0;
+    #resume-container {
     }
     #resume {
-        width: 50%;
-        height: 100em;
-        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        /* max-width: 40em; */
+
+        /* aspect-ratio: 8.5 / 11; */
+        height: 11in;
+        display: block;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+        filter: brightness(85%);
+        box-sizing: border-box;
     }
 </style>

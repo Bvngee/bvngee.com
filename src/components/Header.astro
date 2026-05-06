@@ -1,4 +1,19 @@
 ---
+
+enum Page {
+    Home,
+    About,
+    Blogs,
+    Unknown,
+}
+
+const routeToPage: Record<string, Page> = {
+    "": Page.Home,
+    "about": Page.About,
+    "blogs": Page.Blogs,
+};
+
+let selectedPage = routeToPage[Astro.routePattern.split('/')[1]];
 ---
 
 <!-- prettier-ignore -->
@@ -6,9 +21,27 @@
     <div id="left"></div>
 
     <div id="center">
-        <a id="home" href="/"><span class="icon" id="home-logo"> </span>Home</a>
-        <a id="about" href="/about/"><span class="icon" id="about-logo"> </span>About</a>
-        <a id="blog" href="/blogs/"><span class="icon" id="blog-logo">󱀂 </span>Blogs</a>
+        <a 
+            id="home" 
+            class={selectedPage==Page.Home ? "selected" : ""} 
+            href="/"
+        >
+            <span class="icon" id="home-logo"> </span>Home
+        </a>
+        <a 
+            id="about"
+            class={selectedPage==Page.About ? "selected" : ""}
+            href="/about/"
+        >
+            <span class="icon" id="about-logo"> </span>About
+        </a>
+        <a
+            id="blogs"
+            class={selectedPage==Page.Blogs ? "selected" : ""}
+            href="/blogs/"
+        >
+            <span class="icon" id="blogs-logo">󱀂 </span>Blogs
+        </a>
     </div>
 
     <div id="right"></div>
@@ -48,36 +81,39 @@
         line-height: 120%;
         font-size: 18px;
         text-decoration: none;
-        transform: perspective(1px) translateZ(0);
+        /* transform: perspective(1px) translateZ(0); */
         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
         position: relative;
         overflow: hidden;
-        transition-duration: 0.1s;
-        transition-property: transform;
+        /* transition-duration: 0.1s; */
+        /* transition-property: transform; */
     }
-    /* :before targets the <span>'s that contain the icons */
-    #center a:before {
+    a::after {
         content: "";
+        opacity: 90%;
         position: absolute;
-        z-index: -1;
-        left: 6px;
+        /* z-index: -1; */
+        left: 5px;
         right: 100%;
-        bottom: 0px;
-        height: 3px;
-        border-radius: 4px;
+        bottom: 2px;
+        height: 2px;
+        border-radius: 2px;
         transition-property: right;
-        transition-duration: 0.2s;
+        transition-duration: 0.15s;
     }
-    a:hover:before {
-        right: 6px;
+    a.selected::after {
+        right: 5px;
     }
-    a#home:before {
+    a:hover::after {
+        right: 5px;
+    }
+    a#home::after {
         background-color: var(--green);
     }
-    a#about:before {
+    a#about::after {
         background-color: var(--orange);
     }
-    a#blog:before {
+    a#blogs::after {
         background-color: var(--blue);
     }
     #home-logo {
@@ -88,7 +124,7 @@
         padding-right: 2px;
         font-size: 16px;
     }
-    #blog-logo {
+    #blogs-logo {
         color: var(--blue);
     }
     .icon {

@@ -127,7 +127,7 @@ a[target="_blank"]:not(.no-icon) {
 a[target="_blank"]:not(.no-icon):after {
     font-family: "CaskaydiaCove Nerd Font";
     content: " "; /* content: "󰌹"; */
-    font-size: 85%;
+    font-size: 80%;
     padding: 1px 7px 0 2px;
     display: inline-block;
     color: var(--fg2);

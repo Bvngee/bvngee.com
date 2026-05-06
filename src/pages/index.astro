@@ -5,7 +5,7 @@ import SoftwareIconShield from "@components/SoftwareIconShield.astro";
 import BasePageLayout from "@layouts/BasePageLayout.astro";
 
 import { Image } from "astro:assets";
-import img from "@assets/1_small_cropped.jpg";
+import headshotImg from "@assets/1_small_cropped.jpg";
 
 // @ts-ignore-next-line
 const lastCommitHash = LAST_COMMIT_HASH;
@@ -15,19 +15,19 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
 
 <BasePageLayout title="Home">
     <PageContainer>
-        <h1 id="home-title">Hi, I'm Jack!</h1>
+        <h1 id="home-title">Jack Nystrom</h1>
         <div id="intro-headshot-container">
             <div class="box" id="who">
                 <h2>Who?</h2>
 
                 <p>
                     A second year CS/EE student at UC Santa Cruz. I'm interested
-                    in all things technology but especially systems programming
-                    and electronics. I am currently the Firmware Lead for <a
+                    in tons of things but especially systems programming and
+                    electronics. I am currently the Firmware Lead for <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://formulaslug.com/">Formula Slug</a
-                    >! I am also a passionate Linux / neovim user and NixOS
+                    >. I am also a passionate Linux / neovim user and NixOS
                     addict... But when I'm not at my computer or in the lab I
                     also occasionally mountain bike, play tennis, and enjoy the
                     sun and Santa Cruz mountains.
@@ -39,19 +39,18 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                         href="#where"
                         style="color: unset; text-decoration-color: var(--gray2);"
                         >on the internet</a
-                    >
-                    . Read more
+                    >.
                     <a
                         href="/about"
                         style="color: unset; text-decoration-color: var(--orange);"
-                        >here</a
+                        >More here</a
                     >!
                 </p>
             </div>
 
             <Image
                 id="headshot"
-                src={img}
+                src={headshotImg}
                 layout="full-width"
                 alt="Jack Nystrom"
             />
@@ -59,26 +58,35 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         <div class="box" id="what">
             <h2>What?</h2>
             <p>
-                Nowadays most of my time is spent in Formula Slug's lab space
-                working on a variety of projects from embedded programming to
-                PCB design/debugging, sensor integration, telemetry and data
-                analysis and more. Eventually I will write more about it on this
-                site.
+                I spend most of my time in Formula Slug's lab space doing
+                embedded programming, PCB design & debugging, wire harnessing,
+                telemetry and data analysis, or whatever else needs doing to
+                prepare for our next racecar. Currently we're working on FS-4,
+                which is set to compete in June!
             </p>
-            <p>
-                Here are a bunch of other projects I care about, past and
-                present:
-            </p>
+            <p>Here are a bunch of projects I care about, past and present:</p>
             <ul>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/formulaslug/fs-4-firmware"
+                        >FS-4 Firmware</a
+                    >: The firmware for Formula Slug's latest racecar! Including
+                    throttle control, BMS, dash screens, data acquisition &
+                    logging, traction control, state-of-charge estimation, CAN
+                    bus management, drivers for various sensors, and the rest of
+                    the racecar's business logic
+                </li>
                 <li>
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://github.com/Bvngee/nixconf/tree/main"
                         >NixOS config</a
-                    >: my journey into Linux, learning how OS's work from the
-                    bottom up, and my descent into madness trying to build the
-                    perfect dev environment
+                    >: The culmination of my years of using and configuring
+                    Linux, learning how OS's work, and my descent into madness
+                    trying to build the perfect dev environment
                 </li>
                 <li>
                     <a
@@ -90,11 +98,12 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                     programming, and debugging. This is the result of that!
                 </li>
                 <li>
-                    This website! (<a
+                    <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href="https://github.com/Bvngee/bvngee.com">source</a
-                    >): Written and hosted from scratch using only Astro, nginx,
+                        href="https://github.com/Bvngee/bvngee.com"
+                        >bvngee.com!</a
+                    >: Written and hosted from scratch using only Astro, nginx,
                     and some bash. Custom automated deployment, manual SSL, etc
                     (see <a href="/blogs/website-explanation">this blog post</a
                     >).
@@ -105,7 +114,7 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                         rel="noopener noreferrer"
                         href="https://github.com/Bvngee/BvngeeAddons"
                         >BvngeeAddons</a
-                    >: my personal set of client-side fixes & features for
+                    >: My personal set of client-side fixes & features for
                     Minecraft 1.17, including screenshot management utils,
                     improved boss bar rendering, bug fixes, and more! Made
                     purely for myself to resolve my own annoyances with the
@@ -123,25 +132,24 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                         rel="noopener noreferrer"
                         href="https://www.curseforge.com/minecraft/mc-mods/anti-auto-jump"
                         >AntiAutoJump</a
-                    >: my first two Minecraft mods, somewhere around 16k total
-                    downloads (circa 2020)
+                    >: My first two Minecraft mods. Got around 16k downloads
+                    (circa 2020)
                 </li>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://discord.gg/94EYHt8qgw">Oracle SMP</a
-                    >: my technical Minecraft server - farms, automation,
-                    redstone, etc - all the nerdy stuff. (2020-2024)
-                </li>
+                <!-- <li> -->
+                <!--     <a -->
+                <!--         target="_blank" -->
+                <!--         rel="noopener noreferrer" -->
+                <!--         href="https://discord.gg/94EYHt8qgw">Oracle SMP</a -->
+                <!--     >: My technical Minecraft server - farms, automation, -->
+                <!--     redstone, etc - all the nerdy stuff. (2020-2024) -->
+                <!-- </li> -->
                 <li>
                     A bunch of other stuff (see <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://github.com/Bvngee?tab=repositories&type=source"
                         >GitHub</a
-                    >): hackathons, AOCs, scripts, other Minecraft mods, and
-                    more
+                    >): Experiments, C++/Rust adventures, school assignments, etc.
                 </li>
             </ul>
         </div>
@@ -156,24 +164,24 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                     <!-- Icons from simpleicons.org, also devicon.dev as a backup -->
                     <!-- Determine colors using ../../get_language_color.sh (which uses github-linguists) -->
                     <!-- TODO: replace all these with NF icons via icon update branch? -->
-                    <SoftwareIconShield name="Java" color="#b07219" slug="" />
-                    <SoftwareIconShield
-                        name="Rust"
-                        color="#dea584"
-                        slug="rust"
-                    />
-                    <SoftwareIconShield name="Lua" color="#000080" slug="lua" />
-                    <SoftwareIconShield name="C" color="#555555" slug="c" />
                     <SoftwareIconShield
                         name="C++"
                         color="#f34b7d"
                         slug="cplusplus"
                     />
                     <SoftwareIconShield
+                        name="Rust"
+                        color="#dea584"
+                        slug="rust"
+                    />
+                    <SoftwareIconShield
                         name="Python"
                         color="#3572A5"
                         slug="python"
                     />
+                    <SoftwareIconShield name="Lua" color="#000080" slug="lua" />
+                    <SoftwareIconShield name="C" color="#555555" slug="c" />
+                    <SoftwareIconShield name="Java" color="#b07219" slug="" />
                     <SoftwareIconShield
                         name="Bash"
                         color="#89e051"
@@ -280,20 +288,30 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
                 />
             </div>
         </div>
-        <a
-            id="commit-time"
-            href={"https://github.com/Bvngee/bvngee.com/commit/" +
-                lastCommitHash}
-        >
-            <span class="icon">󰊤 </span>
-            <span
-                id="commit-time-text"
-                data-time-of-last-commit={timeOfLastCommit}
-                data-last-commit-hash={lastCommitHash}
-            >
-                Calculating...
-            </span>
-        </a>
+        <div id="footer">
+            <div id="left"></div>
+            <div id="center">
+                <a
+                    id="commit-time"
+                    href={"https://github.com/Bvngee/bvngee.com/commit/" +
+                        lastCommitHash}
+                >
+                    <span class="icon">󰊤 </span>
+                    <span
+                        id="commit-time-text"
+                        data-time-of-last-commit={timeOfLastCommit}
+                        data-last-commit-hash={lastCommitHash}
+                    >
+                        Calculating...
+                    </span>
+                </a>
+            </div>
+            <div id="right">
+                <a id="back-to-top" href="#nav-links">
+                    <em>(back to top)</em>
+                </a>
+            </div>
+        </div>
     </PageContainer>
 </BasePageLayout>
 
@@ -347,7 +365,20 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         commit!.innerHTML = "???";
     }
 </script>
-
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const backToTop = document.getElementById("back-to-top");
+        function checkScroll() {
+            if (window.scrollY > 600) {
+                // Magic constant scroll threshold that feels good for home page
+                backToTop!.style.display = "block";
+            }
+        }
+        checkScroll(); // page load
+        window.addEventListener("scroll", checkScroll);
+        window.addEventListener("resize", checkScroll);
+    });
+</script>
 <style>
     #home-title {
         margin: 0 10px 20px 10px;
@@ -424,18 +455,40 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     /*     border-radius: 6px; */
     /*     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px; */
     /* } */
-    #commit-time {
-        color: var(--gray2);
+
+    #footer {
+        display: flex;
+        justify-items: center;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 2em;
+        margin: 20px 15px;
+        margin-bottom: 100px;
+    }
+    #footer #left {
+        flex: 1;
+    }
+    #footer #right {
+        flex: 1;
+        text-align: right;
+    }
+    #footer #center {
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin-right: 20px;
-        margin-top: -10px;
+    }
+    #footer #center #commit-time {
+        color: var(--gray2);
         text-decoration: none;
     }
-    #commit-time .icon {
+    #footer #center #commit-time .icon {
         font-size: 20px;
         font-family: "CaskaydiaCove Nerd Font";
-        margin: 14px;
+        position: relative;
+        top: 1px;
+    }
+    #footer #back-to-top {
+        display: none;
+        flex: 1;
+        color: var(--gray2);
     }
 </style>
