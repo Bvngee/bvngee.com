@@ -102,7 +102,7 @@ import BasePageLayout from "@layouts/BasePageLayout.astro";
         </div>
 
         <div class="box">
-            <h2>Qualifications</h2>
+            <h2>Experience</h2>
 
             <p>
                 I've done software development of all kinds: web dev, CI/CD,
@@ -143,7 +143,7 @@ import BasePageLayout from "@layouts/BasePageLayout.astro";
                 <div id="resume-container">
                     <object
                         id="resume"
-                        data="/Resume_Jack_Nystrom.pdf#navpanes=0&statusbar=0&messages=0&scrollbar=0&view=fit&zoom=100"
+                        data="/Resume_Jack_Nystrom.pdf#navpanes=0&statusbar=0&messages=0&scrollbar=0&view=fit&zoom=auto"
                         type="application/pdf"
                         width="100%"
                         height="100%"
@@ -184,9 +184,11 @@ import BasePageLayout from "@layouts/BasePageLayout.astro";
         margin-left: auto;
         margin-right: auto;
         /* max-width: 40em; */
+        max-width: 8.5in;
+        max-height: 11in;
 
-        /* aspect-ratio: 8.5 / 11; */
-        height: 11in;
+        aspect-ratio: 8.5 / 11;
+        /* height: 11in; */
         display: block;
         border-radius: 8px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
