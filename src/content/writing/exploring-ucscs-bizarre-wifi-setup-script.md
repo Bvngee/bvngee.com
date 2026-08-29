@@ -2,7 +2,13 @@
 title: Exploring UCSC's Bizarre WiFi Setup Script
 tags: []
 publishedDate: "2025-09-26"
-edits: [{ date: "2025-09-27", desc: "Added info about JoinNow being a SecureW2 product"}]
+edits:
+    [
+        {
+            date: "2025-09-27",
+            desc: "Added info about JoinNow being a SecureW2 product",
+        },
+    ]
 draft: false
 showToc: true
 ---
@@ -14,7 +20,7 @@ showToc: true
     finishing it has been on the back of my mind, but I couldn't find the time
     to finalize my thoughts and couldn't bring myself to publish something
     unpolished... So now, instead of letting perfection eat away at my brain,
-    I'm going to work on writing less perfect, more spew-of-conciousness blogs
+    I'm going to focus on less perfect, more spew-of-conciousness writing 
     that encompass what I'm actively spending my time on. Hope that makes sense
     :)
 </aside>
@@ -284,8 +290,7 @@ similar out.xml, except with differing `<actions>` depending on the unique
 networks of each school (eg. UCSC-Guest, ResWifi).
 
 At this point I was curious enough to try running the script. After being
-prompted for login I saw that ~/.joinnow/ was created, with a file
-08d..4e2.pem:
+prompted for login I saw that ~/.joinnow/ was created, with a file 08d..4e2.pem:
 
 ```console
 $ cat ~/.joinnow/08d[..]4e2.pem
@@ -338,9 +343,9 @@ let
       mode = "infrastructure";
     };
     "802-1x" = {
-      ca-cert = "${pkgs.fetchurl { 
+      ca-cert = "${pkgs.fetchurl {
         url = "https://its.ucsc.edu/wireless/docs/ca.crt";
-        hash = "sha256-[..]"; 
+        hash = "sha256-[..]";
       }}";
       anonymous-identity = "anon";
       domain-suffix-match = "ucsc.edu";

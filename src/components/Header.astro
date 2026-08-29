@@ -3,14 +3,14 @@
 enum Page {
     Home,
     About,
-    Blogs,
+    Writing,
     Unknown,
 }
 
 const routeToPage: Record<string, Page> = {
     "": Page.Home,
     "about": Page.About,
-    "blogs": Page.Blogs,
+    "writing": Page.Writing
 };
 
 let selectedPage = routeToPage[Astro.routePattern.split('/')[1]];
@@ -36,11 +36,11 @@ let selectedPage = routeToPage[Astro.routePattern.split('/')[1]];
             <span class="icon" id="about-logo"> </span>About
         </a>
         <a
-            id="blogs"
-            class={selectedPage==Page.Blogs ? "selected" : ""}
-            href="/blogs/"
+            id="writing"
+            class={selectedPage==Page.Writing ? "selected" : ""}
+            href="/writing/"
         >
-            <span class="icon" id="blogs-logo">󱀂 </span>Blogs
+            <span class="icon" id="writing-logo">󱀂 </span>Writing
         </a>
     </div>
 
@@ -113,7 +113,7 @@ let selectedPage = routeToPage[Astro.routePattern.split('/')[1]];
     a#about::after {
         background-color: var(--orange);
     }
-    a#blogs::after {
+    a#writing::after {
         background-color: var(--blue);
     }
     #home-logo {
@@ -124,7 +124,7 @@ let selectedPage = routeToPage[Astro.routePattern.split('/')[1]];
         padding-right: 2px;
         font-size: 16px;
     }
-    #blogs-logo {
+    #writing-logo {
         color: var(--blue);
     }
     .icon {

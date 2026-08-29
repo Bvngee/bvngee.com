@@ -1,21 +1,21 @@
 ---
 import BasePageLayout from "@layouts/BasePageLayout.astro";
 import PageContainer from "@components/PageContainer.astro";
-import BlogContentContainer from "@components/BlogContentContainer.astro";
+import ArticleContentContainer from "@components/ArticleContentContainer.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 // import type { MarkdownHeading } from "astro";
 
-// Defines the final routes for each blog content entry
+// Defines the final routes for each article content entry
 export async function getStaticPaths() {
-    const blogs = await getCollection("blog");
-    return blogs.map((entry) => ({
+    const articles = await getCollection("writing");
+    return articles.map((entry) => ({
         params: { slug: entry.id },
         props: { entry },
     }));
 }
 
 interface Props {
-    entry: CollectionEntry<"blog">;
+    entry: CollectionEntry<"writing">;
 }
 const entry = Astro.props.entry;
 
@@ -41,8 +41,8 @@ let edits: string[] = entry.data.edits.map(
 <BasePageLayout title={entry.data.title}>
     <PageContainer>
         <div id="header">
-            <h1 id="blog-title">{entry.data.title}</h1>
-            <p id="blog-date">
+            <h1 id="article-title">{entry.data.title}</h1>
+            <p id="article-date">
                 {entry.data.publishedDate?.longFormat}
                 {
                     entry.data.edits.length > 0 ? (
@@ -54,11 +54,11 @@ let edits: string[] = entry.data.edits.map(
             </p>
         </div>
 
-        <div id="blog-card">
-            <!-- this just applies BlogContentStyles.css to its contents -->
-            <!-- (which is the only good way to style the rendered html) -->
+        <div id="article-card">
             <article>
-                <BlogContentContainer>
+                <!-- this just applies ArticleContentStyles.css to its contents -->
+                <!-- (which is the only good way to style the rendered html) -->
+                <ArticleContentContainer>
                     {
                         entry.data.showToc ? (
                             <aside id="toc">
@@ -73,7 +73,7 @@ let edits: string[] = entry.data.edits.map(
                     }
 
                     <Content />
-                </BlogContentContainer>
+                </ArticleContentContainer>
             </article>
         </div>
         <div id="footer">
@@ -124,32 +124,32 @@ let edits: string[] = entry.data.edits.map(
         justify-content: space-between;
         padding: 0 10px;
     }
-    #blog-title {
+    #article-title {
         flex-grow: 0;
         margin: 0;
         max-width: 75%;
         text-shadow: 2px 4px 9px rgba(0, 0, 0, 0.4);
     }
-    #blog-date {
+    #article-date {
         align-content: end;
         margin-bottom: 2px;
         color: var(--gray2);
     }
-    #blog-date span {
+    #article-date span {
         padding-left: 0.2em;
     }
-    #blog-date a {
+    #article-date a {
         color: var(--gray2);
         padding: 0 1px;
     }
-    #blog-card {
+    #article-card {
         padding: 15px;
         margin: 20px 0 0 0;
         background-color: var(--bg2);
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
     }
-    #blog-card img {
+    #article-card img {
         max-width: 100%;
         height: auto; /* Ensures aspect ratio is maintained */
         border: 100px red;

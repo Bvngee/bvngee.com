@@ -228,8 +228,8 @@ Inconvenient for sure, but it works well enough as a temporary solution.
 
 In the meantime, I'll keep an eye on these issue and PRs:
 
--   (PR) https://github.com/NixOS/nixpkgs/pull/354755
--   (Issue) https://github.com/NixOS/nixpkgs/issues/348791
--   (Issue) https://github.com/clangd/clangd/issues/2181
+- (PR) https://github.com/NixOS/nixpkgs/pull/354755
+- (Issue) https://github.com/NixOS/nixpkgs/issues/348791
+- (Issue) https://github.com/clangd/clangd/issues/2181
 
 That's all. Hope you enjoyed or learned something!

@@ -251,13 +251,13 @@ comments, or corrections.
 
 Here are some of the resources I used:
 
--   https://lwn.net/Articles/679309/
--   https://dbhi.github.io/qus/context.html
--   https://github.com/NixOS/nixpkgs/issues/160300
--   https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/system/boot/binfmt.nix
--   https://discourse.nixos.org/t/docker-ignoring-platform-when-run-in-nixos/21120/16?u=bvngeecord
--   https://docs.docker.com/build/building/multi-platform/#qemu
--   https://drpdishant.medium.com/multi-arch-images-with-docker-buildx-and-qemu-141e0b6161e7
+- https://lwn.net/Articles/679309/
+- https://dbhi.github.io/qus/context.html
+- https://github.com/NixOS/nixpkgs/issues/160300
+- https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/system/boot/binfmt.nix
+- https://discourse.nixos.org/t/docker-ignoring-platform-when-run-in-nixos/21120/16?u=bvngeecord
+- https://docs.docker.com/build/building/multi-platform/#qemu
+- https://drpdishant.medium.com/multi-arch-images-with-docker-buildx-and-qemu-141e0b6161e7
 
 P.S. In one of my next posts, I'll talk about how I irradicated Dockerfiles
 alltogether, replacing them completely with pure nix :) More to come!

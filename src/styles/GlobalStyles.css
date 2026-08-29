@@ -48,7 +48,7 @@ body {
     <pre> is used to indicate whitespace significance (so that multiline works),
     <code> is used to signify any instance of code
 */
-/* should I keep these in GlobalStyles versus BlogContentContainer? */
+/* should I keep these in GlobalStyles versus ArticleContentContainer? */
 code, pre {
     background-color: var(--bg-dark);
 }
@@ -94,7 +94,7 @@ aside {
 }
 
 /* improved look for details/summary blocks */
-/* (most useful in blog posts but can be used elsewhere) */
+/* (most useful in writings but can be used elsewhere) */
 details summary {
     cursor: pointer;
     padding-left: 0.2em;

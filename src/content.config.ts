@@ -26,8 +26,8 @@ function dateFormats(date: Date) {
     };
 }
 
-const blogCollection = defineCollection({
-    loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
+const writingCollection = defineCollection({
+    loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/writing" }),
     schema: z
         .object({
             title: z.string(),
@@ -57,5 +57,5 @@ const blogCollection = defineCollection({
 });
 
 export const collections = {
-    blog: blogCollection,
+    writing: writingCollection,
 };

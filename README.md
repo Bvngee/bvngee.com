@@ -11,17 +11,17 @@ Directory structure:
 │   ├── components/
 │   │   └── <reusable astro components>
 │   ├── content/
-│   │   └── blog/
-│   │       ├── a_post.md
-│   │       └── <blog posts>  
+│   │   └── writing/
+│   │       ├── article_a.md
+│   │       └── <articles>  
 │   ├── layouts/
 │   │   └── BasePageLayout.astro
 │   └── pages/
-│       ├── blogs/
-│       │   └── [slug].astro    //page for viewing blog posts
+│       ├── writing/
+│       │   └── [slug].astro     // page for viewing article of writing
 │       ├── about.astro
-│       ├── blogs.astro
-│       ├── index.astro          //home page
+│       ├── writing.astro
+│       ├── index.astro          // home page
 │       └── ...
 └── public/
     ├── fonts/

@@ -13,8 +13,8 @@ real domain names of your choice, create new local-only domains, and customize a
 [captive portal](https://en.wikipedia.org/wiki/Captive_portal) for users of your
 local network.
 
-In this post I'll briefly cover how I did that, what it gave me, and some more
-fun things about captive portals.
+I'll briefly cover how I did that, what it gave me, and some more fun things
+about captive portals.
 
 ## What is a Recursive DNS Server?
 
@@ -26,9 +26,9 @@ recursive DNS server is not told to do anything special for a given domain name,
 then it will simply pass it on to whatever the backup server is, caching the
 result.
 
-This can be useful for two *main* reasons, that being caching DNS queries made
+This can be useful for two _main_ reasons, that being caching DNS queries made
 in your local network onto a server that is local and therefore faster, and
-overriding
+overriding domain names of your choosing to an IP address of your choosing.
 
 The tool I used for this purpose is called
 [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html).

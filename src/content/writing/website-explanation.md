@@ -59,12 +59,12 @@ webpage (I'll get back to this later too).
 
 After many many hours of:
 
--   configuring firewalls, iptables and DNS records
--   learning the Nginx syntax and its capabilities
--   finally understanding file permissions in Linux
--   installing SSL certs with CertBot
--   many failed attempts at fixing the SELinux security layer before I finally
-    gave up and disabled it
+- configuring firewalls, iptables and DNS records
+- learning the Nginx syntax and its capabilities
+- finally understanding file permissions in Linux
+- installing SSL certs with CertBot
+- many failed attempts at fixing the SELinux security layer before I finally
+  gave up and disabled it
 
 I finally had a default landing page hosted on my domain. The next order of
 business:
@@ -72,17 +72,17 @@ business:
 # The Frontend
 
 I have only ever worked with raw HTML and JavaScript, and barely even any CSS. I
-knew however that I would want to write blogs in Markdown, and that I would want
-at least _some_ extra capabilities and QOL features than what you get from just
-those basics. So I began to search for Static Site Generators (SSGs) and
+knew however that I would want to write articles in Markdown, and that I would
+want at least _some_ extra capabilities and QOL features than what you get from
+just those basics. So I began to search for Static Site Generators (SSGs) and
 frameworks that I might want to use. Some things I looked for:
 
--   I don't _need_ lots of functionality, but I like a high complexity ceiling
-    (aka opt-in complexity)
--   No rediculous abstractions; I still want to understand the entire system and
-    compilation process
--   Preferably lightweight, minimal to no client-side JS
--   Fast compilation / build time
+- I don't _need_ lots of functionality, but I like a high complexity ceiling
+  (aka opt-in complexity)
+- No rediculous abstractions; I still want to understand the entire system and
+  compilation process
+- Preferably lightweight, minimal to no client-side JS
+- Fast compilation / build time
 
 Out of those preferences, I found myself quite liking the approach that
 [Astro](https://astro.build) takes. It allows for fully opt-in client-side
@@ -114,14 +114,14 @@ website on the server itself and constantly poll for updates in a loop?
 
 After some thinking, I came up with these desires:
 
--   Source code for the website should be hosted on GitHub, but the build
-    process should NOT tied into it
-    -   Simple webhooks are OK - most git forges should have them
-    -   GitHub Actions are NOT OK - they're too rooted into GitHub, and hides
-        too much of the process
--   The website is built separately from my computer, on the server itself
--   All I should have to do to trigger the rebuild and deploy process is a
-    `git push`
+- Source code for the website should be hosted on GitHub, but the build process
+  should NOT tied into it
+    - Simple webhooks are OK - most git forges should have them
+    - GitHub Actions are NOT OK - they're too rooted into GitHub, and hides too
+      much of the process
+- The website is built separately from my computer, on the server itself
+- All I should have to do to trigger the rebuild and deploy process is a
+  `git push`
 
 I found out that GitHub (not surprisingly) provides a quite convenient webhook
 interface, allowing reposity owners to configure webhooks that get triggered

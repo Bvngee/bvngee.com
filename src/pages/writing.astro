@@ -1,54 +1,55 @@
 ---
 import BasePageLayout from "@layouts/BasePageLayout.astro";
-import BlogContentContainer from "@components/BlogContentContainer.astro";
+import ArticleContentContainer from "@components/ArticleContentContainer.astro";
 import PageContainer from "@components/PageContainer.astro";
+
 import { getCollection } from "astro:content";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import { render, type CollectionEntry } from "astro:content";
 
-const blogPosts = await getCollection("blog");
+const articles = await getCollection("writing");
 
-if (blogPosts.length == 0) {
-    throw new Error("No blogs found!");
+if (articles.length == 0) {
+    throw new Error("No articles found!");
 }
 
-const sortedPosts = blogPosts
+const sortedArticles = articles
     .filter((p) => !p.data.draft)
     .sort((a, b) => b.data.publishedDate!.unix - a.data.publishedDate!.unix);
 
-const postContent = await Promise.all(
-    sortedPosts.map((p) => render(p).then((p) => p.Content)),
+const articleContent = await Promise.all(
+    sortedArticles.map((p) => render(p).then((p) => p.Content)),
 );
 
-const postsAndContent: [CollectionEntry<"blog">, AstroComponentFactory][] =
-    sortedPosts.map((p, i) => [p, postContent[i]]);
+const postsAndContent: [CollectionEntry<"writing">, AstroComponentFactory][] =
+    sortedArticles.map((p, i) => [p, articleContent[i]]);
 
-const lastUpdatedDate = sortedPosts[0].data.publishedDate;
+const lastUpdatedDate = sortedArticles[0].data.publishedDate;
 ---
 
-<BasePageLayout title="Blogs">
+<BasePageLayout title="Writing">
     <PageContainer>
         <div id="header">
-            <h1 id="header-title">Blogs</h1>
+            <h1 id="header-title">Writing</h1>
             <div id="header-latest-date">
                 Latest: {lastUpdatedDate!.longFormat}
             </div>
         </div>
         {
             postsAndContent.map(([post, Content]) => (
-                <div id="blog-card">
-                    <div id="blog-card-label">
-                        <h2 id="blog-title">
+                <div id="article-card">
+                    <div id="article-card-label">
+                        <h2 id="article-title">
                             <a href={post.id}>{post.data.title}</a>
                         </h2>
-                        <h id="blog-date">
+                        <h id="article-date">
                             {post.data.publishedDate!.longFormat}
                         </h>
                     </div>
-                    <div id="blog-content">
-                        <BlogContentContainer>
+                    <div id="article-content">
+                        <ArticleContentContainer>
                             <Content />
-                        </BlogContentContainer>
+                        </ArticleContentContainer>
                     </div>
                 </div>
             ))
@@ -71,7 +72,7 @@ const lastUpdatedDate = sortedPosts[0].data.publishedDate;
     #header-title {
         margin: 0;
     }
-    #blog-card {
+    #article-card {
         background-color: var(--bg2);
         border-radius: 10px;
         padding: 10px;
@@ -80,39 +81,39 @@ const lastUpdatedDate = sortedPosts[0].data.publishedDate;
         transition-property: transform;
         transition-duration: 0.25s;
     }
-    #blog-card:hover {
+    #article-card:hover {
         transform: scale(1.016) translateZ(0);
         backface-visibility: hidden;
     }
-    #blog-card-label {
+    #article-card-label {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding-bottom: 2px;
     }
-    #blog-title {
+    #article-title {
         margin: -2px 0 0 2px;
         text-shadow: 2px 4px 7px rgba(0, 0, 0, 0.4);
         max-width: 75%;
     }
-    #blog-date {
+    #article-date {
         padding: 5px;
         font-size: 14px;
         color: var(--gray2);
     }
-    #blog-title > a:hover {
+    #article-title > a:hover {
         color: var(--aqua);
     }
-    #blog-title > a {
+    #article-title > a {
         text-decoration: none;
         color: var(--blue);
     }
-    #blog-hrs {
+    #article-hrs {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    #blog-hrs * {
+    #article-hrs * {
         width: 3%;
         margin: 0;
         height: 4px;
@@ -120,7 +121,7 @@ const lastUpdatedDate = sortedPosts[0].data.publishedDate;
         background-color: var(--aqua);
         border-radius: 2px;
     }
-    #blog-content {
+    #article-content {
         display: block;
         white-space: normal;
         overflow: hidden;
