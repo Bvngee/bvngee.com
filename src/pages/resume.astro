@@ -1,0 +1,188 @@
+---
+import PageContainer from "@components/PageContainer.astro";
+import SoftwareIconShield from "@components/SoftwareIconShield.astro";
+import BasePageLayout from "@layouts/BasePageLayout.astro";
+---
+
+<BasePageLayout title="About">
+    <PageContainer>
+        <!-- <h1 id="about-title" style="text-align: left;">Resume / Experience</h1> -->
+        <div class="box">
+            <h2>Experience</h2>
+
+            <p>
+                I'm experienced in software development of all kinds (systems
+                programming, embedded firmware, web dev, CI/CD, game modding,
+                linux sysadmin, some graphics, scripting, etc). My main
+                interests are in low-level and embedded programming: C/Zig/Rust,
+                microcontrollers, event loops and task switching, embedded
+                device drivers, communication protocols,... all the really fun
+                stuff!
+            </p>
+            <p>
+                I also have experience in electronics of many forms, mostly
+                thanks to Formula Student. Among my main interests are motor
+                controllers, PCB design, power conversion, high speed digital
+                and analog circuit design. I'd love for a chance to develop PCBs
+                professionally.
+            </p>
+
+            <p>
+                I'm always looking for exciting work opportunities. If you know
+                of an opening in Embedded Systems / Firmware Development /
+                Electrical Engineering or a related field, please feel free to
+                reach me <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="mailto:nystromjp@gmail.com">by email</a
+                >!
+            </p>
+        </div>
+        <div class="box">
+            <details open>
+                <summary style="margin-bottom: 8px;">
+                    <h2 style="display: inline;">Resume</h2>
+                </summary>
+                <div id="resume-container">
+                    <object
+                        id="resume"
+                        data="/Resume_Jack_Nystrom.pdf#navpanes=0&statusbar=0&messages=0&scrollbar=0&view=fit&zoom=auto"
+                        type="application/pdf"
+                        width="100%"
+                        height="100%"
+                    >
+                        <p>
+                            It appears your browser doesn't have PDF support.
+                            You can <a href="/Resume_Jack_Nystrom.pdf"
+                                >click here to download the resume PDF.</a
+                            >
+                        </p>
+                    </object>
+                    <br />
+                </div>
+            </details>
+        </div>
+        <div class="box">
+            <h2>Programming</h2>
+            <div>
+                <p>Some of the languages I've used a lot:</p>
+                <div class="icon-card-wrapper">
+                    <!-- Icons from simpleicons.org, also devicon.dev as a backup -->
+                    <!-- Determine colors using ../../get_language_color.sh (which uses github-linguists) -->
+                    <!-- TODO: replace all these with NF icons via icon update branch? -->
+                    <SoftwareIconShield
+                        name="C++"
+                        color="#f34b7d"
+                        slug="cplusplus"
+                    />
+                    <SoftwareIconShield
+                        name="Rust"
+                        color="#dea584"
+                        slug="rust"
+                    />
+                    <SoftwareIconShield
+                        name="Python"
+                        color="#3572A5"
+                        slug="python"
+                    />
+                    <SoftwareIconShield name="Lua" color="#000080" slug="lua" />
+                    <SoftwareIconShield name="C" color="#555555" slug="c" />
+                    <SoftwareIconShield name="Java" color="#b07219" slug="" />
+                    <SoftwareIconShield
+                        name="Bash"
+                        color="#89e051"
+                        slug="gnubash"
+                    />
+                    <SoftwareIconShield
+                        name="TypeScript"
+                        color="#3178c6"
+                        slug="typescript"
+                    />
+                    <SoftwareIconShield
+                        name="Astro"
+                        color="#ff5a03"
+                        slug="astro"
+                    />
+                    <SoftwareIconShield
+                        name="React"
+                        color="#61dafb"
+                        slug="react"
+                    />
+                    <SoftwareIconShield
+                        name="Nix"
+                        color="#7e7eff"
+                        slug="nixos"
+                    />
+                </div>
+                <p>What I actually enjoy writing:</p>
+                <div class="icon-card-wrapper">
+                    <SoftwareIconShield
+                        name="Rust"
+                        color="#dea584"
+                        slug="rust"
+                    />
+                    <SoftwareIconShield name="Zig" color="#ec915c" slug="zig" />
+                    <SoftwareIconShield name="C" color="#555555" slug="c" />
+                    <SoftwareIconShield
+                        name="C++"
+                        color="#f34b7d"
+                        slug="cplusplus"
+                    />
+                    <!-- <SoftwareIconShield name="Nix" color="#7e7eff" slug="nixos" /> -->
+                </div>
+            </div>
+            <p>
+                For electronics I'm a fan of KiCad and enjoy working with
+                STM32s. I've used FreeRTOS and Arm MbedOS, as well as AVR's
+                baremetal SDK on an ATtiny.
+            </p>
+        </div>
+    </PageContainer>
+</BasePageLayout>
+<style>
+    .box {
+        padding: 15px;
+        border-radius: 10px;
+        background-color: var(--bg2);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+        margin: 20px 0;
+    }
+    .box > p {
+    }
+    .box > h2 {
+        margin-top: 0;
+    }
+    .box li {
+        /* add a little vertical space between bullets */
+        margin: 0.5em 0;
+    }
+    #about-title {
+        margin: 0 10px;
+        /* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
+    }
+    #resume-container {
+    }
+    #resume {
+        margin-left: auto;
+        margin-right: auto;
+        /* max-width: 40em; */
+        max-width: 8.5in;
+        max-height: 11in;
+
+        aspect-ratio: 8.5 / 11;
+        /* height: 11in; */
+        display: block;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+        filter: brightness(85%);
+        box-sizing: border-box;
+    }
+    .icon-card-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: -8px;
+        margin-bottom: 20px;
+    }
+</style>

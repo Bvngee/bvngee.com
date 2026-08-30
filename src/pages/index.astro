@@ -1,399 +1,217 @@
 ---
 import PageContainer from "@components/PageContainer.astro";
 import SocialLinkPreview from "@components/SocialLinkPreview.astro";
-import SoftwareIconShield from "@components/SoftwareIconShield.astro";
 import BasePageLayout from "@layouts/BasePageLayout.astro";
 
 import { Image } from "astro:assets";
 import headshotImg from "@assets/1_small_cropped.jpg";
-
-// @ts-ignore-next-line
-const lastCommitHash = LAST_COMMIT_HASH;
-// @ts-ignore-next-line
-const timeOfLastCommit = TIME_OF_LAST_COMMIT;
 ---
 
 <BasePageLayout title="Home">
     <PageContainer>
-        <h1 id="home-title">Jack Nystrom</h1>
-        <div id="intro-headshot-container">
-            <div class="box" id="who">
-                <h2>Who?</h2>
-
-                <p>
-                    A third-year CS/EE student at UC Santa Cruz. I'm interested
-                    in tons of things but especially systems programming and
-                    electronics. I am currently the Electrical Captain for <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://formulaslug.com/">Formula Slug</a
-                    >. I am also a passionate Linux / neovim user and NixOS
-                    addict... But when I'm not at my computer or in the lab I
-                    also occasionally mountain bike, play tennis, and enjoy the
-                    sun and Santa Cruz mountains.
-                </p>
-
-                <p>
-                    I go by bvngee
-                    <a
-                        href="#where"
-                        style="color: unset; text-decoration-color: var(--gray2);"
-                        >on the internet</a
-                    >.
-                    <a
-                        href="/about"
-                        style="color: unset; text-decoration-color: var(--orange);"
-                        >More here</a
-                    >
-                </p>
-            </div>
-
+        <!-- <h1 id="home-title">Jack Nystrom</h1> -->
+        <div id="bio-headshot-container">
             <Image
                 id="headshot"
                 src={headshotImg}
                 layout="full-width"
                 alt="Jack Nystrom"
             />
-        </div>
-        <div class="box" id="what">
-            <h2>What?</h2>
-            <p>
-                I spend most of my time in Formula Slug's lab space doing
-                embedded programming, PCB design & debugging, wire harnessing,
-                telemetry and data analysis, or whatever else needs doing to
-                prepare for our next racecar. Currently we're working on FS-5,
-                which is set to compete next June!
-            </p>
-            <p>Here are a bunch of projects I care about:</p>
-            <ul>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/formulaslug/fs-4-firmware"
-                        >FS-4 Firmware</a
-                    >: The firmware for Formula Slug's latest racecar! Including
-                    throttle control, BMS, dash screens, data acquisition &
-                    logging, traction control, state-of-charge estimation, CAN
-                    bus management, drivers for various sensors, and the rest of
-                    the racecar's business logic. I led a team of ~10 firmware
-                    developers to bring this to life from the ground-up!
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/formulaslug/fs-4-schematics"
-                        >FS-4 Schematics</a
-                    >: The PCB designs for Formula Slug's latest racecar! I am
-                    very proud of my impact on this monumental team effort, from
-                    implementing our first custom STM32 design and fixing
-                    last-second BMS and battery temp sense PCB mistakes, to
-                    testing nearly every aspect of the electrical system and
-                    getting the motor spinning just days before competition.
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/Bvngee/nixconf/tree/main"
-                        >NixOS config</a
-                    >: The culmination of my years using Linux, learning how
-                    operating systems work, and my descent into madness trying
-                    to build the perfect dev environment (&gt;450 commits deep).
-                    Nowadays I couldn't bear to live without it.
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/Bvngee/SAR">SAR project</a
-                    >: I helped develop and test my highschool's brand new
-                    electronics class, leading tons of fun research, embedded
-                    programming, and debugging. This is the result of that!
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/Bvngee/bvngee.com"
-                        >bvngee.com</a
-                    >: Written and hosted from scratch using only Astro, nginx,
-                    and some bash. Automated deployment, manual SSL, etc (see <a
-                        href="/writing/website-explanation">this post</a
-                    >). Fun learning experience!
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/Bvngee/BvngeeAddons"
-                        >BvngeeAddons</a
-                    >: My personal set of client-side fixes & features for
-                    Minecraft 1.17, including screenshot management utils,
-                    improved boss bar rendering, bug fixes, and more! Made
-                    purely for myself to resolve my own annoyances with the
-                    game.
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.curseforge.com/minecraft/mc-mods/coordinate-mod"
-                        >CoordinateMod</a
-                    >
-                    and <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.curseforge.com/minecraft/mc-mods/anti-auto-jump"
-                        >AntiAutoJump</a
-                    >: My first two Minecraft mods, around 16k downloads (circa
-                    2020)
-                </li>
-                <!-- <li> -->
-                <!--     <a -->
-                <!--         target="_blank" -->
-                <!--         rel="noopener noreferrer" -->
-                <!--         href="https://discord.gg/94EYHt8qgw">Oracle SMP</a -->
-                <!--     >: My technical Minecraft server - farms, automation, -->
-                <!--     redstone, etc - all the nerdy stuff. (2020-2024) -->
-                <!-- </li> -->
-                <li>
-                    A bunch of other stuff (<a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/Bvngee?tab=repositories&type=source"
-                        >GitHub</a
-                    >): Experiments, C++/Rust adventures, assignments, etc.
-                </li>
-            </ul>
-        </div>
-        <div class="box" id="how">
-            <h2>How?</h2>
-            <div>
+            <div class="box" id="bio">
+                <div id="bio-header">
+                    <h1 style="margin: 0;">Jack Nystrom</h1>
+                    <div id="socials">
+                        <!-- use http://www.google.com/s2/favicons?domain=www.example.com if the default doesn't work, like with Discord -->
+                        <SocialLinkPreview
+                            title="GitHub"
+                            href="https://www.github.com/Bvngee/"
+                            favicon="https://www.github.com/favicon.ico"
+                        />
+                        <SocialLinkPreview
+                            title="LinkedIn"
+                            href="https://www.linkedin.com/in/jack-nystrom-3a7128311/"
+                            favicon="https://static.licdn.com/aero-v1/sc/h/akt4ae504epesldzj74dzred8"
+                        />
+                        <SocialLinkPreview
+                            title="Email"
+                            href="mailto:nystromjp@gmail.com"
+                            favicon="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+                        />
+                        <!-- <SocialLinkPreview -->
+                        <!--     title="Reddit" -->
+                        <!--     href="https://www.reddit.com/u/BvngeeCord/" -->
+                        <!--     favicon="https://www.reddit.com/favicon.ico" -->
+                        <!-- /> -->
+                        <!-- <SocialLinkPreview -->
+                        <!--     title="YouTube" -->
+                        <!--     href="https://www.youtube.com/@Bvngee/" -->
+                        <!--     favicon="https://www.youtube.com/favicon.ico" -->
+                        <!-- /> -->
+                        <!-- <SocialLinkPreview -->
+                        <!--     title="Discord" -->
+                        <!--     href="https://www.discordapp.com/users/484519672235163648" -->
+                        <!--     favicon="https://www.google.com/s2/favicons?domain=www.discord.com" -->
+                        <!-- /> -->
+                    </div>
+                </div>
+
                 <p>
-                    My primary background is in software development. Languages
-                    I've used a lot:
+                    I'm a third-year CS/EE student at UC Santa Cruz, and the
+                    Electrical Captain of <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://formulaslug.com/">Formula Slug</a
+                    >.
                 </p>
-                <div class="icon-card-wrapper">
-                    <!-- Icons from simpleicons.org, also devicon.dev as a backup -->
-                    <!-- Determine colors using ../../get_language_color.sh (which uses github-linguists) -->
-                    <!-- TODO: replace all these with NF icons via icon update branch? -->
-                    <SoftwareIconShield
-                        name="C++"
-                        color="#f34b7d"
-                        slug="cplusplus"
-                    />
-                    <SoftwareIconShield
-                        name="Rust"
-                        color="#dea584"
-                        slug="rust"
-                    />
-                    <SoftwareIconShield
-                        name="Python"
-                        color="#3572A5"
-                        slug="python"
-                    />
-                    <SoftwareIconShield name="Lua" color="#000080" slug="lua" />
-                    <SoftwareIconShield name="C" color="#555555" slug="c" />
-                    <SoftwareIconShield name="Java" color="#b07219" slug="" />
-                    <SoftwareIconShield
-                        name="Bash"
-                        color="#89e051"
-                        slug="gnubash"
-                    />
-                    <SoftwareIconShield
-                        name="TypeScript"
-                        color="#3178c6"
-                        slug="typescript"
-                    />
-                    <SoftwareIconShield
-                        name="Astro"
-                        color="#ff5a03"
-                        slug="astro"
-                    />
-                    <SoftwareIconShield
-                        name="React"
-                        color="#61dafb"
-                        slug="react"
-                    />
-                    <SoftwareIconShield
-                        name="Nix"
-                        color="#7e7eff"
-                        slug="nixos"
-                    />
-                </div>
-                <p>What I actually enjoy writing:</p>
-                <div class="icon-card-wrapper">
-                    <SoftwareIconShield
-                        name="Rust"
-                        color="#dea584"
-                        slug="rust"
-                    />
-                    <SoftwareIconShield name="Zig" color="#ec915c" slug="zig" />
-                    <SoftwareIconShield name="C" color="#555555" slug="c" />
-                    <SoftwareIconShield
-                        name="C++"
-                        color="#f34b7d"
-                        slug="cplusplus"
-                    />
-                    <!-- <SoftwareIconShield name="Nix" color="#7e7eff" slug="nixos" /> -->
-                </div>
+                <p>
+                    I'm interested in tons of things but especially systems
+                    programming and electronics. I care a lot about sustainable,
+                    reliable, and valuable engineering.
+                </p>
+
+                <p>I go by bvngee on the internet.</p>
             </div>
+        </div>
+        <div class="box">
+            <h2>About</h2>
+
             <p>
-                For electronics I'm a fan of KiCad and enjoy working with
-                STM32s. I've used FreeRTOS and Arm MbedOS, as well as AVR's
-                baremetal SDK on an ATtiny. I'm a big proponent of compatible
-                and open build systems, and will do anything I can to stay out
-                of proprietary IDEs and in my Neovim!
+                Check out my various
+                <a
+                    href="/projects"
+                    style="color: unset; text-decoration-color: var(--green);"
+                    >projects</a
+                >,
+                <a
+                    href="/writing"
+                    style="color: unset; text-decoration-color: var(--blue);"
+                    >writing</a
+                >, and my
+                <a
+                    href="/resume"
+                    style="color: unset; text-decoration-color: var(--purple);"
+                    >resume/experience</a
+                >!
             </p>
 
-            <!-- Until GitHub implements something like -->
-            <!-- https://github.com/orgs/community/discussions/18230#discussioncomment-14514129, -->
-            <!-- this is too innacurate. -->
-            <!-- <div class="most-used-languages"> -->
-            <!--     <img src={ -->
-            <!--         "https://github-readme-stats.bvngee.com/top-langs?" -->
-            <!--             + "username=Bvngee" -->
-            <!--             + "&theme=dark" -->
-            <!--             + "&langs_count=10" -->
-            <!--             + "&hide=typst" -->
-            <!--             + "&layout=compact" -->
-            <!--             + "&hide_border=true" -->
-            <!--             + "&bg_color=00000000" -->
-            <!--             + "&text_color=ddc7a1ee" // TODO: make this css var(--fg1) -->
-            <!--             + "&title_color=ddc7a1ee" -->
-            <!--     } alt="Most Used Languages" /> -->
-            <!-- </div> -->
-        </div>
-        <div class="box" id="where">
-            <h2>Where?</h2>
-            <p>Some places you can find me:</p>
-            <div class="icon-card-wrapper">
-                <!-- use http://www.google.com/s2/favicons?domain=www.example.com if the default doesn't work, like with Discord -->
-                <SocialLinkPreview
-                    title="GitHub"
-                    href="https://www.github.com/Bvngee/"
-                    favicon="https://www.github.com/favicon.ico"
-                />
-                <SocialLinkPreview
-                    title="LinkedIn"
-                    href="https://www.linkedin.com/in/jack-nystrom-3a7128311/"
-                    favicon="https://static.licdn.com/aero-v1/sc/h/akt4ae504epesldzj74dzred8"
-                />
-                <SocialLinkPreview
-                    title="Email"
-                    href="mailto:nystromjp@gmail.com"
-                    favicon="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
-                />
-                <SocialLinkPreview
-                    title="Reddit"
-                    href="https://www.reddit.com/u/BvngeeCord/"
-                    favicon="https://www.reddit.com/favicon.ico"
-                />
-                <SocialLinkPreview
-                    title="YouTube"
-                    href="https://www.youtube.com/@Bvngee/"
-                    favicon="https://www.youtube.com/favicon.ico"
-                />
-                <SocialLinkPreview
-                    title="Discord"
-                    href="https://www.discordapp.com/users/484519672235163648"
-                    favicon="https://www.google.com/s2/favicons?domain=www.discord.com"
-                />
-            </div>
-        </div>
-        <div id="footer">
-            <div id="left"></div>
-            <div id="center">
-                <a
-                    id="commit-time"
-                    href={"https://github.com/Bvngee/bvngee.com/commit/" +
-                        lastCommitHash}
-                >
-                    <span class="icon">󰊤 </span>
-                    <span
-                        id="commit-time-text"
-                        data-time-of-last-commit={timeOfLastCommit}
-                        data-last-commit-hash={lastCommitHash}
-                    >
-                        Calculating...
-                    </span>
-                </a>
-            </div>
-            <div id="right">
-                <a id="back-to-top" href="#nav-links">
-                    <em>(back to top)</em>
-                </a>
-            </div>
+            <hr style="color: var(--gray1);" />
+
+            A bunch of things in no particular order:
+            <ul>
+                <li>
+                    I spend most of my time in the basements of Baskin
+                    Engineering, working on an EV racecar
+                </li>
+                <li>
+                    Passionate about high quality software engineering and
+                    electronics, will talk for hours (be a nerd about something,
+                    don't be boring!)
+                </li>
+                <li>
+                    Mountain biker, but mostly as a social activity (I'm still
+                    pretty mediocre)
+                </li>
+                <li>You won't find me coding in anything other than Neovim</li>
+                <li>
+                    Big fan of compiled programming languages that still expose
+                    the details without compromising abstractions and safety.
+                    Hopeful that Zig's new IO interface and the colorless-async
+                    dream will have useful event-loop applications in embedded
+                    programming
+                </li>
+                <li>
+                    I use NixOS not because it saves me time in the long run but
+                    because I absolutely love getting to control and understand
+                    the pieces of my OS and the reproducibility of everything
+                    down to specific program build flags and kernel parameters.
+                    And because having isolated tooling is awesome
+                </li>
+                <li>
+                    I believe in cities designed around pedestrians and bikes
+                    over 50mph expressways and 8ft tall lifted trucks. E-biking
+                    is my favorite part of the day, give it a try! People would
+                    be healthier and happier.
+                </li>
+                <li>
+                    I am strongly against AI agents. LLMs are a super useful
+                    tool, but the way Big Tech is obsessed with AI and with
+                    replacing human labor is nothing short of awful. Largely, AI
+                    is in direct opposition with everything we should be
+                    fighting for. Allow me to explain.
+                    <ul>
+                        <li>
+                            The code that AI produces is mostly unuseable and/or
+                            unmaintainable without skilled human review and
+                            manual cleanup. In the hands of the right person
+                            this can produce a viable output, but in most real
+                            world cases the output of this AI-centric workflow
+                            is a product with strictly worse quality and poorer
+                            maintainability than the same product if it had been
+                            made purely by humans. In a world where software
+                            quality is essential to the everyday lives and
+                            safety of billions of people, and where software is
+                            already so frustratingly low-quality in so many
+                            cases, I am very concerned by the direction we're
+                            headed. Of course, CEOs and investors love anything
+                            that promises a faster product to market. But the
+                            world needs us to focus on quality, not getting out
+                            the door faster.
+                        </li>
+                        <li>
+                            Using an AI agent is outsourcing your intelligence
+                            to a tool owned by one of ~3 billionares. We
+                            sacrifice our agency and critical thinking in the
+                            name of productivity, and hand over the intellectual
+                            ownership of our product to a tool run by our
+                            greatest enemies. We introduce a link in the chain
+                            of information flow with the ability to wholely
+                            manipulate it in whichever way they want, invisibly
+                            to the user. Furthermore, the sacrifice of our
+                            learning to artificial intelligence increases our
+                            dependence on it, attaching a subscription fee to
+                            the very basis of producing work. Who does this
+                            "productivity" really benefit? Hint: it's not us.
+                            (Meanwhile, Nvidia continues to gladly sell the
+                            shovels...)
+                        </li>
+                        <li>
+                            I believe that the best way to make use of AI is as
+                            a glorified conversational search engine to help you
+                            learn about well-known topics. It has ingested
+                            basically all of the publicly available human
+                            knowledge at this point, and is extremely good at
+                            articulating it for you. What you should NOT use it
+                            for is: designing APIs and interfaces, deriving new
+                            solutions to unsolved problems, designing your
+                            product, and especially not autonomously coding
+                            anything.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    I am very concerned about the state of US politics, our
+                    dysfunctional government, the scale of corruption, the
+                    political polarization, the inability to pursue any remotely
+                    radical progressive change, the intentionally
+                    sensationalistic media, the voter suppression, the
+                    ever-increasing national debt and defense budget, the
+                    administration full of guilty but unstoppable narcissists,
+                    and the embarassment of a national leader
+                </li>
+                <li>Induction stoves are awesome</li>
+                <li>
+                    Huge fan of Jazz and harmony and think that things like <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.youtube.com/watch?v=VPLCk-FTVvw&pp=ygUYbW9vbiByaXZlciBqYWNvYiBjb2xsaWVy"
+                        >this</a
+                    > are peak music (give it a chance)
+                </li>
+            </ul>
         </div>
     </PageContainer>
 </BasePageLayout>
 
-<script>
-    function timeSince(date: Date) {
-        const seconds = Math.floor((+new Date() - +date) / 1000);
-        let intervalType;
-        let interval = Math.floor(seconds / 31536000);
-        if (interval >= 1) {
-            intervalType = "year";
-        } else {
-            interval = Math.floor(seconds / 2592000);
-            if (interval >= 1) {
-                intervalType = "month";
-            } else {
-                interval = Math.floor(seconds / 86400);
-                if (interval >= 1) {
-                    intervalType = "day";
-                } else {
-                    interval = Math.floor(seconds / 3600);
-                    if (interval >= 1) {
-                        intervalType = "hour";
-                    } else {
-                        interval = Math.floor(seconds / 60);
-                        if (interval >= 1) {
-                            intervalType = "minute";
-                        } else {
-                            return "less than a minute";
-                        }
-                    }
-                }
-            }
-        }
-        if (interval > 1 || interval === 0) {
-            intervalType += "s";
-        }
-        return interval + " " + intervalType;
-    }
-
-    const commit = document.getElementById("commit-time-text");
-    const timeOfLastCommit = commit?.dataset.timeOfLastCommit;
-    const lastCommitHash = commit?.dataset.lastCommitHash;
-    if (timeOfLastCommit !== undefined && lastCommitHash !== undefined) {
-        commit!.innerText =
-            "Last updated " +
-            timeSince(new Date(parseInt(timeOfLastCommit))) +
-            " ago (" +
-            lastCommitHash.substring(0, 7) +
-            ")";
-    } else {
-        commit!.innerHTML = "???";
-    }
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const backToTop = document.getElementById("back-to-top");
-        function checkScroll() {
-            if (window.scrollY > 600) {
-                // Magic constant scroll threshold that feels good for home page
-                backToTop!.style.display = "block";
-            }
-        }
-        checkScroll(); // page load
-        window.addEventListener("scroll", checkScroll);
-        window.addEventListener("resize", checkScroll);
-    });
-</script>
 <style>
     #home-title {
         margin: 0 10px 20px 10px;
@@ -409,24 +227,17 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     .box > h2 {
         margin: 0;
     }
-    /* Hack; without the :is() too much gets selected but just 
-     * having first-level last-child doesn't get everything */
-    .box :is(p, h2, ul, li, .icon-card-wrapper):last-child {
-        margin-bottom: 0.4em;
+    .box > :first-child {
+        margin-top: 0;
+    }
+    .box > :last-child {
+        margin-bottom: 0;
     }
     .box a {
         text-decoration-color: var(--blue);
         color: var(--blue);
     }
-    .icon-card-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        margin-top: -8px;
-        margin-bottom: 20px;
-    }
-    #intro-headshot-container {
+    #bio-headshot-container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -434,12 +245,12 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
 
         margin: 20px 0;
     }
-    #intro-headshot-container .box#who {
+    #bio-headshot-container .box#bio {
         flex: 3 1;
         margin: 0;
         min-width: 15em;
     }
-    #intro-headshot-container #headshot {
+    #bio-headshot-container #headshot {
         flex: 1 1;
 
         max-width: 100%;
@@ -450,6 +261,21 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
         border-radius: 10px;
         filter: brightness(90%);
     }
+    #bio-headshot-container #bio #bio-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5em 2em;
+        margin-bottom: 1.4em;
+    }
+    #bio-headshot-container #bio #bio-header #socials {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 12px;
+        margin-right: 4px;
+    }
     ul {
         /* make bullets a little closer to left wall of box */
         padding-left: 2em;
@@ -457,54 +283,5 @@ const timeOfLastCommit = TIME_OF_LAST_COMMIT;
     li {
         /* add a little vertical space between bullets */
         margin: 0.5em 0;
-    }
-    /* .most-used-languages { */
-    /*     flex: 0 0 auto; */
-    /*     justify-content: center; */
-    /*     height: min-content; */
-    /*     align-self: center; */
-    /*     margin: 0 1.5em; */
-    /* } */
-    /* .most-used-languages > img { */
-    /*     background-color: var(--bg-dark); */
-    /*     border-radius: 6px; */
-    /*     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px; */
-    /* } */
-
-    #footer {
-        display: flex;
-        justify-items: center;
-        justify-content: space-between;
-        align-items: stretch;
-        gap: 2em;
-        margin: 20px 15px;
-        margin-bottom: 100px;
-    }
-    #footer #left {
-        flex: 1;
-    }
-    #footer #right {
-        flex: 1;
-        text-align: right;
-    }
-    #footer #center {
-        display: flex;
-        align-items: center;
-    }
-    #footer #center #commit-time {
-        color: var(--gray2);
-        text-decoration: none;
-        white-space: nowrap;
-    }
-    #footer #center #commit-time .icon {
-        font-size: 20px;
-        font-family: "CaskaydiaCove Nerd Font";
-        position: relative;
-        top: 1px;
-    }
-    #footer #back-to-top {
-        display: none;
-        flex: 1;
-        color: var(--gray2);
     }
 </style>

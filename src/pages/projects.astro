@@ -1,0 +1,164 @@
+---
+import PageContainer from "@components/PageContainer.astro";
+import BasePageLayout from "@layouts/BasePageLayout.astro";
+---
+
+<BasePageLayout title="About">
+    <PageContainer>
+        <!-- <div class="box"> -->
+        <!--     <h2>FS-3</h2> -->
+        <!-- </div> -->
+        <div class="box">
+            <h2>Projects</h2>
+            <p>
+                These days I spend most of my time in Formula Slug's lab space
+                doing embedded programming, PCB design & debugging, wire
+                harnessing, telemetry and data analysis, or whatever else needs
+                doing to prepare for our next racecar. Currently we're working
+                on FS-5, which is set to compete next June!
+            </p>
+            <p>Here are a bunch of projects I care about:</p>
+            <ul>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/formulaslug/fs-4-firmware"
+                        >FS-4 Firmware</a
+                    >: The firmware for Formula Slug's latest racecar! Including
+                    throttle control, BMS, dash screens, data acquisition &
+                    logging, traction control, state-of-charge estimation, CAN
+                    bus management, drivers for various sensors, and the rest of
+                    the racecar's business logic. I led a team of ~10 firmware
+                    developers to bring this to life from the ground-up!
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/formulaslug/fs-4-schematics"
+                        >FS-4 Schematics</a
+                    >: The PCB designs for Formula Slug's latest racecar! I am
+                    very proud of my impact on this monumental team effort, from
+                    implementing our first custom STM32 design and fixing
+                    last-second BMS and battery temp sense PCB mistakes, to
+                    testing nearly every aspect of the electrical system and
+                    getting the motor spinning just days before competition.
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee/nixconf/tree/main"
+                        >NixOS config</a
+                    >: The culmination of my years using Linux, learning how
+                    operating systems work, and my descent into madness trying
+                    to build the perfect dev environment (&gt;450 commits deep).
+                    Nowadays I couldn't bear to live without it.
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee/SAR">SAR project</a
+                    >: I helped develop and test my highschool's brand new
+                    electronics class, leading tons of fun research, embedded
+                    programming, and debugging. This is the result of that!
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee/bvngee.com"
+                        >bvngee.com</a
+                    >: Written and hosted from scratch using only Astro, nginx,
+                    and some bash. Automated deployment, manual SSL, etc (see <a
+                        href="/writing/website-explanation">this post</a
+                    >). Fun learning experience!
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee/BvngeeAddons"
+                        >BvngeeAddons</a
+                    >: My personal set of client-side fixes & features for
+                    Minecraft 1.17, including screenshot management utils,
+                    improved boss bar rendering, bug fixes, and more! Made
+                    purely for myself to resolve my own annoyances with the
+                    game.
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.curseforge.com/minecraft/mc-mods/coordinate-mod"
+                        >CoordinateMod</a
+                    >
+                    and <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.curseforge.com/minecraft/mc-mods/anti-auto-jump"
+                        >AntiAutoJump</a
+                    >: My first two Minecraft mods, around 16k downloads (circa
+                    2020)
+                </li>
+                <!-- <li> -->
+                <!--     <a -->
+                <!--         target="_blank" -->
+                <!--         rel="noopener noreferrer" -->
+                <!--         href="https://discord.gg/94EYHt8qgw">Oracle SMP</a -->
+                <!--     >: My technical Minecraft server - farms, automation, -->
+                <!--     redstone, etc - all the nerdy stuff. (2020-2024) -->
+                <!-- </li> -->
+                <li>
+                    A bunch of other stuff (<a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/Bvngee?tab=repositories&type=source"
+                        >GitHub</a
+                    >): Experiments, C++/Rust adventures, assignments, etc.
+                </li>
+            </ul>
+        </div>
+    </PageContainer>
+</BasePageLayout>
+<style>
+    .box {
+        padding: 15px;
+        border-radius: 10px;
+        background-color: var(--bg2);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+        margin: 20px 0;
+    }
+    .box > p {
+    }
+    .box > h2 {
+        margin-top: 0;
+    }
+    .box li {
+        /* add a little vertical space between bullets */
+        margin: 0.5em 0;
+    }
+    #about-title {
+        margin: 0 10px;
+        /* text-shadow: 2px 4px 9px rgba(0,0,0,0.4); */
+    }
+    #resume-container {
+    }
+    #resume {
+        margin-left: auto;
+        margin-right: auto;
+        /* max-width: 40em; */
+        max-width: 8.5in;
+        max-height: 11in;
+
+        aspect-ratio: 8.5 / 11;
+        /* height: 11in; */
+        display: block;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+        filter: brightness(85%);
+        box-sizing: border-box;
+    }
+</style>

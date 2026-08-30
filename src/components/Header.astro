@@ -1,47 +1,47 @@
 ---
-
 enum Page {
-    Home,
     About,
+    Projects,
     Writing,
+    Resume,
     Unknown,
 }
 
 const routeToPage: Record<string, Page> = {
-    "": Page.Home,
-    "about": Page.About,
-    "writing": Page.Writing
+    "": Page.About,
+    about: Page.About,
+    projects: Page.Projects,
+    writing: Page.Writing,
+    resume: Page.Resume,
 };
 
-let selectedPage = routeToPage[Astro.routePattern.split('/')[1]];
+let selectedPage = routeToPage[Astro.routePattern.split("/")[1]];
 ---
 
-<!-- prettier-ignore -->
 <nav id="nav-links">
     <div id="left"></div>
 
     <div id="center">
-        <a 
-            id="home" 
-            class={selectedPage==Page.Home ? "selected" : ""} 
-            href="/"
-        >
-            <span class="icon" id="home-logo"> </span>Home
-        </a>
-        <a 
+        <a
             id="about"
-            class={selectedPage==Page.About ? "selected" : ""}
-            href="/about/"
+            class={selectedPage == Page.About ? "selected" : ""}
+            href="/">About</a
         >
-            <span class="icon" id="about-logo"> </span>About
-        </a>
+        <a
+            id="projects"
+            class={selectedPage == Page.Projects ? "selected" : ""}
+            href="/projects">Projects</a
+        >
         <a
             id="writing"
-            class={selectedPage==Page.Writing ? "selected" : ""}
-            href="/writing/"
+            class={selectedPage == Page.Writing ? "selected" : ""}
+            href="/writing">Writing</a
         >
-            <span class="icon" id="writing-logo">󱀂 </span>Writing
-        </a>
+        <a
+            id="resume"
+            class={selectedPage == Page.Resume ? "selected" : ""}
+            href="/resume">Resume</a
+        >
     </div>
 
     <div id="right"></div>
@@ -49,44 +49,33 @@ let selectedPage = routeToPage[Astro.routePattern.split('/')[1]];
 
 <style>
     #nav-links {
-        /* height: 50px; */
-        /* This is kind of a hack; when the screen width is very small,
-         * the width of the page-container becomes larger than the body,
-         * but the nav is by default restricted to the width of the body
-         * so it looks bad. This says if overflowing, use min width as
-         * defined in src/Components/PageContainer.astro */
-        width: max(100%, 300px);
-
-        padding: 10px 0;
+        padding: 4px 0 6px 0;
         display: flex;
         align-items: center;
-        column-gap: 10px;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
         background-color: var(--bg2);
-        font-weight: 600;
+        font-weight: 500;
     }
     #center {
         display: flex;
-        width: min(80%, 330px);
         justify-content: space-between;
+        /* width: min(80%, 330px); */
+        gap: 2em;
     }
     /* Currently unused; previously I had content on the right side, left here
      * in case I change my mind again */
-    #left, #right {
+    #left,
+    #right {
         flex: 1;
     }
     a {
         padding: 4px 6px;
         text-align: center;
         line-height: 120%;
-        font-size: 18px;
+        font-size: 1.1em;
         text-decoration: none;
-        /* transform: perspective(1px) translateZ(0); */
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
         position: relative;
         overflow: hidden;
-        /* transition-duration: 0.1s; */
-        /* transition-property: transform; */
     }
     a::after {
         content: "";
@@ -95,39 +84,26 @@ let selectedPage = routeToPage[Astro.routePattern.split('/')[1]];
         /* z-index: -1; */
         left: 5px;
         right: 100%;
-        bottom: 2px;
+        bottom: 3px;
         height: 2px;
         border-radius: 2px;
         transition-property: right;
         transition-duration: 0.15s;
     }
-    a.selected::after {
-        right: 5px;
-    }
+    a.selected::after,
     a:hover::after {
         right: 5px;
-    }
-    a#home::after {
-        background-color: var(--green);
     }
     a#about::after {
         background-color: var(--orange);
     }
+    a#projects::after {
+        background-color: var(--green);
+    }
     a#writing::after {
         background-color: var(--blue);
     }
-    #home-logo {
-        color: var(--green);
-    }
-    #about-logo {
-        color: var(--orange);
-        padding-right: 2px;
-        font-size: 16px;
-    }
-    #writing-logo {
-        color: var(--blue);
-    }
-    .icon {
-        font-family: "CaskaydiaCove Nerd Font";
+    a#resume::after {
+        background-color: var(--purple);
     }
 </style>

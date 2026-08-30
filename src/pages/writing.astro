@@ -1,11 +1,8 @@
 ---
 import BasePageLayout from "@layouts/BasePageLayout.astro";
-import ArticleContentContainer from "@components/ArticleContentContainer.astro";
 import PageContainer from "@components/PageContainer.astro";
 
 import { getCollection } from "astro:content";
-import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import { render, type CollectionEntry } from "astro:content";
 
 const articles = await getCollection("writing");
 
@@ -43,6 +40,7 @@ const formatDate = (date: Date) => {
     return `${year} ${month} ${day}`;
 };
 
+// Old "preview" style:
 // const articleContent = await Promise.all(
 //     sortedArticles.map((p) => render(p).then((p) => p.Content)),
 // );
@@ -55,14 +53,11 @@ const lastUpdatedDate = sortedArticles[0].data.publishedDate;
 
 <BasePageLayout title="Writing">
     <PageContainer>
-        <div id="header">
-            <h1 id="header-title">Writing</h1>
-            <div id="header-latest-date">
-                Latest: {formatDate(lastUpdatedDate!.dateObject)}
-            </div>
-        </div>
-        <div class="box" id="articles-box">
-            {
+        <div class="box">
+            <h4 id="header-latest-date">
+                Latest: {lastUpdatedDate!.longFormat}
+            </h4>
+            <div id="articles-list">{
                 sortedArticles.map((post, i) => {
                     if (!post.data.publishedDate) return null;
                     const nextPost = sortedArticles[i - 1];
@@ -76,12 +71,12 @@ const lastUpdatedDate = sortedArticles[0].data.publishedDate;
                                 {formatDate(post.data.publishedDate.dateObject)}
                             </p>
                             <p id="article-title" class={addMargin ? "add-margin" : null}>
-                                <a href={post.id}>{post.data.title}</a>
+                                <a href={"/writing/" + post.id}>{post.data.title}</a>
                             </p>
                         
                     );
                 })
-            }
+            }</div>
         </div>
 
         <!-- Old "preview" style: -->
@@ -107,22 +102,13 @@ const lastUpdatedDate = sortedArticles[0].data.publishedDate;
     </PageContainer>
 </BasePageLayout>
 <style>
-    #header {
-        padding: 0 10px;
-        display: flex;
-        justify-content: space-between;
-    }
     #header-latest-date {
-        min-width: max-content;
-        margin: 0 0 4px 20px;
-        align-self: flex-end;
-        color: var(--fg2);
-        opacity: 80%;
+        /* min-width: max-content; */
+        /* margin: 0 0 4px 20px; */
+        /* align-self: flex-end; */
+        /* color: var(--fg2); */
+        /* opacity: 80%; */
     }
-    #header-title {
-        margin: 0;
-    }
-
     .box {
         padding: 15px;
         border-radius: 10px;
@@ -137,7 +123,7 @@ const lastUpdatedDate = sortedArticles[0].data.publishedDate;
         margin-bottom: 0;
     }
 
-    .box#articles-box {
+    #articles-list {
         display: grid;
         grid-template-columns: max-content 1fr;
         column-gap: 20px;

@@ -1,6 +1,7 @@
 /* Global CSS Styles */
 
-@import "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+/* @import "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap"; */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 body {
     /* Variable Declaration */
     --bg-darker: #141617;
@@ -32,7 +33,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 105%;
-    font-family: "Nunito", sans-serif;
+    font-family: "Nunito Sans", sans;
     text-underline-offset: 2px;
 }
 
@@ -144,31 +145,3 @@ a[target="_blank"]:not(.no-icon):after {
     font-style: normal;
     font-display: swap;
 }
-@font-face {
-    /* NORMAL ITALIC */
-    font-family: "CaskaydiaCove Nerd Font";
-    src: url("/fonts/Caskaydia Cove Nerd Font Complete Italic.otf")
-        format("opentype");
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    /* BOLD */
-    font-family: "CaskaydiaCove Nerd Font";
-    src: url("/fonts/Caskaydia Cove Nerd Font Complete SemiBold.otf")
-        format("opentype");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    /* BOLD ITALIC */
-    font-family: "CaskaydiaCove Nerd Font";
-    src: url("/fonts/Caskaydia Cove Nerd Font Complete SemiBold Italic.otf")
-        format("opentype");
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-/* sudo cp /usr/local/share/fonts/CaskaydiaCove/Caskaydia\ Cove\ Nerd\ Font\ Complete\ Mono\ Regular.otf ~/Code/bvngeecord.com/public/fonts */
